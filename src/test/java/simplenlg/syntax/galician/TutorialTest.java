@@ -26,12 +26,12 @@ import simplenlg.framework.DocumentElement;
 import simplenlg.framework.NLGElement;
 import simplenlg.framework.NLGFactory;
 import simplenlg.lexicon.Lexicon;
-import simplenlg.lexicon.spanish.XMLLexicon;
+import simplenlg.lexicon.galician.XMLLexicon;
 import simplenlg.phrasespec.NPPhraseSpec;
 import simplenlg.phrasespec.PPPhraseSpec;
 import simplenlg.phrasespec.SPhraseSpec;
 import simplenlg.phrasespec.VPPhraseSpec;
-import simplenlg.realiser.spanish.Realiser;
+import simplenlg.realiser.galician.Realiser;
 
 import java.util.Arrays;
 
@@ -60,13 +60,13 @@ public class TutorialTest {
         Lexicon lexicon = new XMLLexicon();                         // default simplenlg lexicon
         NLGFactory nlgFactory = new NLGFactory(lexicon);             // factory based on lexicon
 
-        NLGElement s1 = nlgFactory.createSentence("mi perro es feliz");
+        NLGElement s1 = nlgFactory.createSentence("o meu can é feliz");
 
         Realiser r = new Realiser(lexicon);
 
         String output = r.realiseSentence(s1);
 
-        assertEquals("Mi perro es feliz.", output);
+        assertEquals("O meu can é feliz.", output);
     }
 
     /**
@@ -79,12 +79,12 @@ public class TutorialTest {
         Realiser realiser = new Realiser(lexicon);
 
         SPhraseSpec p = nlgFactory.createClause();
-        p.setSubject("mi perro");
+        p.setSubject("o meu can");
         p.setVerb("perseguir");
         p.setObject("George");
 
         String output = realiser.realiseSentence(p);
-        assertEquals("Mi perro persigue George.", output);
+        assertEquals("O meu can persegue George.", output);
     }
 
     /**
@@ -103,7 +103,7 @@ public class TutorialTest {
 
         p.setFeature(Feature.TENSE, Tense.PAST);
         String output = realiser.realiseSentence(p);
-        assertEquals("Mary persiguió a George.", output);
+        assertEquals("Mary perseguiu a George.", output);
 
         p.setFeature(Feature.TENSE, Tense.FUTURE);
         output = realiser.realiseSentence(p);
@@ -111,7 +111,7 @@ public class TutorialTest {
 
         p.setFeature(Feature.NEGATED, true);
         output = realiser.realiseSentence(p);
-        assertEquals("Mary no perseguirá a George.", output);
+        assertEquals("Mary non perseguirá a George.", output);
 
         p = nlgFactory.createClause();
         p.setSubject("Mary");
@@ -121,19 +121,19 @@ public class TutorialTest {
         p.setFeature(Feature.INTERROGATIVE_TYPE,
                 InterrogativeType.YES_NO);
         output = realiser.realiseSentence(p);
-        assertEquals("¿Persigue Mary a George?", output);
+        assertEquals("Persegue Mary a George?", output);
 
         p.setSubject("Mary");
         p.setVerb("perseguir");
         p.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.WHO_OBJECT);
         output = realiser.realiseSentence(p);
-        assertEquals("¿A quién persigue Mary?", output);
+        assertEquals("A quen persegue Mary?", output);
 
         p = nlgFactory.createClause();
-        p.setSubject("el perro");
-        p.setVerb("despierta");
+        p.setSubject("o can");
+        p.setVerb("esperta");
         output = realiser.realiseSentence(p);
-        assertEquals("El perro despierta.", output);
+        assertEquals("O can esperta.", output);
 
     }
 
@@ -147,43 +147,43 @@ public class TutorialTest {
         Realiser realiser = new Realiser(lexicon);
 
         SPhraseSpec p = nlgFactory.createClause();
-        p.setSubject("mi perro");
+        p.setSubject("o meu can");
         p.setVerb("ser");  // variant of be
         p.setObject("George");
 
         String output = realiser.realiseSentence(p);
-        assertEquals("Mi perro es George.", output);
+        assertEquals("O meu can é George.", output);
 
         p = nlgFactory.createClause();
-        p.setSubject("mi perro");
+        p.setSubject("o meu can");
         p.setVerb("perseguir");  // variant of chase
         p.setObject(nlgFactory.createPrepositionPhrase("a", "George"));
 
         output = realiser.realiseSentence(p);
-        assertEquals("Mi perro persigue a George.", output);
+        assertEquals("O meu can persegue a George.", output);
 
 
         p = nlgFactory.createClause();
-        p.setSubject(nlgFactory.createNounPhrase("los", "perros"));   // variant of "dog"
-        p.setVerb("es");  // variant of be
+        p.setSubject(nlgFactory.createNounPhrase("os", "cans"));   // variant of "dog"
+        p.setVerb("é");  // variant of be
         p.setObject("felices");  // variant of happy
         output = realiser.realiseSentence(p);
-        assertEquals("El perro es feliz.", output);
+        assertEquals("O can é feliz.", output);
 
         p = nlgFactory.createClause();
-        p.setSubject(nlgFactory.createNounPhrase("los", "niños"));   // variant of "child"
+        p.setSubject(nlgFactory.createNounPhrase("os", "nenos"));   // variant of "child"
         p.setVerb("son");  // variant of be
         p.setObject("felices");  // variant of happy
         output = realiser.realiseSentence(p);
-        assertEquals("El niño es feliz.", output);
+        assertEquals("O neno é feliz.", output);
 
         // following functionality is enabled
         p = nlgFactory.createClause();
-        p.setSubject(nlgFactory.createNounPhrase("los", "perros"));   // variant of "dog"
+        p.setSubject(nlgFactory.createNounPhrase("os", "cans"));   // variant of "dog"
         p.setVerb("son");  // variant of be
         p.setObject("felices");  // variant of happy
         output = realiser.realiseSentence(p);
-        assertEquals("El perro es feliz.", output); //corrected automatically
+        assertEquals("O can é feliz.", output); //corrected automatically
     }
 
 	/* Following code tests the section 5 to 15
@@ -204,10 +204,10 @@ public class TutorialTest {
         SPhraseSpec p = nlgFactory.createClause();
         p.setSubject("Mary");
         p.setVerb("perseguir");
-        p.setObject("el mono");
+        p.setObject("o mono");
 
         String output = realiser.realiseSentence(p);
-        assertEquals("Mary persigue el mono.", output);
+        assertEquals("Mary persegue o mono.", output);
     } // testSection5A
 
     /**
@@ -222,34 +222,34 @@ public class TutorialTest {
         SPhraseSpec p = nlgFactory.createClause();
         p.setSubject("Mary");
         p.setVerb("perseguir");
-        p.setObject(nlgFactory.createPrepositionPhrase("a", nlgFactory.createNounPhrase("el", "mono")));
+        p.setObject(nlgFactory.createPrepositionPhrase("a", nlgFactory.createNounPhrase("o", "mono")));
 
         p.setFeature(Feature.TENSE, Tense.PAST);
         String output = realiser.realiseSentence(p);
-        assertEquals("Mary persiguió al mono.", output);
+        assertEquals("Mary perseguiu ao mono.", output);
 
         p.setFeature(Feature.TENSE, Tense.FUTURE);
         output = realiser.realiseSentence(p);
-        assertEquals("Mary perseguirá al mono.", output);
+        assertEquals("Mary perseguirá ao mono.", output);
 
         p.setFeature(Feature.NEGATED, true);
         output = realiser.realiseSentence(p);
-        assertEquals("Mary no perseguirá al mono.", output);
+        assertEquals("Mary non perseguirá ao mono.", output);
 
         p = nlgFactory.createClause();
         p.setSubject("Mary");
         p.setVerb("perseguir");
-        p.setObject(nlgFactory.createPrepositionPhrase("a", nlgFactory.createNounPhrase("el", "mono")));
+        p.setObject(nlgFactory.createPrepositionPhrase("a", nlgFactory.createNounPhrase("o", "mono")));
 
         p.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.YES_NO);
         output = realiser.realiseSentence(p);
-        assertEquals("¿Persigue Mary al mono?", output);
+        assertEquals("Persegue Mary ao mono?", output);
 
         p.setSubject("Mary");
         p.setVerb("perseguir");
         p.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.WHO_OBJECT);
         output = realiser.realiseSentence(p);
-        assertEquals("¿A quién persigue Mary?", output);
+        assertEquals("A quen persegue Mary?", output);
     }
 
     /**
@@ -264,12 +264,12 @@ public class TutorialTest {
         SPhraseSpec p = nlgFactory.createClause();
         p.setSubject("Mary");
         p.setVerb("perseguir");
-        p.setObject("el mono");
-        p.addComplement("muy rápido");
-        p.addComplement("a pesar de su agotamiento");
+        p.setObject("o mono");
+        p.addComplement("moi rápido");
+        p.addComplement("a pesar do seu esgotamento");
 
         String output = realiser.realiseSentence(p);
-        assertEquals("Mary persigue el mono muy rápido a pesar de su agotamiento.", output);
+        assertEquals("Mary persegue o mono moi rápido a pesar do seu esgotamento.", output);
     }
 
     /**
@@ -282,7 +282,7 @@ public class TutorialTest {
         Realiser realiser = new Realiser(lexicon);
 
         NPPhraseSpec subject = nlgFactory.createNounPhrase("Mary");
-        NPPhraseSpec object = nlgFactory.createNounPhrase("el mono");
+        NPPhraseSpec object = nlgFactory.createNounPhrase("o mono");
         VPPhraseSpec verb = nlgFactory.createVerbPhrase("perseguir");
         subject.addModifier("rápido");
         subject.setFeature(LexicalFeature.GENDER, Gender.FEMININE);
@@ -293,12 +293,12 @@ public class TutorialTest {
         p.setObject(object);
 
         String outputA = realiser.realiseSentence(p);
-        assertEquals("Rápida Mary persigue el mono.", outputA);
+        assertEquals("Rápida Mary persegue o mono.", outputA);
 
         verb.addModifier("rápidamente");
 
         String outputB = realiser.realiseSentence(p);
-        assertEquals("Rápida Mary persigue rápidamente el mono.", outputB);
+        assertEquals("Rápida Mary persegue rápidamente o mono.", outputB);
     }
 
     // there is no code specified in section 9
@@ -313,7 +313,7 @@ public class TutorialTest {
         Realiser realiser = new Realiser(lexicon);
 
         NPPhraseSpec subject1 = nlgFactory.createNounPhrase("Mary");
-        NPPhraseSpec subject2 = nlgFactory.createNounPhrase("tu", "girafa");
+        NPPhraseSpec subject2 = nlgFactory.createNounPhrase("a túa", "xirafa");
 
         // next line is not correct ~ should be nlgFactory.createCoordinatedPhrase ~ may be corrected in the API
         CoordinatedPhraseElement subj = nlgFactory.createCoordinatedPhrase(subject1, subject2);
@@ -323,12 +323,12 @@ public class TutorialTest {
         SPhraseSpec p = nlgFactory.createClause();
         p.setSubject(subj);
         p.setVerb(verb);
-        p.setObject("el mono");
+        p.setObject("o mono");
 
         String outputA = realiser.realiseSentence(p);
-        assertEquals("Mary y tu girafa persiguen el mono.", outputA);
+        assertEquals("Mary e a túa xirafa perseguen o mono.", outputA);
 
-        NPPhraseSpec object1 = nlgFactory.createNounPhrase("el mono");
+        NPPhraseSpec object1 = nlgFactory.createNounPhrase("o mono");
         NPPhraseSpec object2 = nlgFactory.createNounPhrase("George");
 
         // next line is not correct ~ should be nlgFactory.createCoordinatedPhrase ~ may be corrected in the API
@@ -337,12 +337,12 @@ public class TutorialTest {
         p.setObject(obj);
 
         String outputB = realiser.realiseSentence(p);
-        assertEquals("Mary y tu girafa persiguen el mono, George y Martha.", outputB);
+        assertEquals("Mary e a túa xirafa perseguen o mono, George e Martha.", outputB);
 
-        obj.setFeature(Feature.CONJUNCTION, "o");
+        obj.setFeature(Feature.CONJUNCTION, "ou");
 
         String outputC = realiser.realiseSentence(p);
-        assertEquals("Mary y tu girafa persiguen el mono, George o Martha.", outputC);
+        assertEquals("Mary e a túa xirafa perseguen o mono, George ou Martha.", outputC);
     }
 
     /**
@@ -355,18 +355,18 @@ public class TutorialTest {
 
         Realiser realiser = new Realiser(lexicon);
 
-        SPhraseSpec pA = nlgFactory.createClause("Mary", "perseguir", "el mono");
-        pA.addComplement("en el parque");
+        SPhraseSpec pA = nlgFactory.createClause("Mary", "perseguir", "o mono");
+        pA.addComplement("no parque");
 
         String outputA = realiser.realiseSentence(pA);
-        assertEquals("Mary persigue el mono en el parque.", outputA);
+        assertEquals("Mary persegue o mono no parque.", outputA);
 
         // alternative build paradigm
         NPPhraseSpec place = nlgFactory.createNounPhrase("parque");
-        SPhraseSpec pB = nlgFactory.createClause("Mary", "perseguir", "el mono");
+        SPhraseSpec pB = nlgFactory.createClause("Mary", "perseguir", "o mono");
 
         // next line is depreciated ~ may be corrected in the API
-        place.setDeterminer("el");
+        place.setDeterminer("o");
         PPPhraseSpec pp = nlgFactory.createPrepositionPhrase();
         pp.addComplement(place);
         pp.setPreposition("en");
@@ -374,12 +374,12 @@ public class TutorialTest {
         pB.addComplement(pp);
 
         String outputB = realiser.realiseSentence(pB);
-        assertEquals("Mary persigue el mono en el parque.", outputB);
+        assertEquals("Mary persegue o mono no parque.", outputB);
 
         place.addPreModifier("frondoso");
 
         String outputC = realiser.realiseSentence(pB);
-        assertEquals("Mary persigue el mono en el frondoso parque.", outputC);
+        assertEquals("Mary persegue o mono no frondoso parque.", outputC);
     } // testSection11
 
     // section12 only has a code table as illustration
@@ -394,9 +394,9 @@ public class TutorialTest {
 
         Realiser realiser = new Realiser(lexicon);
 
-        SPhraseSpec s1 = nlgFactory.createClause("mi gato", "querer", "pescado");
-        SPhraseSpec s2 = nlgFactory.createClause("mi perro", "querer", "huesos grandes");
-        SPhraseSpec s3 = nlgFactory.createClause("mi caballo", "querer", "hierba");
+        SPhraseSpec s1 = nlgFactory.createClause("o meu gato", "querer", "pescado");
+        SPhraseSpec s2 = nlgFactory.createClause("o meu can", "querer", "ósos grandes");
+        SPhraseSpec s3 = nlgFactory.createClause("o meu cabalo", "querer", "herba");
 
         CoordinatedPhraseElement c = nlgFactory.createCoordinatedPhrase();
         c.addCoordinate(s1);
@@ -404,17 +404,17 @@ public class TutorialTest {
         c.addCoordinate(s3);
 
         String outputA = realiser.realiseSentence(c);
-        assertEquals("Mi gato quiere pescado, mi perro quiere huesos grandes y mi caballo quiere hierba.", outputA);
+        assertEquals("O meu gato quere pescado, o meu can quere ósos grandes e o meu cabalo quere herba.", outputA);
 
-        SPhraseSpec p = nlgFactory.createClause("yo", "ser", "feliz");
-        SPhraseSpec q = nlgFactory.createClause("yo", "comer", "pescado");
+        SPhraseSpec p = nlgFactory.createClause("eu", "ser", "feliz");
+        SPhraseSpec q = nlgFactory.createClause("eu", "comer", "peixe");
         q.setFeature(Feature.COMPLEMENTISER, "porque");
         q.setFeature(Feature.TENSE, Tense.PAST);
         q.getSubject().setFeature(Feature.ELIDED, true);
         p.addComplement(q);
 
         String outputB = realiser.realiseSentence(p);
-        assertEquals("Yo soy feliz porque comí pescado.", outputB);
+        assertEquals("Eu son feliz porque comín peixe.", outputB);
     }
 
     /**
@@ -427,8 +427,8 @@ public class TutorialTest {
 
         Realiser realiser = new Realiser(lexicon);
 
-        SPhraseSpec p1 = nlgFactory.createClause("Mary", "perseguir", "el mono");
-        SPhraseSpec p2 = nlgFactory.createClause("El mono", "pelear");
+        SPhraseSpec p1 = nlgFactory.createClause("Mary", "perseguir", "o mono");
+        SPhraseSpec p2 = nlgFactory.createClause("O mono", "pelexar");
         SPhraseSpec p3 = nlgFactory.createClause("Mary", "estar", "nerviosa");
 
         DocumentElement s1 = nlgFactory.createSentence(p1);
@@ -438,12 +438,12 @@ public class TutorialTest {
         DocumentElement par1 = nlgFactory.createParagraph(Arrays.asList(s1, s2, s3));
 
         String output14a = realiser.realise(par1).getRealisation();
-        assertEquals("Mary persigue el mono. El mono pelea. Mary está nerviosa.\n\n", output14a);
+        assertEquals("Mary persegue o mono. O mono pelexa. Mary está nerviosa.\n\n", output14a);
 
-        DocumentElement section = nlgFactory.createSection("Las pruebas y tribulaciones de María y el mono");
+        DocumentElement section = nlgFactory.createSection("As probas e tribulacións de María e o mono");
         section.addComponent(par1);
         String output14b = realiser.realise(section).getRealisation();
-        assertEquals("Las pruebas y tribulaciones de María y el mono\nMary persigue el mono. El mono pelea. Mary está nerviosa.\n\n", output14b);
+        assertEquals("As probas e tribulacións de María e o mono\nMary persegue o mono. O mono pelexa. Mary está nerviosa.\n\n", output14b);
     }
 
 } 

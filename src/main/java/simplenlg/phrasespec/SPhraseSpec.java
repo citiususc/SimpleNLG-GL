@@ -163,7 +163,7 @@ public class SPhraseSpec extends PhraseElement {
 	 */
 	@Override
 	public void addComplement(NLGElement complement) {
-		if(complement.getFeature(InternalFeature.SUBJECTS) == null) {
+		if(complement.getFeature(InternalFeature.SUBJECTS) == null && this.getSubject() != null) {
 			complement.setFeature(Feature.PERSON, this.getSubject().getFeature(Feature.PERSON));
 		}
 		PhraseElement verbPhrase = (PhraseElement) getFeatureAsElement(InternalFeature.VERB_PHRASE);

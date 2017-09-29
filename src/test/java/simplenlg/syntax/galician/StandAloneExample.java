@@ -27,7 +27,7 @@ import simplenlg.phrasespec.AdjPhraseSpec;
 import simplenlg.phrasespec.NPPhraseSpec;
 import simplenlg.phrasespec.PPPhraseSpec;
 import simplenlg.phrasespec.SPhraseSpec;
-import simplenlg.realiser.spanish.Realiser;
+import simplenlg.realiser.galician.Realiser;
 
 /**
  * @author Dave Westwater, Data2Text Ltd
@@ -44,12 +44,12 @@ public class StandAloneExample {
         // afterwards is an example of using simplenlg just for morphology
 
         // set up
-        Lexicon lexicon = new simplenlg.lexicon.spanish.XMLLexicon();                          // default simplenlg lexicon
+        Lexicon lexicon = new simplenlg.lexicon.galician.XMLLexicon();                          // default simplenlg lexicon
         NLGFactory nlgFactory = new NLGFactory(lexicon);             // factory based on lexicon
 
         // create sentences
         // 	"John did not go to the bigger park. He played football there."
-        NPPhraseSpec thePark = nlgFactory.createNounPhrase("el", "parque");   // create an NP
+        NPPhraseSpec thePark = nlgFactory.createNounPhrase("o", "parque");   // create an NP
         AdjPhraseSpec bigp = nlgFactory.createAdjectivePhrase("gran");        // create AdjP
         bigp.setFeature(Feature.IS_COMPARATIVE, true);                       // use comparative form ("bigger")
         thePark.addModifier(bigp);                                        // add adj as modifier in NP
@@ -72,8 +72,8 @@ public class StandAloneExample {
                 .createSentence(johnGoToThePark);
 
         // below creates a sentence DocumentElement by concatenating strings
-        StringElement hePlayed = new StringElement("él jugó");
-        StringElement there = new StringElement("allí");
+        StringElement hePlayed = new StringElement("el xogou");
+        StringElement there = new StringElement("alí");
         WordElement football = new WordElement("fútbol");
 
         DocumentElement sentence2 = nlgFactory.createSentence();
@@ -101,7 +101,7 @@ public class StandAloneExample {
         // hopefully will be better supported in later versions
 
         // get word element for "child"
-        WordElement word = (WordElement) nlgFactory.createWord("niño", LexicalCategory.NOUN);
+        WordElement word = (WordElement) nlgFactory.createWord("neno", LexicalCategory.NOUN);
         // create InflectedWordElement from word element
         InflectedWordElement inflectedWord = new InflectedWordElement(word);
         // set the inflected word to plural

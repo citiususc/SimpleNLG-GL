@@ -1777,6 +1777,8 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
                     }
                 } else if (Gender.MASCULINE.equals(gender)) {
                     morphology = morphology + "o";
+                } else if(Gender.NEUTER.equals(gender)) {
+                    morphology = baseForm;
                 }
                 if (NumberAgreement.PLURAL.equals(number)) {
                     morphology = morphology + "s";
