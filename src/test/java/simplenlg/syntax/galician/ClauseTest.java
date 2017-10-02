@@ -715,7 +715,7 @@ public class ClauseTest extends SimpleNLG4Test {
         this.s3.setFeature(Feature.MODAL, "deber"); //$NON-NLS-1$
         this.s3.setFeature(Feature.TENSE, Tense.PAST);
         Assert.assertEquals(
-                "o home debe haber dado á muller a flor de John", //$NON-NLS-1$
+                "o home debeu dar á muller a flor de John", //$NON-NLS-1$
                 this.realiser.realise(this.s3).getRealisation());
     }
 

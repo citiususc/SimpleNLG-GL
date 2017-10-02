@@ -136,7 +136,7 @@ public class ExternalTest {
         realiser.setDebugMode(true);
         Assert
                 .assertEquals(
-                        "a nai do doente ou o pai do doente ten unha copia cambiada do xen FGFR3 en todas as células", //$NON-NLS-1$
+                        "a nai do doente ou o pai do doente teñen unha copia cambiada do xen FGFR3 en todas as células", //$NON-NLS-1$
                         this.realiser.realise(sentence1).getRealisation());
 
         // Rachel's second test
@@ -290,7 +290,7 @@ public class ExternalTest {
 
         p = this.phraseFactory.createClause("Mary", "perseguir", "a George");
         p.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.WHERE);
-        Assert.assertEquals("Donde persegue Mary a George?", realiser.realiseSentence(p));
+        Assert.assertEquals("Onde persegue Mary a George?", realiser.realiseSentence(p));
 
         p = this.phraseFactory.createClause("Mary", "perseguir", "a George");
         p.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.WHY);

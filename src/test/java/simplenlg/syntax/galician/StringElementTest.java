@@ -27,10 +27,10 @@ import simplenlg.features.Gender;
 import simplenlg.features.LexicalFeature;
 import simplenlg.framework.*;
 import simplenlg.lexicon.Lexicon;
-import simplenlg.lexicon.spanish.XMLLexicon;
+import simplenlg.lexicon.galician.XMLLexicon;
 import simplenlg.phrasespec.NPPhraseSpec;
 import simplenlg.phrasespec.SPhraseSpec;
-import simplenlg.realiser.spanish.Realiser;
+import simplenlg.realiser.galician.Realiser;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
@@ -66,10 +66,10 @@ public class StringElementTest {
     @Test
     public void stringElementAsHeadTest() {
         NPPhraseSpec np = this.phraseFactory.createNounPhrase();
-        np.setHead(phraseFactory.createStringElement("perros y gatos"));
-        np.setSpecifier(phraseFactory.createWord("los", LexicalCategory.DETERMINER));
+        np.setHead(phraseFactory.createStringElement("cans e gatos"));
+        np.setSpecifier(phraseFactory.createWord("os", LexicalCategory.DETERMINER));
         np.setPlural(true);
-        assertEquals("los perros y gatos", this.realiser.realise(np)
+        assertEquals("os cans e gatos", this.realiser.realise(np)
                 .getRealisation());
     }
 
@@ -79,9 +79,9 @@ public class StringElementTest {
     @Test
     public void stringElementAsVPTest() {
         SPhraseSpec s = this.phraseFactory.createClause();
-        s.setVerbPhrase(this.phraseFactory.createStringElement("come y bebe"));
-        s.setSubject(this.phraseFactory.createStringElement("el hombre grande y gordo"));
-        assertEquals("el hombre grande y gordo come y bebe", this.realiser
+        s.setVerbPhrase(this.phraseFactory.createStringElement("come e bebe"));
+        s.setSubject(this.phraseFactory.createStringElement("o home grande e gordo"));
+        assertEquals("o home grande e gordo come e bebe", this.realiser
                 .realise(s).getRealisation());
     }
 
@@ -95,12 +95,12 @@ public class StringElementTest {
         senSpec.addComplement((this.phraseFactory.createStringElement("mary ama")));
         NPPhraseSpec np = this.phraseFactory.createNounPhrase();
         np.setHead("vaca");
-        np.setDeterminer("el");
+        np.setDeterminer("o");
         np.setFeature(LexicalFeature.GENDER, Gender.FEMININE);
         senSpec.addComplement(np);
         DocumentElement completeSen = this.phraseFactory.createSentence();
         completeSen.addComponent(senSpec);
-        assertEquals("Mary ama la vaca.", this.realiser.realise(completeSen).getRealisation());
+        assertEquals("Mary ama a vaca.", this.realiser.realise(completeSen).getRealisation());
     }
 
     /**
@@ -111,12 +111,12 @@ public class StringElementTest {
         SPhraseSpec senSpec = this.phraseFactory.createClause();
         NPPhraseSpec np = this.phraseFactory.createNounPhrase();
         np.setHead("gato");
-        np.setDeterminer("el");
+        np.setDeterminer("o");
         senSpec.addComplement(np);
-        senSpec.addComplement(this.phraseFactory.createStringElement("ama un perro"));
+        senSpec.addComplement(this.phraseFactory.createStringElement("ama un can"));
         DocumentElement completeSen = this.phraseFactory.createSentence();
         completeSen.addComponent(senSpec);
-        assertEquals("El gato ama un perro.", this.realiser.realise(completeSen).getRealisation());
+        assertEquals("O gato ama un can.", this.realiser.realise(completeSen).getRealisation());
     }
 
 
@@ -127,14 +127,14 @@ public class StringElementTest {
     @Test
     public void mulitpleStringElementsTest() {
         SPhraseSpec senSpec = this.phraseFactory.createClause();
-        senSpec.addComplement(this.phraseFactory.createStringElement("el mundo ama"));
+        senSpec.addComplement(this.phraseFactory.createStringElement("o mundo ama"));
         NPPhraseSpec np = this.phraseFactory.createNounPhrase();
         np.setHead("ABBA");
         senSpec.addComplement(np);
-        senSpec.addComplement(this.phraseFactory.createStringElement("pero no a un mal perdedor"));
+        senSpec.addComplement(this.phraseFactory.createStringElement("pero non a un mal perdedor"));
         DocumentElement completeSen = this.phraseFactory.createSentence();
         completeSen.addComponent(senSpec);
-        assertEquals("El mundo ama ABBA pero no a un mal perdedor.", this.realiser.realise(completeSen).getRealisation());
+        assertEquals("O mundo ama ABBA pero non a un mal perdedor.", this.realiser.realise(completeSen).getRealisation());
     }
 
     /**
@@ -147,14 +147,14 @@ public class StringElementTest {
         NPPhraseSpec frontNoun = this.phraseFactory.createNounPhrase();
         frontNoun.setHead("john");
         senSpec.addComplement(frontNoun);
-        senSpec.addComplement(this.phraseFactory.createStringElement("es un juez"));
+        senSpec.addComplement(this.phraseFactory.createStringElement("é un xuez"));
         NPPhraseSpec backNoun = this.phraseFactory.createNounPhrase();
         backNoun.setDeterminer("de");
         backNoun.setNoun("queso");
         senSpec.addComplement(backNoun);
         DocumentElement completeSen = this.phraseFactory.createSentence();
         completeSen.addComponent(senSpec);
-        assertEquals("John es un juez de queso.", this.realiser.realise(completeSen).getRealisation());
+        assertEquals("John é un xuez de queso.", this.realiser.realise(completeSen).getRealisation());
 
     }
 
@@ -169,34 +169,34 @@ public class StringElementTest {
     public void whiteSpaceNPTest() {
         SPhraseSpec senSpec = this.phraseFactory.createClause();
         NPPhraseSpec firstNoun = this.phraseFactory.createNounPhrase();
-        firstNoun.setDeterminer("el");
+        firstNoun.setDeterminer("o");
         firstNoun.setNoun("Nasdaq");
         senSpec.addComplement(firstNoun);
-        senSpec.addComplement(this.phraseFactory.createStringElement(" subió sostenidamente durante "));
+        senSpec.addComplement(this.phraseFactory.createStringElement(" subiu sostidamente durante "));
         NPPhraseSpec secondNoun = this.phraseFactory.createNounPhrase();
-        secondNoun.setSpecifier("las");
-        secondNoun.setPreModifier(phraseFactory.createWord("primera", LexicalCategory.ADJECTIVE));
-        secondNoun.setNoun("venta");
+        secondNoun.setSpecifier("as");
+        secondNoun.setPreModifier(phraseFactory.createWord("primeira", LexicalCategory.ADJECTIVE));
+        secondNoun.setNoun("venda");
         secondNoun.setPlural(true);
         senSpec.addComplement(secondNoun);
-        senSpec.addComplement(this.phraseFactory.createStringElement(" , sin embargo se desplomó debido a"));
+        senSpec.addComplement(this.phraseFactory.createStringElement(" , sen embargo desplomouse debido a"));
         NPPhraseSpec thirdNoun = this.phraseFactory.createNounPhrase();
         thirdNoun.setSpecifier("un");
         thirdNoun.setNoun("shock");
         senSpec.addComplement(thirdNoun);
-        senSpec.addComplement(this.phraseFactory.createStringElement(" después de que "));
+        senSpec.addComplement(this.phraseFactory.createStringElement(" despois de que "));
         NPPhraseSpec fourthNoun = this.phraseFactory.createNounPhrase();
         fourthNoun.setNoun("IBM");
         senSpec.addComplement(fourthNoun);
         senSpec.addComplement(this.phraseFactory.createStringElement("anunciara malos    "));
         NPPhraseSpec fifthNoun = this.phraseFactory.createNounPhrase();
-        fifthNoun.setPostModifier("el primer trimestre");
+        fifthNoun.setPostModifier("o primeiro trimestre");
         fifthNoun.setNoun("resultados");
         fifthNoun.setPlural(true);
         senSpec.addComplement(fifthNoun);
         DocumentElement completeSen = this.phraseFactory.createSentence();
         completeSen.addComponent(senSpec);
-        assertEquals("El Nasdaq subió sostenidamente durante las primeras ventas, sin embargo se desplomó debido a un shock después de que IBM anunciara malos resultados el primer trimestre.",
+        assertEquals("O Nasdaq subiu sostidamente durante as primeiras vendas, sen embargo desplomouse debido a un shock despois de que IBM anunciara malos resultados o primeiro trimestre.",
                 this.realiser.realise(completeSen).getRealisation());
     }
 
@@ -210,10 +210,10 @@ public class StringElementTest {
         NPPhraseSpec firstNoun = this.phraseFactory.createNounPhrase();
         firstNoun.setNoun("yaha");
         senSpec.addComplement(firstNoun);
-        senSpec.addComplement("estaba durmiendo y soñando etc.");
+        senSpec.addComplement("estaba durmindo e soñando etc.");
         DocumentElement completeSen = this.phraseFactory.createSentence();
         completeSen.addComponent(senSpec);
-        assertEquals("Yaha estaba durmiendo y soñando etc.",
+        assertEquals("Yaha estaba durmindo e soñando etc.",
                 this.realiser.realise(completeSen).getRealisation());
 
 
@@ -229,10 +229,10 @@ public class StringElementTest {
         NPPhraseSpec firstNoun = this.phraseFactory.createNounPhrase();
         firstNoun.setNoun("yaha");
         senSpec.addComplement(firstNoun);
-        senSpec.addComplement("estaba durmiendo y soñando etc.      ");
+        senSpec.addComplement("estaba durmindo e soñando etc.      ");
         DocumentElement completeSen = this.phraseFactory.createSentence();
         completeSen.addComponent(senSpec);
-        assertEquals("Yaha estaba durmiendo y soñando etc.",
+        assertEquals("Yaha estaba durmindo e soñando etc.",
                 this.realiser.realise(completeSen).getRealisation());
     }
 
@@ -247,15 +247,15 @@ public class StringElementTest {
         NPPhraseSpec firstNoun = this.phraseFactory.createNounPhrase();
         firstNoun.setNoun("yahya");
         senSpec.addComplement(firstNoun);
-        senSpec.addComplement(this.phraseFactory.createStringElement("y amigos etc. fueron"));
+        senSpec.addComplement(this.phraseFactory.createStringElement("e amigos etc. foron"));
         NPPhraseSpec secondNoun = this.phraseFactory.createNounPhrase();
-        secondNoun.setDeterminer("al");
+        secondNoun.setDeterminer("ao");
         secondNoun.setNoun("parque");
         senSpec.addComplement(secondNoun);
-        senSpec.addComplement("a jugar");
+        senSpec.addComplement("a xogar");
         DocumentElement completeSen = this.phraseFactory.createSentence();
         completeSen.addComponent(senSpec);
-        assertEquals("Yahya y amigos etc. fueron al parque a jugar.",
+        assertEquals("Yahya e amigos etc. foron ao parque a xogar.",
                 this.realiser.realise(completeSen).getRealisation());
     }
 
@@ -267,12 +267,12 @@ public class StringElementTest {
     @Test
     public void stringIndefiniteArticleInflectionVowelTest() {
         SPhraseSpec senSpec = this.phraseFactory.createClause();
-        senSpec.addComplement(this.phraseFactory.createStringElement("yo veo un"));
+        senSpec.addComplement(this.phraseFactory.createStringElement("eu vexo un"));
         NPPhraseSpec firstNoun = this.phraseFactory.createNounPhrase("elefante");
         senSpec.addComplement(firstNoun);
         DocumentElement completeSen = this.phraseFactory.createSentence();
         completeSen.addComponent(senSpec);
-        assertEquals("Yo veo un elefante.",
+        assertEquals("Eu vexo un elefante.",
                 this.realiser.realise(completeSen).getRealisation());
 
     }
@@ -284,13 +284,13 @@ public class StringElementTest {
     @Test
     public void NPIndefiniteArticleInflectionVowelTest() {
         SPhraseSpec senSpec = this.phraseFactory.createClause();
-        senSpec.addComplement(this.phraseFactory.createStringElement("yo veo"));
+        senSpec.addComplement(this.phraseFactory.createStringElement("eu vexo"));
         NPPhraseSpec firstNoun = this.phraseFactory.createNounPhrase("elefante");
         firstNoun.setDeterminer("un");
         senSpec.addComplement(firstNoun);
         DocumentElement completeSen = this.phraseFactory.createSentence();
         completeSen.addComponent(senSpec);
-        assertEquals("Yo veo un elefante.",
+        assertEquals("Eu vexo un elefante.",
                 this.realiser.realise(completeSen).getRealisation());
 
     }
@@ -303,13 +303,13 @@ public class StringElementTest {
     @Test
     public void stringIndefiniteArticleInflectionConsonantTest() {
         SPhraseSpec senSpec = this.phraseFactory.createClause();
-        senSpec.addComplement(this.phraseFactory.createStringElement("yo veo un"));
+        senSpec.addComplement(this.phraseFactory.createStringElement("eu veo un"));
         NPPhraseSpec firstNoun = this.phraseFactory.createNounPhrase("vaca");
         senSpec.addComplement(firstNoun);
         DocumentElement completeSen = this.phraseFactory.createSentence();
         completeSen.addComponent(senSpec);
         // Do not attempt "an" -> "a"
-        assertNotSame("Yo veo una vaca.",
+        assertNotSame("Eu vexo unha vaca.",
                 this.realiser.realise(completeSen).getRealisation());
     }
 
@@ -320,14 +320,14 @@ public class StringElementTest {
     @Test
     public void NPIndefiniteArticleInflectionConsonantTest() {
         SPhraseSpec senSpec = this.phraseFactory.createClause();
-        senSpec.addComplement(this.phraseFactory.createStringElement("yo veo"));
+        senSpec.addComplement(this.phraseFactory.createStringElement("eu vexo"));
         NPPhraseSpec firstNoun = this.phraseFactory.createNounPhrase("vaca");
         firstNoun.setDeterminer("un");
         senSpec.addComplement(firstNoun);
         DocumentElement completeSen = this.phraseFactory.createSentence();
         completeSen.addComponent(senSpec);
         // Do not attempt "an" -> "a"
-        assertEquals("Yo veo una vaca.",
+        assertEquals("Eu vexo unha vaca.",
                 this.realiser.realise(completeSen).getRealisation());
     }
 
@@ -339,12 +339,12 @@ public class StringElementTest {
     public void aggregationStringElementTest() {
 
         CoordinatedPhraseElement coordinate =
-                phraseFactory.createCoordinatedPhrase(new StringElement("John está llendo a Tesco"),
-                        new StringElement("Mary está llendo a Sainsburys"));
+                phraseFactory.createCoordinatedPhrase(new StringElement("John está indo a Tesco"),
+                        new StringElement("Mary está indo a Sainsburys"));
         SPhraseSpec sentence = phraseFactory.createClause();
         sentence.addComplement(coordinate);
 
-        assertEquals("John está llendo a Tesco y Mary está llendo a Sainsburys.",
+        assertEquals("John está indo a Tesco e Mary está indo a Sainsburys.",
                 realiser.realiseSentence(sentence));
     }
 
@@ -363,44 +363,44 @@ public class StringElementTest {
         NLGElement creature = this.phraseFactory.createStringElement("criatura");
 
         // Test1: null or empty at beginning
-        SPhraseSpec test1 = this.phraseFactory.createClause("un unicornio", "ser", "considerado como una");
+        SPhraseSpec test1 = this.phraseFactory.createClause("un unicornio", "ser", "considerado como unha");
         test1.addPostModifier(emptyStringElement);
         test1.addPostModifier(beautiful);
         test1.addPostModifier(horseLike);
         test1.addPostModifier(creature);
         System.out.println(realiser.realiseSentence(test1));
-        Assert.assertEquals("Un unicornio es considerado como una bonita horse-like criatura.",
+        Assert.assertEquals("Un unicornio é considerado como unha bonita horse-like criatura.",
                 realiser.realiseSentence(test1));
 
         // Test2: empty or null at end
-        SPhraseSpec test2 = this.phraseFactory.createClause("un unicornio", "ser", "considerado como una");
+        SPhraseSpec test2 = this.phraseFactory.createClause("un unicornio", "ser", "considerado como unha");
         test2.addPostModifier(beautiful);
         test2.addPostModifier(horseLike);
         test2.addPostModifier(creature);
         test2.addPostModifier(nullStringElement);
         System.out.println(realiser.realiseSentence(test2));
-        Assert.assertEquals("Un unicornio es considerado como una bonita horse-like criatura.",
+        Assert.assertEquals("Un unicornio é considerado como unha bonita horse-like criatura.",
                 realiser.realiseSentence(test2));
 
         // Test3: empty or null in the middle
-        SPhraseSpec test3 = this.phraseFactory.createClause("un unicornio", "ser", "considerado como una");
+        SPhraseSpec test3 = this.phraseFactory.createClause("un unicornio", "ser", "considerado como unha");
         test3.addPostModifier(beautiful);
         test3.addPostModifier("horse-like");
         test3.addPostModifier("");
         test3.addPostModifier("criatura");
         System.out.println(realiser.realiseSentence(test3));
-        Assert.assertEquals("Un unicornio es considerado como una bonita horse-like criatura.",
+        Assert.assertEquals("Un unicornio é considerado como unha bonita horse-like criatura.",
                 realiser.realiseSentence(test3));
 
         // Test4: empty or null in the middle with empty or null at beginning
-        SPhraseSpec test4 = this.phraseFactory.createClause("un unicornio", "ser", "considerado como una");
+        SPhraseSpec test4 = this.phraseFactory.createClause("un unicornio", "ser", "considerado como unha");
         test4.addPostModifier("");
         test4.addPostModifier(beautiful);
         test4.addPostModifier("horse-like");
         test4.addPostModifier(nullStringElement);
         test4.addPostModifier("criatura");
         System.out.println(realiser.realiseSentence(test4));
-        Assert.assertEquals("Un unicornio es considerado como una bonita horse-like criatura.",
+        Assert.assertEquals("Un unicornio é considerado como unha bonita horse-like criatura.",
                 realiser.realiseSentence(test4));
 
     }

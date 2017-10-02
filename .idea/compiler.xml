@@ -8,10 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SimpleNLG-es" />
+        <module name="SimpleNLG-gl" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="SimpleNLG-es" target="1.8" />
+      <module name="SimpleNLG-gl" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

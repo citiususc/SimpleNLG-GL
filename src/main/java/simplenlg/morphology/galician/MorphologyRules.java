@@ -1777,6 +1777,8 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
                     }
                 } else if (Gender.MASCULINE.equals(gender)) {
                     morphology = morphology + "o";
+                } else if(Gender.NEUTER.equals(gender)) {
+                    morphology = baseForm;
                 }
                 if (NumberAgreement.PLURAL.equals(number)) {
                     morphology = morphology + "s";
@@ -1898,7 +1900,7 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
                         personIndex += 5;
                     }
                 } else if (DiscourseFunction.SUBJECT.equals(discourseValue) && element.getFeatureAsBoolean(Feature.PASSIVE)) {
-                    positionIndex = 4;
+                    positionIndex = 5;
                 } else if (DiscourseFunction.INDIRECT_OBJECT.equals(discourseValue)) {
                     positionIndex = 3;
                 } else {

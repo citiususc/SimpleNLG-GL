@@ -215,9 +215,12 @@ class VerbPhraseHelper extends simplenlg.syntax.VerbPhraseHelper {
             frontVG = addBe(frontVG, vgComponents, Form.PRESENT_PARTICIPLE);
         }
 
-        if (phrase.getFeatureAsBoolean(Feature.PERFECT).booleanValue()
+        /*if (phrase.getFeatureAsBoolean(Feature.PERFECT).booleanValue()
                 || modalPast) {
             frontVG = addHave(frontVG, vgComponents, modal, tenseValue);
+        }*/
+        if (modalPast) {
+            frontVG.setFeature(Feature.FORM, Form.INFINITIVE);
         }
         if (frontVG != null) {
             frontVG.setFeature(Feature.NUMBER, determineNumber(phrase.getParent(), phrase));
