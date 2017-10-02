@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a438994-81f5-48c3-9745-5f0cfd17d647" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyRules.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/phrasespec/SPhraseSpec.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/phrasespec/SPhraseSpec.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/VerbPhraseHelper$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/VerbPhraseHelper$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/VerbPhraseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/VerbPhraseHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/StandAloneExample.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/StandAloneExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/StringElementTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/StringElementTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/TutorialTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/TutorialTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/VerbPhraseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/VerbPhraseTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/external/galician/ExternalTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/external/galician/ExternalTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/ClauseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/ClauseTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyRules.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyRules.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/phrasespec/SPhraseSpec.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/phrasespec/SPhraseSpec.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/syntax/galician/VerbPhraseHelper.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/syntax/galician/VerbPhraseHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/default-galician-lexicon.xml" afterPath="$PROJECT_DIR$/src/main/resources/default-galician-lexicon.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/simplenlg/external/galician/ExternalTest.java" afterPath="$PROJECT_DIR$/src/test/java/simplenlg/external/galician/ExternalTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/ClauseTest.java" afterPath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/ClauseTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/StandAloneExample.java" afterPath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/StandAloneExample.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/StringElementTest.java" afterPath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/StringElementTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/TutorialTest.java" afterPath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/TutorialTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/VerbPhraseTest.java" afterPath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/VerbPhraseTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/default-galician-lexicon.xml" afterPath="$PROJECT_DIR$/target/classes/default-galician-lexicon.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -869,6 +851,14 @@
       <option name="presentableId" value="Default" />
       <updated>1499158145819</updated>
     </task>
+    <task id="LOCAL-00001" summary="Todos los tests pasados. Errores a la hora de prep+pronombre y verbo+pronombre">
+      <created>1506956407840</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1506956407841</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1301,12 +1291,12 @@
         <state relative-caret-position="4029">
           <caret line="284" column="0" lean-forward="false" selection-start-line="284" selection-start-column="0" selection-end-line="284" selection-end-column="0" />
           <folding>
-            <element signature="e#5133#5134#0" expanded="true" />
-            <element signature="e#5160#5161#0" expanded="true" />
-            <element signature="e#5215#5216#0" expanded="true" />
-            <element signature="e#5236#5237#0" expanded="true" />
-            <element signature="e#7036#7037#0" expanded="true" />
-            <element signature="e#7065#7066#0" expanded="true" />
+            <element signature="e#5133#5134#0" expanded="false" />
+            <element signature="e#5160#5161#0" expanded="false" />
+            <element signature="e#5215#5216#0" expanded="false" />
+            <element signature="e#5236#5237#0" expanded="false" />
+            <element signature="e#7036#7037#0" expanded="false" />
+            <element signature="e#7065#7066#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1348,22 +1338,22 @@
         <state relative-caret-position="595">
           <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding>
-            <element signature="e#2660#2661#0" expanded="true" />
-            <element signature="e#2696#2697#0" expanded="true" />
-            <element signature="e#2902#2903#0" expanded="true" />
-            <element signature="e#2945#2946#0" expanded="true" />
-            <element signature="e#6105#6106#0" expanded="true" />
-            <element signature="e#6187#6188#0" expanded="true" />
-            <element signature="e#16447#16448#0" expanded="true" />
-            <element signature="e#16483#16484#0" expanded="true" />
-            <element signature="e#17459#17460#0" expanded="true" />
-            <element signature="e#17493#17494#0" expanded="true" />
-            <element signature="e#17727#17728#0" expanded="true" />
-            <element signature="e#17766#17767#0" expanded="true" />
-            <element signature="e#20530#20531#0" expanded="true" />
-            <element signature="e#20575#20576#0" expanded="true" />
-            <element signature="e#25586#25587#0" expanded="true" />
-            <element signature="e#25616#25617#0" expanded="true" />
+            <element signature="e#2660#2661#0" expanded="false" />
+            <element signature="e#2696#2697#0" expanded="false" />
+            <element signature="e#2902#2903#0" expanded="false" />
+            <element signature="e#2945#2946#0" expanded="false" />
+            <element signature="e#6105#6106#0" expanded="false" />
+            <element signature="e#6187#6188#0" expanded="false" />
+            <element signature="e#16447#16448#0" expanded="false" />
+            <element signature="e#16483#16484#0" expanded="false" />
+            <element signature="e#17459#17460#0" expanded="false" />
+            <element signature="e#17493#17494#0" expanded="false" />
+            <element signature="e#17727#17728#0" expanded="false" />
+            <element signature="e#17766#17767#0" expanded="false" />
+            <element signature="e#20530#20531#0" expanded="false" />
+            <element signature="e#20575#20576#0" expanded="false" />
+            <element signature="e#25586#25587#0" expanded="false" />
+            <element signature="e#25616#25617#0" expanded="false" />
           </folding>
         </state>
       </provider>
