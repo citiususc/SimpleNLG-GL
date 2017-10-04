@@ -176,4 +176,9 @@ public class ListElement extends NLGElement {
 		List<NLGElement> children = getChildren();
 		return children == null ? null : children.get(0);
 	}
+
+	public NLGElement getSecond() {
+		List<NLGElement> children = getChildren();
+		return children == null ? null : children.get(1);
+	}
 }

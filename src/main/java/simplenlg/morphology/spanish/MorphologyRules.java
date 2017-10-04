@@ -1770,6 +1770,10 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
         return realisedElement;
     }
 
+    public String buildPrepositionArticleConjunction(String preposition) {
+        return null;
+    }
+
     public void doDeterminerMorphology(NLGElement determiner, String realisation) {
 
     }

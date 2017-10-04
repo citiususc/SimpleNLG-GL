@@ -87,23 +87,47 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
 //                        eachElement.setFeature(Feature.NUMBER, nextElement.getFeature(Feature.NUMBER));
 //                    }
 //                }
+                InflectedWordElement prep = null;
+                InflectedWordElement art = null;
+                if (eachElement instanceof ListElement) {
+                    try {
+                        if (((ListElement) eachElement).getFirst() instanceof InflectedWordElement) {
+                            prep = (InflectedWordElement) ((ListElement) eachElement).getFirst();
+                            if (((ListElement) eachElement).getSecond() instanceof ListElement && (prep.getBaseForm().equals("en") || prep.getBaseForm().equals("con") || prep.getBaseForm().equals("de") || prep.getBaseForm().equals("por") || prep.getBaseForm().equals("a"))) {
+                                ListElement aux = ((ListElement) ((ListElement) eachElement).getSecond());
+                                art = (InflectedWordElement) aux.getFirst();
+                                if (art.getBaseForm().substring(0, art.getBaseForm().indexOf(" ")).equals("o") || art.getBaseForm().substring(0, art.getBaseForm().indexOf(" ")).equals("a") || art.getBaseForm().substring(0, art.getBaseForm().indexOf(" ")).equals("os") || art.getBaseForm().substring(0, art.getBaseForm().indexOf(" ")).equals("as")) {
+                                    String letter = morphologyRules.buildPrepositionArticleConjunction(prep.getBaseForm());
+                                    if (letter.equals("a") && art.getBaseForm().startsWith("a")) {
+                                        letter = "á";
+                                        art.setFeature(LexicalFeature.BASE_FORM, art.getBaseForm().substring(1, art.getBaseForm().length()));
+                                    }
+                                    art.setFeature(LexicalFeature.BASE_FORM, letter + art.getBaseForm());
+                                    ((ListElement) eachElement).getFirst().clearAllFeatures();
+                                }
+                            }
+                        }
+                    }catch (Exception e) {
+
+                    }
+                }
+
                 currentElement = realise(eachElement);
 
-
                 //when possesive + noun add determiner -> determiner + possesive + noun
-                if (currentElement != null && currentElement.getRealisation() != null && (currentElement.getRealisation().equals("meu") || currentElement.getRealisation().equals("teu") || currentElement.getRealisation().equals("seu") || currentElement.getRealisation().equals("noso") ||currentElement.getRealisation().equals("voso"))) {
+                if (currentElement != null && currentElement.getRealisation() != null && (currentElement.getRealisation().equals("meu") || currentElement.getRealisation().equals("teu") || currentElement.getRealisation().equals("seu") || currentElement.getRealisation().equals("noso") || currentElement.getRealisation().equals("voso"))) {
                     if (prevElement == null) {
                         currentElement.setRealisation("o " + currentElement.getRealisation());
                     }
-                } else if (currentElement != null && currentElement.getRealisation() != null && (currentElement.getRealisation().equals("miña") || currentElement.getRealisation().equals("túa") || currentElement.getRealisation().equals("súa") || currentElement.getRealisation().equals("nosa") ||currentElement.getRealisation().equals("vosa"))) {
+                } else if (currentElement != null && currentElement.getRealisation() != null && (currentElement.getRealisation().equals("miña") || currentElement.getRealisation().equals("túa") || currentElement.getRealisation().equals("súa") || currentElement.getRealisation().equals("nosa") || currentElement.getRealisation().equals("vosa"))) {
                     if (prevElement == null) {
                         currentElement.setRealisation("a " + currentElement.getRealisation());
                     }
-                } else if (currentElement != null && currentElement.getRealisation() != null && (currentElement.getRealisation().equals("meus") || currentElement.getRealisation().equals("teus") || currentElement.getRealisation().equals("seus") || currentElement.getRealisation().equals("nosos") ||currentElement.getRealisation().equals("vosos"))) {
+                } else if (currentElement != null && currentElement.getRealisation() != null && (currentElement.getRealisation().equals("meus") || currentElement.getRealisation().equals("teus") || currentElement.getRealisation().equals("seus") || currentElement.getRealisation().equals("nosos") || currentElement.getRealisation().equals("vosos"))) {
                     if (prevElement == null) {
                         currentElement.setRealisation("os " + currentElement.getRealisation());
                     }
-                } else if (currentElement != null && currentElement.getRealisation() != null && (currentElement.getRealisation().equals("miñas") || currentElement.getRealisation().equals("túas") || currentElement.getRealisation().equals("súas") || currentElement.getRealisation().equals("nosas") ||currentElement.getRealisation().equals("vosas"))) {
+                } else if (currentElement != null && currentElement.getRealisation() != null && (currentElement.getRealisation().equals("miñas") || currentElement.getRealisation().equals("túas") || currentElement.getRealisation().equals("súas") || currentElement.getRealisation().equals("nosas") || currentElement.getRealisation().equals("vosas"))) {
                     if (prevElement == null) {
                         currentElement.setRealisation("as " + currentElement.getRealisation());
                     }
@@ -138,7 +162,7 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                             Boolean startsWithAs = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("as")) || (currentElement.getRealisation().length() >= 3 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 3).equals("as "));
                             Boolean startsWithUn = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("un")) || (currentElement.getRealisation().length() >= 3 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 3).equals("un "));
                             Boolean startsWithUnha = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("unha")) || (currentElement.getRealisation().length() >= 5 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 5).equals("unha "));
-                            Boolean startsWithUns = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("uns")) || (currentElement.getRealisation().length() >=4 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 4).equals("uns "));
+                            Boolean startsWithUns = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("uns")) || (currentElement.getRealisation().length() >= 4 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 4).equals("uns "));
                             Boolean startsWithUnhas = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("unhas")) || (currentElement.getRealisation().length() >= 6 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 6).equals("unhas "));
 
                             if ("a".equals(prevString.toString())) {
@@ -153,7 +177,7 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                                 }
                                 if (startsWithO || startsWithA || startsWithOs || startsWithAs) {
                                     realisedElements.set(realisedElements.size() - 1, prevString);
-                                    if(currentElement instanceof  ListElement) {
+                                    if (currentElement instanceof ListElement) {
                                         ((ListElement) currentElement).getFirst().setRealisation("");
                                     } else {
                                         currentElement.setRealisation(secondPart);
@@ -168,7 +192,7 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                                     prevString.setRealisation("cos");
                                 } else if (startsWithAs) {
                                     prevString.setRealisation("coas");
-                                }else if (startsWithUn) {
+                                } else if (startsWithUn) {
                                     prevString.setRealisation("cun");
                                 } else if (startsWithUnha) {
                                     prevString.setRealisation("cunha");
@@ -179,7 +203,7 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                                 }
                                 if (startsWithO || startsWithA || startsWithOs || startsWithAs || startsWithUn || startsWithUnha || startsWithUns || startsWithUnhas) {
                                     realisedElements.set(realisedElements.size() - 1, prevString);
-                                    if(currentElement instanceof  ListElement) {
+                                    if (currentElement instanceof ListElement) {
                                         ((ListElement) currentElement).getFirst().setRealisation("");
                                     } else {
                                         currentElement.setRealisation(secondPart);
@@ -194,7 +218,7 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                                     prevString.setRealisation("dos");
                                 } else if (startsWithAs) {
                                     prevString.setRealisation("das");
-                                }else if (startsWithUn) {
+                                } else if (startsWithUn) {
                                     prevString.setRealisation("dun");
                                 } else if (startsWithUnha) {
                                     prevString.setRealisation("dunha");
@@ -203,9 +227,9 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                                 } else if (startsWithUnhas) {
                                     prevString.setRealisation("dunhas");
                                 }
-                                if (startsWithO || startsWithA || startsWithOs || startsWithAs|| startsWithUn || startsWithUnha || startsWithUns || startsWithUnhas) {
+                                if (startsWithO || startsWithA || startsWithOs || startsWithAs || startsWithUn || startsWithUnha || startsWithUns || startsWithUnhas) {
                                     realisedElements.set(realisedElements.size() - 1, prevString);
-                                    if(currentElement instanceof  ListElement) {
+                                    if (currentElement instanceof ListElement) {
                                         ((ListElement) currentElement).getFirst().setRealisation("");
                                     } else {
                                         currentElement.setRealisation(secondPart);
@@ -231,13 +255,13 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                                 }
                                 if (startsWithO || startsWithA || startsWithOs || startsWithAs || startsWithUn || startsWithUnha || startsWithUns || startsWithUnhas) {
                                     realisedElements.set(realisedElements.size() - 1, prevString);
-                                    if(currentElement instanceof  ListElement) {
+                                    if (currentElement instanceof ListElement) {
                                         ((ListElement) currentElement).getFirst().setRealisation("");
                                     } else {
                                         currentElement.setRealisation(secondPart);
                                     }
                                 }
-                            }else if ("por".equals(prevString.toString())) {
+                            } else if ("por".equals(prevString.toString())) {
                                 if (startsWithO) {
                                     prevString.setRealisation("polo");
                                 } else if (startsWithA) {
@@ -249,7 +273,7 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                                 }
                                 if (startsWithO || startsWithA || startsWithOs || startsWithAs) {
                                     realisedElements.set(realisedElements.size() - 1, prevString);
-                                    if(currentElement instanceof  ListElement) {
+                                    if (currentElement instanceof ListElement) {
                                         ((ListElement) currentElement).getFirst().setRealisation("");
                                     } else {
                                         currentElement.setRealisation(secondPart);
@@ -258,6 +282,8 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                             }
                         }
                     }
+
+                    //pronoun+article
                     StringElement prevString = null;
                     if (prevElement != null && LexicalCategory.PRONOUN.equals(prevElement.getCategory())) {
                         for (Object s : realisedElements) {

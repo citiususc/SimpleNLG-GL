@@ -813,4 +813,8 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
                 element.getFeature(InternalFeature.DISCOURSE_FUNCTION));
         return realisedElement;
     }
+
+    public String buildPrepositionArticleConjunction(String preposition) {
+        return null;
+    }
 }

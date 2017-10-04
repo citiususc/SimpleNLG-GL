@@ -2057,4 +2057,20 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
     public void doDeterminerMorphology(NLGElement determiner, String realisation) {
 
     }
+
+    public String buildPrepositionArticleConjunction(String preposition) {
+        String letter = "";
+        if(preposition.equals("en")) {
+            letter = "n";
+        } else if (preposition.equals("con")) {
+            letter = "c";
+        } else if (preposition.equals("de")) {
+            letter = "d";
+        } else if (preposition.equals("por")) {
+            letter = "p";
+        } else if (preposition.equals("a")) {
+            letter = "a";
+        }
+        return letter;
+    }
 }
