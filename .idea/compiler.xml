@@ -12,8 +12,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="SimpleNLG-es" target="1.8" />
-      <module name="SimpleNLG-gl" target="1.5" />
+      <module name="SimpleNLG-gl" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

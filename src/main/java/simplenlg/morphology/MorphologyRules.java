@@ -164,4 +164,12 @@ public abstract class MorphologyRules {
         // return baseWord.getBaseForm();
         // }
     }
+
+    /**
+     * return the conjunction between a preposition and an article
+     *
+     * @param preposition
+     * @return String conjunction
+     */
+    public abstract String buildPrepositionArticleConjunction(String preposition);
 }

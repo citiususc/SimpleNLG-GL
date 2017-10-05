@@ -165,6 +165,8 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                             Boolean startsWithUns = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("uns")) || (currentElement.getRealisation().length() >= 4 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 4).equals("uns "));
                             Boolean startsWithUnhas = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("unhas")) || (currentElement.getRealisation().length() >= 6 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 6).equals("unhas "));
 
+                            String letter = morphologyRules.buildPrepositionArticleConjunction(prevString.toString());
+                            //FALTA MODIFICAR ESTO
                             if ("a".equals(prevString.toString())) {
                                 if (startsWithO) {
                                     prevString.setRealisation("ao");

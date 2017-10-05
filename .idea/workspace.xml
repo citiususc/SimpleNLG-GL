@@ -3,257 +3,136 @@
   <component name="ChangeListManager">
     <list default="true" id="3a438994-81f5-48c3-9745-5f0cfd17d647" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MainTest.class" afterPath="$PROJECT_DIR$/target/classes/MainTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/AggregationHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/AggregationHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/AggregationRule.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/AggregationRule.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/Aggregator.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/Aggregator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/BackwardConjunctionReductionRule.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/BackwardConjunctionReductionRule.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/ClauseCoordinationRule.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/ClauseCoordinationRule.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/ForwardConjunctionReductionRule.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/ForwardConjunctionReductionRule.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/FunctionalSet.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/FunctionalSet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/NewAggregator.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/NewAggregator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/Periphery.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/Periphery.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/PhraseChecker.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/PhraseChecker.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/PhraseSet.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/aggregation/PhraseSet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/ClauseStatus.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/ClauseStatus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/DiscourseFunction.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/DiscourseFunction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/Feature.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/Feature.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/Form.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/Form.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/Gender.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/Gender.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/Inflection.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/Inflection.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/InternalFeature.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/InternalFeature.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/InterrogativeType$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/InterrogativeType$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/InterrogativeType.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/InterrogativeType.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/LexicalFeature.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/LexicalFeature.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/NumberAgreement.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/NumberAgreement.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/Person.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/Person.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/Tense.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/Tense.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/galician/LexicalFeature.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/galician/LexicalFeature.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/spanish/LexicalFeature.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/spanish/LexicalFeature.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/format/english/HTMLFormatter$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/format/english/HTMLFormatter$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/format/english/HTMLFormatter.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/format/english/HTMLFormatter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/format/english/NumberedPrefix.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/format/english/NumberedPrefix.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/format/english/TextFormatter$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/format/english/TextFormatter$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/format/english/TextFormatter.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/format/english/TextFormatter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/CoordinatedPhraseElement.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/CoordinatedPhraseElement.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/DocumentCategory$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/DocumentCategory$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/DocumentCategory.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/DocumentCategory.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/DocumentElement.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/DocumentElement.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/ElementCategory.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/ElementCategory.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/InflectedWordElement.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/InflectedWordElement.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/Language.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/Language.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/LexicalCategory.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/LexicalCategory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/ListElement.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/ListElement.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/NLGElement.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/NLGElement.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/NLGFactory.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/NLGFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/NLGModule.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/NLGModule.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/PhraseCategory.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/PhraseCategory.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/PhraseElement$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/PhraseElement$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/PhraseElement.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/PhraseElement.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/StringElement.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/StringElement.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/WordElement$InflectionSet.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/WordElement$InflectionSet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/WordElement.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/WordElement.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/Lexicon.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/Lexicon.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/LexiconInterface.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/LexiconInterface.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/MultipleLexicon$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/MultipleLexicon$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/MultipleLexicon.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/MultipleLexicon.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/NIHDBLexicon$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/NIHDBLexicon$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/NIHDBLexicon.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/NIHDBLexicon.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/XMLLexicon$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/XMLLexicon$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/XMLLexicon.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/XMLLexicon.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/english/XMLLexicon$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/english/XMLLexicon$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/english/XMLLexicon.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/english/XMLLexicon.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/galician/XMLLexicon$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/galician/XMLLexicon$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/galician/XMLLexicon.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/galician/XMLLexicon.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/spanish/XMLLexicon$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/spanish/XMLLexicon$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/spanish/XMLLexicon.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/spanish/XMLLexicon.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/util/NIHLexiconXMLDumpUtil.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/lexicon/util/NIHLexiconXMLDumpUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/MorphologyProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/MorphologyProcessor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/MorphologyRules.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/MorphologyRules.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/english/DeterminerAgrHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/english/DeterminerAgrHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/english/MorphologyProcessor$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/english/MorphologyProcessor$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/english/MorphologyProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/english/MorphologyProcessor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/english/MorphologyRules.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/english/MorphologyRules.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyProcessor$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyProcessor$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyProcessor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyRules$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyRules$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyRules.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyRules.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/spanish/MorphologyProcessor$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/spanish/MorphologyProcessor$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/spanish/MorphologyProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/spanish/MorphologyProcessor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/spanish/MorphologyRules$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/spanish/MorphologyRules$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/spanish/MorphologyRules.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/spanish/MorphologyRules.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/orthography/OrthographyProcessor$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/orthography/OrthographyProcessor$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/orthography/OrthographyProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/orthography/OrthographyProcessor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/orthography/english/OrthographyProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/orthography/english/OrthographyProcessor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/orthography/galician/OrthographyProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/orthography/galician/OrthographyProcessor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/orthography/spanish/OrthographyProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/orthography/spanish/OrthographyProcessor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/phrasespec/AdjPhraseSpec.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/phrasespec/AdjPhraseSpec.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/phrasespec/AdvPhraseSpec.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/phrasespec/AdvPhraseSpec.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/phrasespec/NPPhraseSpec.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/phrasespec/NPPhraseSpec.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/phrasespec/PPPhraseSpec.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/phrasespec/PPPhraseSpec.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/phrasespec/SPhraseSpec.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/phrasespec/SPhraseSpec.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/phrasespec/VPPhraseSpec.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/phrasespec/VPPhraseSpec.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/realiser/Realiser.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/realiser/Realiser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/realiser/english/Realiser.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/realiser/english/Realiser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/realiser/galician/Realiser.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/realiser/galician/Realiser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/realiser/spanish/Realiser.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/realiser/spanish/Realiser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/server/RealisationRequest.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/server/RealisationRequest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/server/SimpleClient.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/server/SimpleClient.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/server/SimpleServer.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/server/SimpleServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/ClauseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/ClauseHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/CoordinatedPhraseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/CoordinatedPhraseHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/NounPhraseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/NounPhraseHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/PhraseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/PhraseHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/SyntaxProcessor$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/SyntaxProcessor$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/SyntaxProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/SyntaxProcessor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/VerbPhraseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/VerbPhraseHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/english/ClauseHelper$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/english/ClauseHelper$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/english/ClauseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/english/ClauseHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/english/CoordinatedPhraseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/english/CoordinatedPhraseHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/english/NounPhraseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/english/NounPhraseHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/english/PhraseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/english/PhraseHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/english/SyntaxProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/english/SyntaxProcessor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/english/VerbPhraseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/english/VerbPhraseHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/ClauseHelper$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/ClauseHelper$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/ClauseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/ClauseHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/CoordinatedPhraseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/CoordinatedPhraseHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/NounPhraseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/NounPhraseHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/PhraseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/PhraseHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/SyntaxProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/SyntaxProcessor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/VerbPhraseHelper$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/VerbPhraseHelper$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/VerbPhraseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/VerbPhraseHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/spanish/ClauseHelper$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/spanish/ClauseHelper$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/spanish/ClauseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/spanish/ClauseHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/spanish/CoordinatedPhraseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/spanish/CoordinatedPhraseHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/spanish/NounPhraseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/spanish/NounPhraseHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/spanish/PhraseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/spanish/PhraseHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/spanish/SyntaxProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/spanish/SyntaxProcessor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/spanish/VerbPhraseHelper$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/spanish/VerbPhraseHelper$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/spanish/VerbPhraseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/spanish/VerbPhraseHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/Recording.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/Recording.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/UnWrapper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/UnWrapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/XMLRealiser$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/XMLRealiser$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/XMLRealiser$LexiconType.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/XMLRealiser$LexiconType.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/XMLRealiser$OpCode.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/XMLRealiser$OpCode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/XMLRealiser.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/XMLRealiser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/XMLRealiserException.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/XMLRealiserException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/DocumentRealisation.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/DocumentRealisation.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/NLGSpec.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/NLGSpec.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/ObjectFactory.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/ObjectFactory.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/RecordSet.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/RecordSet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/RequestType.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/RequestType.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlAdjPhraseSpec.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlAdjPhraseSpec.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlAdvPhraseSpec.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlAdvPhraseSpec.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlClauseStatus.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlClauseStatus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlCoordinatedPhraseElement.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlCoordinatedPhraseElement.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlDiscourseFunction.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlDiscourseFunction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlDocumentCategory.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlDocumentCategory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlDocumentElement.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlDocumentElement.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlForm.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlForm.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlGender.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlGender.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlInflection.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlInflection.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlInterrogativeType.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlInterrogativeType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlLexicalCategory.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlLexicalCategory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlNLGElement.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlNLGElement.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlNPPhraseSpec.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlNPPhraseSpec.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlNumberAgreement.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlNumberAgreement.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlPPPhraseSpec.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlPPPhraseSpec.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlPerson.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlPerson.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlPhraseCategory.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlPhraseCategory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlPhraseElement.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlPhraseElement.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlSPhraseSpec.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlSPhraseSpec.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlStringElement.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlStringElement.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlTense.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlTense.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlVPPhraseSpec.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlVPPhraseSpec.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlWordElement.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/XmlWordElement.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/package-info.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/xmlrealiser/wrapper/package-info.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/external/english/ExternalTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/external/english/ExternalTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/external/galician/ExternalTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/external/galician/ExternalTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/external/spanish/ExternalTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/external/spanish/ExternalTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/format/english/EnumeratedListTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/format/english/EnumeratedListTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/format/english/NumberedPrefixTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/format/english/NumberedPrefixTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/format/english/TextFormatterTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/format/english/TextFormatterTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/english/LexicalVariantsTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/english/LexicalVariantsTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/english/MultipleLexiconTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/english/MultipleLexiconTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/english/NIHDBLexiconTest$LexThread.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/english/NIHDBLexiconTest$LexThread.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/english/NIHDBLexiconTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/english/NIHDBLexiconTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/english/SharedLexiconTests.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/english/SharedLexiconTests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/english/XMLLexiconTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/english/XMLLexiconTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/galician/SharedLexiconTests.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/galician/SharedLexiconTests.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/galician/XMLLexiconTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/galician/XMLLexiconTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/spanish/SharedLexiconTests.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/spanish/SharedLexiconTests.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/spanish/XMLLexiconTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/lexicon/spanish/XMLLexiconTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/morphology/english/DeterminerAgrHelperTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/morphology/english/DeterminerAgrHelperTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/realiser/english/RealiserTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/realiser/english/RealiserTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/realiser/galician/RealiserTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/realiser/galician/RealiserTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/realiser/spanish/RealiserTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/realiser/spanish/RealiserTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/server/ServerTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/server/ServerTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/AdjectivePhraseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/AdjectivePhraseTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/ClauseAggregationTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/ClauseAggregationTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/ClauseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/ClauseTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/CoordinationTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/CoordinationTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/DeterminerTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/DeterminerTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/DocumentElementTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/DocumentElementTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/ElisionTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/ElisionTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/FeatureTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/FeatureTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/HTMLFormatterTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/HTMLFormatterTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/InterrogativeTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/InterrogativeTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/NounPhraseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/NounPhraseTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/OrthographyFormatTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/OrthographyFormatTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/PhraseSpecTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/PhraseSpecTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/PremodifierTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/PremodifierTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/PrepositionalPhraseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/PrepositionalPhraseTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/SimpleNLG4Test.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/SimpleNLG4Test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/StandAloneExample.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/StandAloneExample.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/StringElementTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/StringElementTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/TutorialTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/TutorialTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/VerbPhraseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/english/VerbPhraseTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/AdjectivePhraseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/AdjectivePhraseTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/ClauseAggregationTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/ClauseAggregationTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/ClauseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/ClauseTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/CoordinationTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/CoordinationTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/DeterminerTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/DeterminerTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/DocumentElementTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/DocumentElementTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/FeatureTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/FeatureTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/HTMLFormatterTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/HTMLFormatterTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/InterrogativeTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/InterrogativeTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/NounPhraseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/NounPhraseTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/OrthographyFormatTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/OrthographyFormatTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/PhraseSpecTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/PhraseSpecTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/PremodifierTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/PremodifierTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/PrepositionalPhraseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/PrepositionalPhraseTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/SimpleNLG4Test.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/SimpleNLG4Test.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/StandAloneExample.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/StandAloneExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/StringElementTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/StringElementTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/TutorialTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/TutorialTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/VerbPhraseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/VerbPhraseTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/AdjectivePhraseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/AdjectivePhraseTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/ClauseAggregationTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/ClauseAggregationTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/ClauseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/ClauseTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/CoordinationTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/CoordinationTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/DeterminerTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/DeterminerTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/DocumentElementTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/DocumentElementTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/FeatureTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/FeatureTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/HTMLFormatterTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/HTMLFormatterTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/InterrogativeTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/InterrogativeTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/NounPhraseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/NounPhraseTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/OrthographyFormatTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/OrthographyFormatTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/PhraseSpecTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/PhraseSpecTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/PremodifierTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/PremodifierTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/PrepositionalPhraseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/PrepositionalPhraseTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/SimpleNLG4Test.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/SimpleNLG4Test.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/StandAloneExample.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/StandAloneExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/StringElementTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/StringElementTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/TutorialTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/TutorialTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/VerbPhraseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/spanish/VerbPhraseTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/xmlrealiser/XMLRealiserParameterizedTests.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/xmlrealiser/XMLRealiserParameterizedTests.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/framework/ListElement.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/framework/ListElement.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyRules.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyRules.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/english/MorphologyRules.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/english/MorphologyRules.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyRules.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyRules.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/spanish/MorphologyRules.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/spanish/MorphologyRules.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/InterrogativeTest.java" afterPath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/InterrogativeTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -278,13 +157,10 @@
       <file leaf-file-name="MorphologyProcessor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="114" column="54" lean-forward="false" selection-start-line="114" selection-start-column="54" selection-end-line="114" selection-end-column="54" />
+            <state relative-caret-position="17">
+              <caret line="168" column="50" lean-forward="false" selection-start-line="168" selection-start-column="50" selection-end-line="168" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2489#2490#0" expanded="true" />
-                <element signature="e#2533#2534#0" expanded="true" />
-                <element signature="e#2746#2758#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -293,7 +169,7 @@
       <file leaf-file-name="MorphologyProcessor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
+            <state relative-caret-position="1292">
               <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
               <folding />
             </state>
@@ -303,7 +179,7 @@
       <file leaf-file-name="PrepositionalPhraseTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/PrepositionalPhraseTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
+            <state relative-caret-position="765">
               <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding />
             </state>
@@ -313,7 +189,7 @@
       <file leaf-file-name="Realiser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/realiser/Realiser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="1479">
               <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
               <folding />
             </state>
@@ -333,12 +209,10 @@
       <file leaf-file-name="NLGElement.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/NLGElement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
+            <state relative-caret-position="1037">
               <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding>
-                <element signature="e#2104#2120#0" expanded="true" />
                 <element signature="e#2696#2697#0" expanded="true" />
-                <element signature="e#7487#7499#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -347,7 +221,7 @@
       <file leaf-file-name="ListElement.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/ListElement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
+            <state relative-caret-position="2499">
               <caret line="176" column="0" lean-forward="false" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
               <folding />
             </state>
@@ -496,9 +370,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -672,6 +543,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -1101,7 +975,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506956611814</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Prep+pronombre solucionado (salvo un caso concreto en PrepositionalPhraseTest)">
+      <created>1507117487675</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1507117487675</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1137,12 +1018,11 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.030927835" sideWeight="0.48958334" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1153,12 +1033,12 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24861111" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26207906" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23453608" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2826087" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1166,6 +1046,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.030927835" sideWeight="0.48958334" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1176,7 +1057,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Todos los tests pasados. Errores a la hora de prep+pronombre y verbo+pronombre" />
-    <option name="LAST_COMMIT_MESSAGE" value="Todos los tests pasados. Errores a la hora de prep+pronombre y verbo+pronombre" />
+    <MESSAGE value="Prep+pronombre solucionado (salvo un caso concreto en PrepositionalPhraseTest)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prep+pronombre solucionado (salvo un caso concreto en PrepositionalPhraseTest)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1348,9 +1230,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6732">
           <caret line="427" column="38" lean-forward="false" selection-start-line="427" selection-start-column="38" selection-end-line="427" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1358,7 +1237,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="72" column="3" lean-forward="false" selection-start-line="72" selection-start-column="3" selection-end-line="72" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1374,7 +1252,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
           <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1404,10 +1281,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
           <caret line="284" column="0" lean-forward="false" selection-start-line="284" selection-start-column="0" selection-end-line="284" selection-end-column="0" />
-          <folding>
-            <element signature="e#5133#5134#0" expanded="false" />
-            <element signature="e#5160#5161#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1415,7 +1288,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
           <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1423,13 +1295,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2227">
           <caret line="156" column="0" lean-forward="false" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
-          <folding>
-            <element signature="e#6378#6379#0" expanded="false" />
-            <element signature="e#19582#19583#0" expanded="false" />
-            <element signature="e#19658#19659#0" expanded="false" />
-            <element signature="e#19863#19864#0" expanded="false" />
-            <element signature="e#19940#19941#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1437,7 +1302,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1564">
           <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1445,7 +1309,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
           <caret line="212" column="0" lean-forward="false" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1453,7 +1316,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="175" column="0" lean-forward="false" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1461,7 +1323,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
           <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1469,7 +1330,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1477,10 +1337,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
           <caret line="249" column="0" lean-forward="false" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
-          <folding>
-            <element signature="e#12891#12892#0" expanded="true" />
-            <element signature="e#12960#12961#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1488,7 +1344,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1496,7 +1351,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1504,10 +1358,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
           <caret line="1772" column="71" lean-forward="false" selection-start-line="1772" selection-start-column="71" selection-end-line="1772" selection-end-column="71" />
-          <folding>
-            <element signature="e#80434#80435#0" expanded="false" />
-            <element signature="e#80461#80462#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1515,10 +1365,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="816" column="71" lean-forward="false" selection-start-line="816" selection-start-column="71" selection-end-line="816" selection-end-column="71" />
-          <folding>
-            <element signature="e#35028#35029#0" expanded="false" />
-            <element signature="e#35055#35056#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1526,7 +1372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1545,7 +1390,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
           <caret line="170" column="25" lean-forward="false" selection-start-line="170" selection-start-column="25" selection-end-line="170" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1553,7 +1397,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1561,7 +1404,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="609">
           <caret line="760" column="0" lean-forward="true" selection-start-line="760" selection-start-column="0" selection-end-line="760" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1569,12 +1411,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1680">
           <caret line="77" column="26" lean-forward="true" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#7716#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#1837#1838#0" expanded="true" />
-            <element signature="e#1864#1865#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1582,7 +1418,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1590,7 +1425,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
           <caret line="2071" column="25" lean-forward="false" selection-start-line="2071" selection-start-column="25" selection-end-line="2071" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1606,7 +1440,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="542">
           <caret line="60" column="57" lean-forward="false" selection-start-line="60" selection-start-column="57" selection-end-line="60" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1614,9 +1447,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-696">
           <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
-          <folding>
-            <element signature="e#5679#5680#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1624,7 +1454,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1638,7 +1467,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
+        <state relative-caret-position="1292">
           <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
           <folding />
         </state>
@@ -1646,7 +1475,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/realiser/Realiser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="1479">
           <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
           <folding />
         </state>
@@ -1654,7 +1483,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/ListElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
+        <state relative-caret-position="2499">
           <caret line="176" column="0" lean-forward="false" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
           <folding />
         </state>
@@ -1662,19 +1491,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/NLGElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
+        <state relative-caret-position="1037">
           <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding>
-            <element signature="e#2104#2120#0" expanded="true" />
             <element signature="e#2696#2697#0" expanded="true" />
-            <element signature="e#7487#7499#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/PrepositionalPhraseTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
+        <state relative-caret-position="765">
           <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding />
         </state>
@@ -1682,13 +1509,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="114" column="54" lean-forward="false" selection-start-line="114" selection-start-column="54" selection-end-line="114" selection-end-column="54" />
+        <state relative-caret-position="17">
+          <caret line="168" column="50" lean-forward="false" selection-start-line="168" selection-start-column="50" selection-end-line="168" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2489#2490#0" expanded="true" />
-            <element signature="e#2533#2534#0" expanded="true" />
-            <element signature="e#2746#2758#0" expanded="true" />
           </folding>
         </state>
       </provider>

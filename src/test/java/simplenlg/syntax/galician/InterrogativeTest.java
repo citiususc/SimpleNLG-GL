@@ -320,7 +320,7 @@ public class InterrogativeTest extends SimpleNLG4Test {
                 InterrogativeType.WHO_SUBJECT);
 
         Assert.assertEquals(
-                "sen embargo por quen será as pelotas collidas na tenda mañán", //$NON-NLS-1$
+                "sen embargo por quen serán as pelotas collidas na tenda mañán", //$NON-NLS-1$
                 this.realiser.realise(this.s4).getRealisation());
 
         // object interrogative
@@ -338,7 +338,7 @@ public class InterrogativeTest extends SimpleNLG4Test {
         this.s4.setFeature(Feature.PASSIVE, true);
 
         Assert.assertEquals(
-                "sen embargo que será collido na tenda por Jane e Andrew mañán", //$NON-NLS-1$
+                "sen embargo que serán collidas na tenda por Jane e Andrew mañán", //$NON-NLS-1$
                 this.realiser.realise(this.s4).getRealisation());
 
         // how-question + passive
@@ -371,7 +371,7 @@ public class InterrogativeTest extends SimpleNLG4Test {
         this.realiser.setLexicon(this.lexicon);
         this.s3.setFeature(Feature.INTERROGATIVE_TYPE,
                 InterrogativeType.WHO_INDIRECT_OBJECT);
-        Assert.assertEquals("a quen da o home a flor de John", //$NON-NLS-1$
+        Assert.assertEquals("a quen dá o home a flor de John", //$NON-NLS-1$
                 this.realiser.realise(this.s3).getRealisation());
     }
 
@@ -688,10 +688,10 @@ public class InterrogativeTest extends SimpleNLG4Test {
                 .getRealisation());
     }
 
-
     /**
      * Test WHERE, HOW and WHY questions, with copular predicate "be"
      */
+    @Test
     public void testSimpleBeWHQuestions() {
         SPhraseSpec p = this.phraseFactory.createClause("eu", "estar");
 
