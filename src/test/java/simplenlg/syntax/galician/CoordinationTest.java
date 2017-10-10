@@ -88,26 +88,26 @@ public class CoordinationTest extends SimpleNLG4Test {
 
         // adda postmodifier
         coord.addPostModifier(this.behindTheCurtain);
-        Assert.assertEquals("despacio se levantou e se caeu tras a cortina",
+        Assert.assertEquals("despacio se levantou e se caeu trala cortina",
                 this.realiser.realise(coord).getRealisation());
 
         // put within the context of a sentence
         SPhraseSpec s = this.phraseFactory.createClause("Jake", coord);
         s.setFeature(Feature.TENSE, Tense.PAST);
         Assert.assertEquals(
-                "Jake despacio se levantou e se caeu tras a cortina",
+                "Jake despacio se levantou e se caeu trala cortina",
                 this.realiser.realise(s).getRealisation());
 
         // add premod to the sentence
         s.addPreModifier(this.lexicon.getWord("sen embargo", LexicalCategory.ADVERB));
         Assert.assertEquals(
-                "Jake sen embargo despacio se levantou e se caeu tras a cortina",
+                "Jake sen embargo despacio se levantou e se caeu trala cortina",
                 this.realiser.realise(s).getRealisation());
 
         // add postmod to the sentence
         s.addPostModifier(this.inTheRoom);
         Assert.assertEquals(
-                "Jake sen embargo despacio se levantou e se caeu tras a cortina na habitación",
+                "Jake sen embargo despacio se levantou e se caeu trala cortina na habitación",
                 this.realiser.realise(s).getRealisation());
     }
 

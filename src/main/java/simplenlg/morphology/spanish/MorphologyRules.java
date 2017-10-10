@@ -1774,6 +1774,11 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
         return null;
     }
 
+    public String buildPronounsConjunction(String ci, String cd) {
+        return null;
+    }
+
+
     public void doDeterminerMorphology(NLGElement determiner, String realisation) {
 
     }

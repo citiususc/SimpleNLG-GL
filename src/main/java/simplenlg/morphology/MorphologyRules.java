@@ -172,4 +172,13 @@ public abstract class MorphologyRules {
      * @return String conjunction
      */
     public abstract String buildPrepositionArticleConjunction(String preposition);
+
+    /**
+     * return the conjunction between two pronouns
+     *
+     * @param ci
+     * @param cd
+     * @return String conjunction
+     */
+    public abstract String buildPronounsConjunction(String ci, String cd);
 }

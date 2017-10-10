@@ -817,4 +817,8 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
     public String buildPrepositionArticleConjunction(String preposition) {
         return null;
     }
+
+    public String buildPronounsConjunction(String ci, String cd) {
+        return null;
+    }
 }

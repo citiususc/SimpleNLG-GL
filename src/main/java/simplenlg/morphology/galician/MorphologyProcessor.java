@@ -24,6 +24,7 @@ import simplenlg.features.LexicalFeature;
 import simplenlg.framework.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -60,6 +61,12 @@ import java.util.List;
  */
 public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcessor {
 
+    private static final String[] PREPOSITIONS = new String[]{"a", "con", "de", "en", "por", "tras"};
+    private static final String[] PREP_INDET = new String[]{"con", "de", "en"};
+    private static final String[] CI_PRONOUNS = new String[]{"me", "che", "lle", "nos", "vos", "lles"};
+    private static final String[] DEFINITES = new String[]{"o", "a", "os", "as"};
+    private static final String[] INDEFINITES = new String[]{"un", "unha", "uns", "unhas"};
+
     public MorphologyProcessor() {
         super(new MorphologyRules());
     }
@@ -93,11 +100,14 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                     try {
                         if (((ListElement) eachElement).getFirst() instanceof InflectedWordElement) {
                             prep = (InflectedWordElement) ((ListElement) eachElement).getFirst();
-                            if (((ListElement) eachElement).getSecond() instanceof ListElement && (prep.getBaseForm().equals("en") || prep.getBaseForm().equals("con") || prep.getBaseForm().equals("de") || prep.getBaseForm().equals("por") || prep.getBaseForm().equals("a"))) {
+                            if (((ListElement) eachElement).getSecond() instanceof ListElement && Arrays.asList(PREPOSITIONS).contains(prep.getBaseForm())) {
                                 ListElement aux = ((ListElement) ((ListElement) eachElement).getSecond());
                                 art = (InflectedWordElement) aux.getFirst();
-                                if (art.getBaseForm().substring(0, art.getBaseForm().indexOf(" ")).equals("o") || art.getBaseForm().substring(0, art.getBaseForm().indexOf(" ")).equals("a") || art.getBaseForm().substring(0, art.getBaseForm().indexOf(" ")).equals("os") || art.getBaseForm().substring(0, art.getBaseForm().indexOf(" ")).equals("as")) {
+                                if ((Arrays.asList(DEFINITES).contains(art.getBaseForm().substring(0, art.getBaseForm().indexOf(" ")))) || (Arrays.asList(INDEFINITES).contains(art.getBaseForm().substring(0, art.getBaseForm().indexOf(" "))) && Arrays.asList(PREP_INDET).contains(prep.getBaseForm()))) {
                                     String letter = morphologyRules.buildPrepositionArticleConjunction(prep.getBaseForm());
+                                    /*if (letter.equals("p")) {
+                                        letter = "pol";
+                                    }*/
                                     if (letter.equals("a") && art.getBaseForm().startsWith("a")) {
                                         letter = "á";
                                         art.setFeature(LexicalFeature.BASE_FORM, art.getBaseForm().substring(1, art.getBaseForm().length()));
@@ -107,7 +117,7 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                                 }
                             }
                         }
-                    }catch (Exception e) {
+                    } catch (Exception e) {
 
                     }
                 }
@@ -142,8 +152,21 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                         currentElement.setFeature(InternalFeature.DISCOURSE_FUNCTION, function);
                     }
 
-                    if (prevElement != null && LexicalCategory.PREPOSITION.equals(prevElement.getCategory())) {
+                    StringElement prevString = null;
+                    try {
+                        prevString = (StringElement) realisedElements.get(realisedElements.size() - 1);
+                    } catch (Exception e) {
 
+                    }
+
+                    //verb+pronoun CI
+                    if (prevElement != null && LexicalCategory.VERB.equals(prevElement.getCategory()) && LexicalCategory.PRONOUN.equals(eachElement.getCategory())) {
+                        prevString.setRealisation(prevString.getRealisation() + currentElement.getRealisation());
+                        currentElement.setRealisation("");
+                    }
+
+                    //preposition+article
+                    if (prevElement != null && LexicalCategory.PREPOSITION.equals(prevElement.getCategory())) {
                         NLGElement root = elements.get(0);
                         while (root.getParent() != null) {
                             root = root.getParent();
@@ -151,129 +174,55 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                         if (root.getFeatureAsBoolean(Feature.PASSIVE) && root.hasFeature(Feature.INTERROGATIVE_TYPE)) {
                             realisedElements.remove(realisedElements.size() - 1);
                         } else {
-                            StringElement prevString = (StringElement) realisedElements.get(realisedElements.size() - 1);
+                            //StringElement prevString = (StringElement) realisedElements.get(realisedElements.size() - 1);
                             String secondPart = "";
                             if (currentElement.getRealisation().contains(" ")) {
                                 secondPart = currentElement.getRealisation().substring(currentElement.getRealisation().indexOf(" "));
                             }
-                            Boolean startsWithO = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("o")) || (currentElement.getRealisation().length() >= 2 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 2).equals("o "));
-                            Boolean startsWithA = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("a")) || (currentElement.getRealisation().length() >= 2 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 2).equals("a "));
-                            Boolean startsWithOs = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("os")) || (currentElement.getRealisation().length() >= 3 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 3).equals("os "));
-                            Boolean startsWithAs = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("as")) || (currentElement.getRealisation().length() >= 3 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 3).equals("as "));
-                            Boolean startsWithUn = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("un")) || (currentElement.getRealisation().length() >= 3 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 3).equals("un "));
-                            Boolean startsWithUnha = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("unha")) || (currentElement.getRealisation().length() >= 5 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 5).equals("unha "));
-                            Boolean startsWithUns = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("uns")) || (currentElement.getRealisation().length() >= 4 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 4).equals("uns "));
-                            Boolean startsWithUnhas = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("unhas")) || (currentElement.getRealisation().length() >= 6 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 6).equals("unhas "));
+                            if (Arrays.asList(PREPOSITIONS).contains(prevString.toString())) {
+                                Boolean startsWithO = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("o")) || (currentElement.getRealisation().length() >= 2 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 2).equals("o "));
+                                Boolean startsWithA = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("a")) || (currentElement.getRealisation().length() >= 2 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 2).equals("a "));
+                                Boolean startsWithOs = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("os")) || (currentElement.getRealisation().length() >= 3 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 3).equals("os "));
+                                Boolean startsWithAs = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("as")) || (currentElement.getRealisation().length() >= 3 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 3).equals("as "));
+                                Boolean startsWithUn = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("un")) || (currentElement.getRealisation().length() >= 3 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 3).equals("un "));
+                                Boolean startsWithUnha = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("unha")) || (currentElement.getRealisation().length() >= 5 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 5).equals("unha "));
+                                Boolean startsWithUns = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("uns")) || (currentElement.getRealisation().length() >= 4 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 4).equals("uns "));
+                                Boolean startsWithUnhas = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("unhas")) || (currentElement.getRealisation().length() >= 6 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 6).equals("unhas "));
 
-                            String letter = morphologyRules.buildPrepositionArticleConjunction(prevString.toString());
-                            //FALTA MODIFICAR ESTO
-                            if ("a".equals(prevString.toString())) {
+                                String letter = morphologyRules.buildPrepositionArticleConjunction(prevString.toString());
+                            /*if(letter.equals("p")) {
+                                letter = "pol";
+                            }*/
                                 if (startsWithO) {
-                                    prevString.setRealisation("ao");
+                                    prevString.setRealisation(letter + "o");
                                 } else if (startsWithA) {
-                                    prevString.setRealisation("á");
-                                } else if (startsWithOs) {
-                                    prevString.setRealisation("aos");
-                                } else if (startsWithAs) {
-                                    prevString.setRealisation("ás");
-                                }
-                                if (startsWithO || startsWithA || startsWithOs || startsWithAs) {
-                                    realisedElements.set(realisedElements.size() - 1, prevString);
-                                    if (currentElement instanceof ListElement) {
-                                        ((ListElement) currentElement).getFirst().setRealisation("");
+                                    if (letter.equals("a")) {
+                                        prevString.setRealisation("á");
                                     } else {
-                                        currentElement.setRealisation(secondPart);
+                                        prevString.setRealisation(letter + "a");
+                                    }
+                                } else if (startsWithOs) {
+                                    prevString.setRealisation(letter + "os");
+                                } else if (startsWithAs) {
+                                    if (letter.equals("a")) {
+                                        prevString.setRealisation("ás");
+                                    } else {
+                                        prevString.setRealisation(letter + "as");
                                     }
                                 }
-                            } else if ("con".equals(prevString.toString())) {
-                                if (startsWithO) {
-                                    prevString.setRealisation("co");
-                                } else if (startsWithA) {
-                                    prevString.setRealisation("coa");
-                                } else if (startsWithOs) {
-                                    prevString.setRealisation("cos");
-                                } else if (startsWithAs) {
-                                    prevString.setRealisation("coas");
-                                } else if (startsWithUn) {
-                                    prevString.setRealisation("cun");
-                                } else if (startsWithUnha) {
-                                    prevString.setRealisation("cunha");
-                                } else if (startsWithUns) {
-                                    prevString.setRealisation("cuns");
-                                } else if (startsWithUnhas) {
-                                    prevString.setRealisation("cunhas");
+                                if (letter.equals("c") || letter.equals("d") || letter.equals("n")) {
+                                    if (startsWithUn) {
+                                        prevString.setRealisation(letter + "un");
+                                    } else if (startsWithUnha) {
+                                        prevString.setRealisation(letter + "unha");
+                                    } else if (startsWithUns) {
+                                        prevString.setRealisation(letter + "uns");
+                                    } else if (startsWithUnhas) {
+                                        prevString.setRealisation(letter + "unhas");
+                                    }
                                 }
+
                                 if (startsWithO || startsWithA || startsWithOs || startsWithAs || startsWithUn || startsWithUnha || startsWithUns || startsWithUnhas) {
-                                    realisedElements.set(realisedElements.size() - 1, prevString);
-                                    if (currentElement instanceof ListElement) {
-                                        ((ListElement) currentElement).getFirst().setRealisation("");
-                                    } else {
-                                        currentElement.setRealisation(secondPart);
-                                    }
-                                }
-                            } else if ("de".equals(prevString.toString())) {
-                                if (startsWithO) {
-                                    prevString.setRealisation("do");
-                                } else if (startsWithA) {
-                                    prevString.setRealisation("da");
-                                } else if (startsWithOs) {
-                                    prevString.setRealisation("dos");
-                                } else if (startsWithAs) {
-                                    prevString.setRealisation("das");
-                                } else if (startsWithUn) {
-                                    prevString.setRealisation("dun");
-                                } else if (startsWithUnha) {
-                                    prevString.setRealisation("dunha");
-                                } else if (startsWithUns) {
-                                    prevString.setRealisation("duns");
-                                } else if (startsWithUnhas) {
-                                    prevString.setRealisation("dunhas");
-                                }
-                                if (startsWithO || startsWithA || startsWithOs || startsWithAs || startsWithUn || startsWithUnha || startsWithUns || startsWithUnhas) {
-                                    realisedElements.set(realisedElements.size() - 1, prevString);
-                                    if (currentElement instanceof ListElement) {
-                                        ((ListElement) currentElement).getFirst().setRealisation("");
-                                    } else {
-                                        currentElement.setRealisation(secondPart);
-                                    }
-                                }
-                            } else if ("en".equals(prevString.toString())) {
-                                if (startsWithO) {
-                                    prevString.setRealisation("no");
-                                } else if (startsWithA) {
-                                    prevString.setRealisation("na");
-                                } else if (startsWithOs) {
-                                    prevString.setRealisation("nos");
-                                } else if (startsWithAs) {
-                                    prevString.setRealisation("nas");
-                                } else if (startsWithUn) {
-                                    prevString.setRealisation("nun");
-                                } else if (startsWithUnha) {
-                                    prevString.setRealisation("nunha");
-                                } else if (startsWithUns) {
-                                    prevString.setRealisation("nuns");
-                                } else if (startsWithUnhas) {
-                                    prevString.setRealisation("nunhas");
-                                }
-                                if (startsWithO || startsWithA || startsWithOs || startsWithAs || startsWithUn || startsWithUnha || startsWithUns || startsWithUnhas) {
-                                    realisedElements.set(realisedElements.size() - 1, prevString);
-                                    if (currentElement instanceof ListElement) {
-                                        ((ListElement) currentElement).getFirst().setRealisation("");
-                                    } else {
-                                        currentElement.setRealisation(secondPart);
-                                    }
-                                }
-                            } else if ("por".equals(prevString.toString())) {
-                                if (startsWithO) {
-                                    prevString.setRealisation("polo");
-                                } else if (startsWithA) {
-                                    prevString.setRealisation("pola");
-                                } else if (startsWithOs) {
-                                    prevString.setRealisation("polos");
-                                } else if (startsWithAs) {
-                                    prevString.setRealisation("polas");
-                                }
-                                if (startsWithO || startsWithA || startsWithOs || startsWithAs) {
                                     realisedElements.set(realisedElements.size() - 1, prevString);
                                     if (currentElement instanceof ListElement) {
                                         ((ListElement) currentElement).getFirst().setRealisation("");
@@ -286,129 +235,20 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                     }
 
                     //pronoun+article
-                    StringElement prevString = null;
+                   /* StringElement prevString = null;
                     if (prevElement != null && LexicalCategory.PRONOUN.equals(prevElement.getCategory())) {
                         for (Object s : realisedElements) {
                             if (s instanceof StringElement) {
                                 prevString = (StringElement) s;
-                                if (prevString.getRealisation().equals("me")) {
-                                    if (currentElement.getRealisation().equals("o")) {
-                                        prevString.setRealisation("mo");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("a")) {
-                                        prevString.setRealisation("ma");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("os")) {
-                                        prevString.setRealisation("mos");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("as")) {
-                                        prevString.setRealisation("mas");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    }
-                                    break;
-                                } else if (prevString.getRealisation().equals("che")) {
-                                    if (currentElement.getRealisation().equals("o")) {
-                                        prevString.setRealisation("cho");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("a")) {
-                                        prevString.setRealisation("cha");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("os")) {
-                                        prevString.setRealisation("chos");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("as")) {
-                                        prevString.setRealisation("chas");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    }
-                                    break;
-                                } else if (prevString.getRealisation().equals("lle")) {
-                                    if (currentElement.getRealisation().equals("o")) {
-                                        prevString.setRealisation("llo");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("a")) {
-                                        prevString.setRealisation("lla");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("os")) {
-                                        prevString.setRealisation("llos");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("as")) {
-                                        prevString.setRealisation("llas");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    }
-                                    break;
-                                } else if (prevString.getRealisation().equals("nos")) {
-                                    if (currentElement.getRealisation().equals("o")) {
-                                        prevString.setRealisation("nolo");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("a")) {
-                                        prevString.setRealisation("nola");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("os")) {
-                                        prevString.setRealisation("nolos");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("as")) {
-                                        prevString.setRealisation("nolas");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    }
-                                    break;
-                                } else if (prevString.getRealisation().equals("vos")) {
-                                    if (currentElement.getRealisation().equals("o")) {
-                                        prevString.setRealisation("volo");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("a")) {
-                                        prevString.setRealisation("vola");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("os")) {
-                                        prevString.setRealisation("volos");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("as")) {
-                                        prevString.setRealisation("volas");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    }
-                                    break;
-                                } else if (prevString.getRealisation().equals("lles")) {
-                                    if (currentElement.getRealisation().equals("o")) {
-                                        prevString.setRealisation("llelo");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("a")) {
-                                        prevString.setRealisation("llela");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("os")) {
-                                        prevString.setRealisation("llelos");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    } else if (currentElement.getRealisation().equals("as")) {
-                                        prevString.setRealisation("llelas");
-                                        realisedElements.set(realisedElements.indexOf(s), prevString);
-                                        currentElement.setRealisation("");
-                                    }
-                                    break;
+                                if (Arrays.asList(CI_PRONOUNS).contains(prevString.getRealisation())) {
+                                    String conj = morphologyRules.buildPronounsConjunction(prevString.getRealisation(), currentElement.getRealisation());
+                                    prevString.setRealisation(conj);
+                                    realisedElements.set(realisedElements.indexOf(s), prevString);
+                                    currentElement.setRealisation("");
                                 }
                             }
                         }
-                    }
+                    }*/
 
                     if (prevElement != null && (LexicalCategory.VERB.equals(prevElement.getCategory()) || LexicalCategory.MODAL.equals(prevElement.getCategory())) && LexicalCategory.PRONOUN.equals(eachElement.getCategory())) {
                         int i;

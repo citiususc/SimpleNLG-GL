@@ -38,7 +38,7 @@ public class OrthographyFormatTest extends SimpleNLG4Test {
     private DocumentElement list1, list2;
     private DocumentElement listItem1, listItem2, listItem3;
     private String list1Realisation = new StringBuffer("* na habitación")
-            .append("\n* tras a cortina").append("\n").toString();
+            .append("\n* trala cortina").append("\n").toString();
     private String list2Realisation = new StringBuffer("* na roca")
             .append("\n* ").append(list1Realisation).append("\n").toString();
 

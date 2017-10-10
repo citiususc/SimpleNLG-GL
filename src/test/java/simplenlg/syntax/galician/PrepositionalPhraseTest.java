@@ -57,7 +57,7 @@ public class PrepositionalPhraseTest extends SimpleNLG4Test {
     public void testBasic() {
         Assert.assertEquals("na habitación", this.realiser //$NON-NLS-1$
                 .realise(this.inTheRoom).getRealisation());
-        Assert.assertEquals("tras a cortina", this.realiser //$NON-NLS-1$
+        Assert.assertEquals("trala cortina", this.realiser //$NON-NLS-1$
                 .realise(this.behindTheCurtain).getRealisation());
         Assert.assertEquals("na roca", this.realiser //$NON-NLS-1$
                 .realise(this.onTheRock).getRealisation());
@@ -84,12 +84,12 @@ public class PrepositionalPhraseTest extends SimpleNLG4Test {
 
         CoordinatedPhraseElement coord1 = phraseFactory.createCoordinatedPhrase(
                 this.inTheRoom, this.behindTheCurtain);
-        Assert.assertEquals("na habitación e tras a cortina", this.realiser //$NON-NLS-1$
+        Assert.assertEquals("na habitación e trala cortina", this.realiser //$NON-NLS-1$
                 .realise(coord1).getRealisation());
 
         // change the conjunction
         coord1.setFeature(Feature.CONJUNCTION, "ou"); //$NON-NLS-1$
-        Assert.assertEquals("na habitación ou tras a cortina", this.realiser //$NON-NLS-1$
+        Assert.assertEquals("na habitación ou trala cortina", this.realiser //$NON-NLS-1$
                 .realise(coord1).getRealisation());
 
         // new coordinate
@@ -106,7 +106,7 @@ public class PrepositionalPhraseTest extends SimpleNLG4Test {
         String text = this.realiser.realise(coord3).getRealisation();
         Assert
                 .assertEquals(
-                        "na habitación ou tras a cortina e na roca ou baixo a mesa", //$NON-NLS-1$
+                        "na habitación ou trala cortina e na roca ou baixo a mesa", //$NON-NLS-1$
                         text);
     }
 }

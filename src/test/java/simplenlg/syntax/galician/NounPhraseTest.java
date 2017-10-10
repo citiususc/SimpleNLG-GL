@@ -247,7 +247,7 @@ public class NounPhraseTest extends SimpleNLG4Test {
                 this.man).getRealisation());
 
         this.woman.addPostModifier(this.behindTheCurtain);
-        Assert.assertEquals("a muller tras a cortina", this.realiser //$NON-NLS-1$
+        Assert.assertEquals("a muller trala cortina", this.realiser //$NON-NLS-1$
                 .realise(this.woman).getRealisation());
 
         // postmodification with a WordElement
@@ -269,7 +269,7 @@ public class NounPhraseTest extends SimpleNLG4Test {
                 this.man).getRealisation());
 
         this.woman.addComplement(this.behindTheCurtain);
-        Assert.assertEquals("a muller tras a cortina", this.realiser //$NON-NLS-1$
+        Assert.assertEquals("a muller trala cortina", this.realiser //$NON-NLS-1$
                 .realise(this.woman).getRealisation());
     }
 
@@ -322,7 +322,7 @@ public class NounPhraseTest extends SimpleNLG4Test {
 
         // simple coordination with complementation of entire coordinate NP
         cnp1.addComplement(this.behindTheCurtain);
-        Assert.assertEquals("o can e a muller tras a cortina", //$NON-NLS-1$
+        Assert.assertEquals("o can e a muller trala cortina", //$NON-NLS-1$
                 this.realiser.realise(cnp1).getRealisation());
 
         // raise the specifier in this cnp
@@ -357,14 +357,14 @@ public class NounPhraseTest extends SimpleNLG4Test {
 
         this.woman.setFeature(InternalFeature.RAISED, false);
         Assert.assertEquals(
-                "o can na roca e a muller tras a cortina", //$NON-NLS-1$
+                "o can na roca e a muller trala cortina", //$NON-NLS-1$
                 this.realiser.realise(cnp2).getRealisation());
 
         // complementised coordinates + outer pp modifier
         cnp2.addPostModifier(this.inTheRoom);
         Assert
                 .assertEquals(
-                        "o can na roca e a muller tras a cortina na habitación", //$NON-NLS-1$
+                        "o can na roca e a muller trala cortina na habitación", //$NON-NLS-1$
                         this.realiser.realise(cnp2).getRealisation());
 
         // set the specifier for this cnp; should unset specifiers for all inner
@@ -376,7 +376,7 @@ public class NounPhraseTest extends SimpleNLG4Test {
 
         Assert
                 .assertEquals(
-                        "todo can na roca e toda muller tras a cortina na habitación", //$NON-NLS-1$
+                        "todo can na roca e toda muller trala cortina na habitación", //$NON-NLS-1$
                         this.realiser.realise(cnp2).getRealisation());
 
         // pronominalise one of the constituents
@@ -388,7 +388,7 @@ public class NounPhraseTest extends SimpleNLG4Test {
 
         // CNP should be realised with pronominal internal const
         Assert.assertEquals(
-                "el e toda muller tras a cortina na habitación", //$NON-NLS-1$
+                "el e toda muller trala cortina na habitación", //$NON-NLS-1$
                 this.realiser.realise(cnp2).getRealisation());
     }
 

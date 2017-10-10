@@ -210,7 +210,7 @@ public class VerbPhraseTest extends SimpleNLG4Test {
         this.give.addPostModifier(this.behindTheCurtain);
         this.give.addPostModifier(this.inTheRoom);
         assertEquals(
-                "lentamente dá á muller o can tras a cortina na habitación", //$NON-NLS-1$
+                "lentamente dá á muller o can trala cortina na habitación", //$NON-NLS-1$
                 this.realiser.realise(this.give).getRealisation());
 
         // reset the arguments
@@ -226,7 +226,7 @@ public class VerbPhraseTest extends SimpleNLG4Test {
         // they won't be coordinated
         this.give.setFeature(Feature.PASSIVE, false);
         assertEquals(
-                "lentamente dá á muller e ao neno o can tras a cortina na habitación", //$NON-NLS-1$
+                "lentamente dá á muller e ao neno o can trala cortina na habitación", //$NON-NLS-1$
                 this.realiser.realise(this.give).getRealisation());
 
         // set them to a coordinate instead
@@ -249,7 +249,7 @@ public class VerbPhraseTest extends SimpleNLG4Test {
         // there were two before
 
         assertEquals(
-                "lentamente dá á muller e ao neno o can tras a cortina na habitación", //$NON-NLS-1$
+                "lentamente dá á muller e ao neno o can trala cortina na habitación", //$NON-NLS-1$
                 this.realiser.realise(this.give).getRealisation());
     }
 
@@ -273,7 +273,7 @@ public class VerbPhraseTest extends SimpleNLG4Test {
         this.give.addPostModifier(this.behindTheCurtain);
         this.give.addPostModifier(this.inTheRoom);
         assertEquals(
-                "lentamente dá á muller o can tras a cortina na habitación", //$NON-NLS-1$
+                "lentamente dá á muller o can trala cortina na habitación", //$NON-NLS-1$
                 this.realiser.realise(this.give).getRealisation());
 
         // passivise: This should suppress "the dog"
@@ -283,7 +283,7 @@ public class VerbPhraseTest extends SimpleNLG4Test {
         this.give.setFeature(Feature.PASSIVE, true);
 
         assertEquals(
-                "é lentamente dado á muller tras a cortina na habitación", //$NON-NLS-1$
+                "é lentamente dado á muller trala cortina na habitación", //$NON-NLS-1$
                 this.realiser.realise(this.give).getRealisation());
     }
 
@@ -331,7 +331,7 @@ public class VerbPhraseTest extends SimpleNLG4Test {
         // [behind the curtain]]
         this.say.addPostModifier(this.behindTheCurtain);
         assertEquals(
-                "dixo que John estivo bicando a Mary e a Susan na habitación tras a cortina", //$NON-NLS-1$
+                "dixo que John estivo bicando a Mary e a Susan na habitación trala cortina", //$NON-NLS-1$
                 this.realiser.realise(this.say).getRealisation());
 
         // create a new sentential complement
@@ -354,7 +354,7 @@ public class VerbPhraseTest extends SimpleNLG4Test {
         // first with outer complementiser suppressed
         s3.setFeature(Feature.SUPRESSED_COMPLEMENTISER, true);
         assertEquals(
-                "dixo que John estivo bicando a Mary e a Susan na habitación e todo estará ben tras a cortina", //$NON-NLS-1$
+                "dixo que John estivo bicando a Mary e a Susan na habitación e todo estará ben trala cortina", //$NON-NLS-1$
                 this.realiser.realise(this.say).getRealisation());
 
         setUp();
@@ -386,7 +386,7 @@ public class VerbPhraseTest extends SimpleNLG4Test {
         this.say.addPostModifier(this.behindTheCurtain);
 
         assertEquals(
-                "dixo que John estivo bicando a Mary e a Susan na habitación e que todo estará ben tras a cortina", //$NON-NLS-1$
+                "dixo que John estivo bicando a Mary e a Susan na habitación e que todo estará ben trala cortina", //$NON-NLS-1$
                 this.realiser.realise(this.say).getRealisation());
 
     }

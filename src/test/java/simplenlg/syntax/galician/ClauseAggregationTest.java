@@ -193,7 +193,7 @@ public class ClauseAggregationTest extends SimpleNLG4Test {
         Assert.assertTrue(result.size() == 1); // should only be one sentence
         NLGElement aggregated = result.get(0);
         Assert.assertEquals(
-                "a muller e o home golpean o can tras a cortina", //$NON-NLS-1$
+                "a muller e o home golpean o can trala cortina", //$NON-NLS-1$
                 this.realiser.realise(aggregated).getRealisation());
     }
 
@@ -214,7 +214,7 @@ public class ClauseAggregationTest extends SimpleNLG4Test {
         NLGElement aggregated = result.get(0);
         Assert
                 .assertEquals(
-                        "sen embargo a muller e o home golpean o can tras a cortina", //$NON-NLS-1$
+                        "sen embargo a muller e o home golpean o can trala cortina", //$NON-NLS-1$
                         this.realiser.realise(aggregated).getRealisation());
     }
 
@@ -229,7 +229,7 @@ public class ClauseAggregationTest extends SimpleNLG4Test {
         NLGElement aggregated = result.get(0);
         Assert
                 .assertEquals(
-                        "a muller e o home e a nena golpean o can tras a cortina", //$NON-NLS-1$
+                        "a muller e o home e a nena golpean o can trala cortina", //$NON-NLS-1$
                         this.realiser.realise(aggregated).getRealisation());
     }
 
@@ -241,7 +241,7 @@ public class ClauseAggregationTest extends SimpleNLG4Test {
         NLGElement aggregated = this.fcr.apply(this.s2, this.s3);
         Assert
                 .assertEquals(
-                        "a muller golpea o can na roca e golpea o can tras a cortina", //$NON-NLS-1$
+                        "a muller golpea o can na roca e golpea o can trala cortina", //$NON-NLS-1$
                         this.realiser.realise(aggregated).getRealisation());
     }
 
@@ -253,7 +253,7 @@ public class ClauseAggregationTest extends SimpleNLG4Test {
         NLGElement aggregated = this.bcr.apply(this.s3, this.s6);
         Assert
                 .assertEquals(
-                        "a muller golpea e a muller bica o can tras a cortina",
+                        "a muller golpea e a muller bica o can trala cortina",
                         this.realiser.realise(aggregated).getRealisation());
     }
 

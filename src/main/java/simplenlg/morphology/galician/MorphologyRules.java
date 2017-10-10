@@ -2067,10 +2067,27 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
         } else if (preposition.equals("de")) {
             letter = "d";
         } else if (preposition.equals("por")) {
-            letter = "p";
+            letter = "pol";
         } else if (preposition.equals("a")) {
             letter = "a";
+        } else if (preposition.equals("tras")) {
+            letter = "tral";
         }
         return letter;
+    }
+
+    public String buildPronounsConjunction(String ci, String cd) {
+        String conj = "";
+        if(ci.equals("me") || ci.equals("che") || ci.equals("lle")) {
+            conj = ci.substring(0, ci.length()-1) + cd;
+        }
+        if(ci.equals("nos") || ci.equals("vos") || ci.equals("lles")) {
+            conj = ci.substring(0, ci.length()-1) + "l" + cd;
+        }
+        return conj;
+    }
+
+    public void accentuationRules(String word) {
+
     }
 }

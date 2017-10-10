@@ -31,6 +31,7 @@ public class MainTest {
         //subject2.setFeature(Feature.NUMBER, NumberAgreement.PLURAL);
         SPhraseSpec p = nlgFactory.createClause();
         p.setSubject(subject2);
+        p.setObject("o");
         p.setIndirectObject("lle");
         p.setVerb("dicir");
         //p.setObject("un mono");
@@ -224,5 +225,13 @@ public class MainTest {
         output = realiser.realiseSentence(p5);
         System.out.println(output);
 
+        //otra forma de crear una frase preposicional -> ok
+        NPPhraseSpec place = nlgFactory.createNounPhrase("un", "parque");
+        PPPhraseSpec pp = nlgFactory.createPrepositionPhrase("de");
+        pp.addComplement(place);
+        SPhraseSpec p11 = nlgFactory.createClause("María", "perseguir", "un mono");
+        p11.addComplement(pp);
+        output = realiser.realiseSentence(p11);
+        System.out.println(output);
     }
 }
