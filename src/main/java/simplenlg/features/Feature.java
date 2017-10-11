@@ -1079,4 +1079,37 @@ abstract public class Feature {
 	 * </table>
 	 */
 	public static final String TENSE = "tense";
+
+	/**
+	 * <p>
+	 * This flag represents if the pronoun (indirect complement) is after verb.
+	 * </p>
+	 * <table border="1">
+	 * <tr>
+	 * <td><b>Feature name</b></td>
+	 * <td><em>pronoun_after</em></td>
+	 * </tr>
+	 * <tr>
+	 * <td><b>Expected type</b></td>
+	 * <td><code>Boolean</code></td>
+	 * </tr>
+	 * <tr>
+	 * <td><b>Created by</b></td>
+	 * <td>The realiser.</td>
+	 * </tr>
+	 * <tr>
+	 * <td><b>Used by</b></td>
+	 * <td>The morphology processor.</td>
+	 * </tr>
+	 * <tr>
+	 * <td><b>Applies to</b></td>
+	 * <td>Clauses, coordinated phrases and verb phrases.</td>
+	 * </tr>
+	 * <tr>
+	 * <td><b>Default</b></td>
+	 * <td><code>false</code>.</td>
+	 * </tr>
+	 * </table>
+	 */
+	public static final String PRONOUN_AFTER = "pronoun_after";
 }

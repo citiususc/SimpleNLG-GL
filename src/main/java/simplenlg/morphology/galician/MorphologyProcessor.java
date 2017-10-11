@@ -159,8 +159,8 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
 
                     }
 
-                    //verb+pronoun CI
-                    if (prevElement != null && LexicalCategory.VERB.equals(prevElement.getCategory()) && LexicalCategory.PRONOUN.equals(eachElement.getCategory())) {
+                    //verb+pronoun
+                    if (eachElement.getFeatureAsBoolean(Feature.PRONOUN_AFTER) && prevElement != null && LexicalCategory.VERB.equals(prevElement.getCategory()) && LexicalCategory.PRONOUN.equals(eachElement.getCategory())) {
                         prevString.setRealisation(prevString.getRealisation() + currentElement.getRealisation());
                         currentElement.setRealisation("");
                     }

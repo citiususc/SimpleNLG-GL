@@ -22,10 +22,13 @@ import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Test;
 import simplenlg.features.Feature;
+import simplenlg.features.Form;
 import simplenlg.features.InternalFeature;
 import simplenlg.features.Tense;
 import simplenlg.framework.*;
+import simplenlg.phrasespec.NPPhraseSpec;
 import simplenlg.phrasespec.SPhraseSpec;
+import simplenlg.phrasespec.VPPhraseSpec;
 
 /**
  * test suite for simple XXXPhraseSpec classes
@@ -91,11 +94,29 @@ public class PhraseSpecTest extends SimpleNLG4Test {
         c2.addFrontModifier("afortunadamente");
         c2.addModifier("rápidamente");
         c2.addModifier("no parque");
-       // c2.setFeature(Feature.NEGATED, true);
+        //c2.setFeature(Feature.NEGATED, true);
         // try setting tense directly as a feature
         c2.setFeature(Feature.TENSE, Tense.PAST);
         Assert.assertEquals("afortunadamente o home viume rápidamente no parque", this.realiser //$NON-NLS-1$
                 .realise(c2).getRealisation());
+    }
+
+    /**
+     * Test Subordinate
+     */
+    @Test
+    public void testSubordinate() {
+        SPhraseSpec p = phraseFactory.createClause("eu", "estar", "feliz");
+        SPhraseSpec q = phraseFactory.createClause(null, "dicir");
+        q.setIndirectObject("lle");
+
+        q.setFeature(Feature.COMPLEMENTISER, "porque");
+        q.setFeature(Feature.TENSE, Tense.PAST);
+        p.addComplement(q);
+
+        Assert.assertEquals("eu estou feliz porque lle dixen", this.realiser //$NON-NLS-1$
+                .realise(p).getRealisation());
+
     }
 
     // get string for head of constituent

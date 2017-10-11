@@ -71,6 +71,7 @@ public abstract class SyntaxProcessor extends NLGModule {
             } else if (element instanceof PhraseElement) {
                 realisedElement = realisePhraseElement((PhraseElement) element);
 
+
             } else if (element instanceof ListElement) {
                 realisedElement = new ListElement();
                 ((ListElement) realisedElement).addComponents(realise(element

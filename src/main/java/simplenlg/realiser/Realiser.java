@@ -19,16 +19,15 @@
 package simplenlg.realiser;
 
 import simplenlg.features.Feature;
-import simplenlg.framework.DocumentCategory;
-import simplenlg.framework.DocumentElement;
-import simplenlg.framework.NLGElement;
-import simplenlg.framework.NLGModule;
+import simplenlg.features.LexicalFeature;
+import simplenlg.framework.*;
 import simplenlg.lexicon.Lexicon;
 import simplenlg.morphology.MorphologyProcessor;
 import simplenlg.orthography.OrthographyProcessor;
 import simplenlg.syntax.SyntaxProcessor;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -42,6 +41,9 @@ public abstract class Realiser extends NLGModule {
     protected NLGModule formatter = null;
     protected boolean debug = false;
 
+    private static final String[] SUBORDINATES = new String[]{"porque", "que", "se"};
+    private static final String[] ADVERBS = new String[] {"quizais", "talvez", "seica", "disque", "xa", "só", "mal", "axiña", "sempre", "aínda", "aquí", "aí", "alí", "máis", "menos"};
+    private static final String[] INDEFINITES = new String[]{"ninguén", "alguén", "calquera", "mesmo", "algo", "nada", "bastante"};
     /**
      * create a realiser (no lexicon)
      */
@@ -116,6 +118,7 @@ public abstract class Realiser extends NLGModule {
     public NLGElement realise(NLGElement element) {
 
         StringBuilder debug = new StringBuilder();
+        boolean pronoun_after = false;
 
         if (this.debug) {
             System.out.println("INITIAL TREE\n"); //$NON-NLS-1$
@@ -125,13 +128,55 @@ public abstract class Realiser extends NLGModule {
         }
 
         NLGElement postSyntax = this.syntax.realise(element);
+        postSyntax.setFeature(Feature.PRONOUN_AFTER, element.getFeatureAsBoolean(Feature.PRONOUN_AFTER));
         if (this.debug) {
             System.out.println("<br/>POST-SYNTAX TREE<br/>"); //$NON-NLS-1$
             System.out.println(postSyntax.printTree(null));
             debug.append("<br/>POST-SYNTAX TREE<br/>");
             debug.append(postSyntax.printTree("&nbsp;&nbsp;").replaceAll("\n", "<br/>"));
         }
+        //////////////////////////////verb + pronoun colocation/////////////////////////////////////////////////
+        //negated and interrogative sentences: verb+pronoun
+        if(postSyntax.getFeatureAsBoolean(Feature.NEGATED) == false && postSyntax.getFeatureAsBoolean(Feature.INTERROGATIVE_TYPE) == false) {
+            pronoun_after = true;
+        }
+        if(postSyntax instanceof ListElement) {
+            List<NLGElement> elements = postSyntax.getChildren();
+            int indexVerb = -1, indexSubordinate = -1, indexAdverb = -1, indexIndefinite = -1;
+            for(NLGElement e: elements) {
+                try {
+                    if (e.getCategory().equals(LexicalCategory.VERB)) {
+                        indexVerb = elements.indexOf(e);
+                    }
+                } catch (Exception ex) {
 
+                }
+                if (Arrays.asList(SUBORDINATES).contains(e)) {
+                    indexSubordinate = elements.indexOf(e);
+                }
+                if (Arrays.asList(ADVERBS).contains(e)) {
+                    indexAdverb = elements.indexOf(e);
+                }
+                if(Arrays.asList(INDEFINITES).contains(e)) {
+                    indexIndefinite = elements.indexOf(e);
+                }
+            }
+            if(indexVerb >= 0) {
+                //subordinates sentences: pronoun before
+                if(indexSubordinate >= 0 && indexSubordinate < indexVerb) {
+                    pronoun_after = false;
+                }
+                //with some adverbs: pronoun before
+                if(indexAdverb >= 0 && indexAdverb < indexVerb) {
+                    pronoun_after = false;
+                }
+                //with some indefinites: pronoun before
+                if(indexIndefinite >= 0 && indexIndefinite < indexVerb) {
+                    pronoun_after = false;
+                }
+            }
+        }
+        postSyntax.setFeature(Feature.PRONOUN_AFTER, pronoun_after);
         NLGElement postMorphology = this.morphology.realise(postSyntax);
         if (this.debug) {
             System.out.println("\nPOST-MORPHOLOGY TREE\n"); //$NON-NLS-1$
