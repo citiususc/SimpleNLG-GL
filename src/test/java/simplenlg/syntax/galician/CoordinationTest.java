@@ -78,36 +78,36 @@ public class CoordinationTest extends SimpleNLG4Test {
         CoordinatedPhraseElement coord = this.phraseFactory
                 .createCoordinatedPhrase(this.getUp, this.fallDown);
         coord.setFeature(Feature.TENSE, Tense.PAST);
-        Assert.assertEquals("se levantou e se caeu", this.realiser
+        Assert.assertEquals("levantouse e caeuse", this.realiser
                 .realise(coord).getRealisation());
 
         // add a premodifier
         coord.addPreModifier("despacio");
-        Assert.assertEquals("despacio se levantou e se caeu", this.realiser
+        Assert.assertEquals("despacio levantouse e caeuse", this.realiser
                 .realise(coord).getRealisation());
 
         // adda postmodifier
         coord.addPostModifier(this.behindTheCurtain);
-        Assert.assertEquals("despacio se levantou e se caeu trala cortina",
+        Assert.assertEquals("despacio levantouse e caeuse trala cortina",
                 this.realiser.realise(coord).getRealisation());
 
         // put within the context of a sentence
         SPhraseSpec s = this.phraseFactory.createClause("Jake", coord);
         s.setFeature(Feature.TENSE, Tense.PAST);
         Assert.assertEquals(
-                "Jake despacio se levantou e se caeu trala cortina",
+                "Jake despacio levantouse e caeuse trala cortina",
                 this.realiser.realise(s).getRealisation());
 
         // add premod to the sentence
         s.addPreModifier(this.lexicon.getWord("sen embargo", LexicalCategory.ADVERB));
         Assert.assertEquals(
-                "Jake sen embargo despacio se levantou e se caeu trala cortina",
+                "Jake sen embargo despacio levantouse e caeuse trala cortina",
                 this.realiser.realise(s).getRealisation());
 
         // add postmod to the sentence
         s.addPostModifier(this.inTheRoom);
         Assert.assertEquals(
-                "Jake sen embargo despacio se levantou e se caeu trala cortina na habitación",
+                "Jake sen embargo despacio levantouse e caeuse trala cortina na habitación",
                 this.realiser.realise(s).getRealisation());
     }
 

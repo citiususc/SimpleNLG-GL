@@ -59,7 +59,6 @@ public class PhraseSpecTest extends SimpleNLG4Test {
                 .getRealisation());
     }
 
-
     /**
      * Test SPhraseSpec
      */
@@ -100,6 +99,7 @@ public class PhraseSpecTest extends SimpleNLG4Test {
         Assert.assertEquals("afortunadamente o home viume rápidamente no parque", this.realiser //$NON-NLS-1$
                 .realise(c2).getRealisation());
     }
+
 
     /**
      * Test Subordinate

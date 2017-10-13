@@ -19,7 +19,6 @@
 package simplenlg.realiser;
 
 import simplenlg.features.Feature;
-import simplenlg.features.LexicalFeature;
 import simplenlg.framework.*;
 import simplenlg.lexicon.Lexicon;
 import simplenlg.morphology.MorphologyProcessor;
@@ -42,8 +41,10 @@ public abstract class Realiser extends NLGModule {
     protected boolean debug = false;
 
     private static final String[] SUBORDINATES = new String[]{"porque", "que", "se"};
-    private static final String[] ADVERBS = new String[] {"quizais", "talvez", "seica", "disque", "xa", "só", "mal", "axiña", "sempre", "aínda", "aquí", "aí", "alí", "máis", "menos"};
+    private static final String[] ADVERBS = new String[]{"quizais", "talvez", "seica", "disque", "xa", "só", "mal", "axiña", "sempre", "aínda", "aquí", "aí", "alí", "máis", "menos"};
     private static final String[] INDEFINITES = new String[]{"ninguén", "alguén", "calquera", "mesmo", "algo", "nada", "bastante"};
+    private static final String[] INTERROGATIVES = new String[]{"cando", "onde", "canto", "como"};
+
     /**
      * create a realiser (no lexicon)
      */
@@ -137,48 +138,64 @@ public abstract class Realiser extends NLGModule {
         }
         //////////////////////////////verb + pronoun colocation/////////////////////////////////////////////////
         //negated and interrogative sentences: verb+pronoun
-        if(postSyntax.getFeatureAsBoolean(Feature.NEGATED) == false && postSyntax.getFeatureAsBoolean(Feature.INTERROGATIVE_TYPE) == false) {
+        if (postSyntax.getFeatureAsBoolean(Feature.NEGATED) == false && postSyntax.getFeatureAsBoolean(Feature.INTERROGATIVE_TYPE) == false) {
             pronoun_after = true;
         }
-        if(postSyntax instanceof ListElement) {
-            List<NLGElement> elements = postSyntax.getChildren();
-            int indexVerb = -1, indexSubordinate = -1, indexAdverb = -1, indexIndefinite = -1;
-            for(NLGElement e: elements) {
-                try {
-                    if (e.getCategory().equals(LexicalCategory.VERB)) {
-                        indexVerb = elements.indexOf(e);
-                    }
-                } catch (Exception ex) {
+        List<NLGElement> elements = new ArrayList<NLGElement>();
+        if (postSyntax instanceof ListElement) {
+            elements.addAll(postSyntax.getChildren());
+        } else {
+            elements.add(postSyntax);
+        }
 
+        elements = checkElements(elements);
+
+        int indexVerb = -1, indexSubordinate = -1, indexAdverb = -1, indexIndefinite = -1, indexInterrogative = -1;
+        for (NLGElement e : elements) {
+            try {
+                if (e.getCategory().equals(LexicalCategory.VERB)) {
+                    indexVerb = elements.indexOf(e);
                 }
-                if (Arrays.asList(SUBORDINATES).contains(e)) {
-                    indexSubordinate = elements.indexOf(e);
-                }
-                if (Arrays.asList(ADVERBS).contains(e)) {
-                    indexAdverb = elements.indexOf(e);
-                }
-                if(Arrays.asList(INDEFINITES).contains(e)) {
-                    indexIndefinite = elements.indexOf(e);
-                }
+            } catch (Exception ex) {
+
             }
-            if(indexVerb >= 0) {
-                //subordinates sentences: pronoun before
-                if(indexSubordinate >= 0 && indexSubordinate < indexVerb) {
-                    pronoun_after = false;
-                }
-                //with some adverbs: pronoun before
-                if(indexAdverb >= 0 && indexAdverb < indexVerb) {
-                    pronoun_after = false;
-                }
-                //with some indefinites: pronoun before
-                if(indexIndefinite >= 0 && indexIndefinite < indexVerb) {
-                    pronoun_after = false;
-                }
+            if (Arrays.asList(SUBORDINATES).contains(e.getRealisation())) {
+                indexSubordinate = elements.indexOf(e);
+            }
+            if (Arrays.asList(ADVERBS).contains(e.getRealisation())) {
+                indexAdverb = elements.indexOf(e);
+            }
+            if (Arrays.asList(INDEFINITES).contains(e.getRealisation())) {
+                indexIndefinite = elements.indexOf(e);
+            }
+            if(Arrays.asList(INTERROGATIVES).contains(e.getRealisation())) {
+                indexInterrogative = elements.indexOf(e);
             }
         }
+        if (indexVerb >= 0) {
+            //subordinates sentences: pronoun before
+            if (indexSubordinate >= 0 && indexSubordinate < indexVerb) {
+                pronoun_after = false;
+            }
+            //with some adverbs: pronoun before
+            if (indexAdverb >= 0 && indexAdverb < indexVerb) {
+                pronoun_after = false;
+            }
+            //with some indefinites: pronoun before
+            if (indexIndefinite >= 0 && indexIndefinite < indexVerb) {
+                pronoun_after = false;
+            }
+            //with interrogatives: pronoun before
+            if(indexInterrogative >= 0 && indexInterrogative < indexVerb) {
+                pronoun_after = false;
+            }
+        }
+
         postSyntax.setFeature(Feature.PRONOUN_AFTER, pronoun_after);
         NLGElement postMorphology = this.morphology.realise(postSyntax);
-        if (this.debug) {
+        if (this.debug)
+
+        {
             System.out.println("\nPOST-MORPHOLOGY TREE\n"); //$NON-NLS-1$
             System.out.println(postMorphology.printTree(null));
             debug.append("<br/>POST-MORPHOLOGY TREE<br/>");
@@ -186,7 +203,9 @@ public abstract class Realiser extends NLGModule {
         }
 
         NLGElement postOrthography = this.orthography.realise(postMorphology);
-        if (this.debug) {
+        if (this.debug)
+
+        {
             System.out.println("\nPOST-ORTHOGRAPHY TREE\n"); //$NON-NLS-1$
             System.out.println(postOrthography.printTree(null));
             debug.append("<br/>POST-ORTHOGRAPHY TREE<br/>");
@@ -194,7 +213,9 @@ public abstract class Realiser extends NLGModule {
         }
 
         NLGElement postFormatter = null;
-        if (this.formatter != null) {
+        if (this.formatter != null)
+
+        {
             postFormatter = this.formatter.realise(postOrthography);
             if (this.debug) {
                 System.out.println("\nPOST-FORMATTER TREE\n"); //$NON-NLS-1$
@@ -203,11 +224,15 @@ public abstract class Realiser extends NLGModule {
                 debug.append(postFormatter.printTree("&nbsp;&nbsp;").replaceAll("\n", "<br/>"));
             }
 
-        } else {
+        } else
+
+        {
             postFormatter = postOrthography;
         }
 
-        if (this.debug) {
+        if (this.debug)
+
+        {
             postFormatter.setFeature("debug", debug.toString());
         }
 
@@ -253,6 +278,27 @@ public abstract class Realiser extends NLGModule {
         this.syntax.setLexicon(newLexicon);
         this.morphology.setLexicon(newLexicon);
         this.orthography.setLexicon(newLexicon);
+    }
+
+    //split ListElements
+    public List<NLGElement> checkElements(List<NLGElement> list) {
+        List<NLGElement> aux;
+        boolean completed;
+        do {
+            aux = new ArrayList<NLGElement>();
+            completed = true;
+            for(NLGElement e: list) {
+                if(e instanceof ListElement) {
+                    aux.addAll(e.getChildren());
+                    completed = false;
+                } else {
+                    aux.add(e);
+                }
+            }
+            list = new ArrayList<NLGElement>();
+            list.addAll(aux);
+        } while(!completed);
+        return list;
     }
 
     public void setFormatter(NLGModule formatter) {

@@ -258,7 +258,7 @@ public class ExternalTest {
         SPhraseSpec sp2 = this.phraseFactory.createClause("el", "dar");
         sp2.setIndirectObject("eu");
         sp2.setObject("o libro");
-        Assert.assertEquals("el me dá o libro", this.realiser.realise(sp2).getRealisation());
+        Assert.assertEquals("el dáme o libro", this.realiser.realise(sp2).getRealisation());
 
     }
 

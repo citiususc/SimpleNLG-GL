@@ -522,7 +522,7 @@ public class ClauseTest extends SimpleNLG4Test {
                 "perseguir", object); //$NON-NLS-1$
         s.setFeature(Feature.PROGRESSIVE, true);
         realiser.setDebugMode(true);
-        Assert.assertEquals("un can de ao lado me está perseguindo", //$NON-NLS-1$
+        Assert.assertEquals("un can de ao lado está perseguíndome", //$NON-NLS-1$
                 this.realiser.realise(s).getRealisation());
     }
 
@@ -638,7 +638,7 @@ public class ClauseTest extends SimpleNLG4Test {
         PhraseElement _s4 = this.phraseFactory.createClause(this.phraseFactory
                         .createNounPhrase("el"), "perseguir", //$NON-NLS-1$ //$NON-NLS-2$
                 this.phraseFactory.createNounPhrase("eu")); //$NON-NLS-1$
-        Assert.assertEquals("el me persegue", this.realiser.realise(_s4) //$NON-NLS-1$
+        Assert.assertEquals("el perségueme", this.realiser.realise(_s4) //$NON-NLS-1$
                 .getRealisation());
         _s4 = this.phraseFactory
                 .createClause(

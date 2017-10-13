@@ -2,21 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a438994-81f5-48c3-9745-5f0cfd17d647" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/Feature.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/Feature.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/MorphologyProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/MorphologyProcessor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyProcessor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/realiser/Realiser.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/realiser/Realiser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/ClauseAggregationTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/ClauseAggregationTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/CoordinationTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/CoordinationTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/NounPhraseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/NounPhraseTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/OrthographyFormatTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/OrthographyFormatTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/SyntaxProcessor$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/SyntaxProcessor$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/SyntaxProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/SyntaxProcessor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/PhraseSpecTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/PhraseSpecTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/PrepositionalPhraseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/PrepositionalPhraseTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/VerbPhraseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/simplenlg/syntax/galician/VerbPhraseTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/features/Feature.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/features/Feature.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/realiser/Realiser.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/realiser/Realiser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/syntax/SyntaxProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/syntax/SyntaxProcessor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/simplenlg/external/galician/ExternalTest.java" afterPath="$PROJECT_DIR$/src/test/java/simplenlg/external/galician/ExternalTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/ClauseTest.java" afterPath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/ClauseTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/CoordinationTest.java" afterPath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/CoordinationTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/PhraseSpecTest.java" afterPath="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/PhraseSpecTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,11 +37,9 @@
       <file leaf-file-name="MorphologyProcessor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="161" column="34" lean-forward="true" selection-start-line="161" selection-start-column="34" selection-end-line="161" selection-end-column="34" />
-              <folding>
-                <element signature="e#3232#3244#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2295">
+              <caret line="161" column="34" lean-forward="false" selection-start-line="161" selection-start-column="34" selection-end-line="161" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -53,47 +47,48 @@
       <file leaf-file-name="MorphologyProcessor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-36">
+            <state relative-caret-position="1377">
               <caret line="103" column="13" lean-forward="false" selection-start-line="103" selection-start-column="13" selection-end-line="103" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PhraseSpecTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PhraseSpecTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/PhraseSpecTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+            <state relative-caret-position="315">
+              <caret line="100" column="5" lean-forward="false" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NLGElement.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/NLGElement.java">
+      <file leaf-file-name="ExternalTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/external/galician/ExternalTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="455" column="0" lean-forward="false" selection-start-line="455" selection-start-column="0" selection-end-line="455" selection-end-column="0" />
-              <folding>
-                <element signature="e#2104#2120#0" expanded="true" />
-                <element signature="e#2660#2661#0" expanded="true" />
-                <element signature="e#2696#2697#0" expanded="true" />
-                <element signature="e#6105#6106#0" expanded="true" />
-                <element signature="e#6187#6188#0" expanded="true" />
-                <element signature="e#7487#7499#0" expanded="true" />
-                <element signature="e#25586#25587#0" expanded="true" />
-                <element signature="e#25616#25617#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="141">
+              <caret line="260" column="36" lean-forward="false" selection-start-line="260" selection-start-column="36" selection-end-line="260" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SPhraseSpec.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/phrasespec/SPhraseSpec.java">
+      <file leaf-file-name="AdjectivePhraseTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/AdjectivePhraseTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="212" column="0" lean-forward="false" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
+            <state relative-caret-position="-165">
+              <caret line="59" column="16" lean-forward="false" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FeatureTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/FeatureTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="302" column="0" lean-forward="false" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -102,8 +97,20 @@
       <file leaf-file-name="Realiser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/realiser/Realiser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="927">
-              <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+            <state relative-caret-position="122">
+              <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+              <folding>
+                <element signature="e#5792#5804#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrepositionalPhraseTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/PrepositionalPhraseTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -112,8 +119,8 @@
       <file leaf-file-name="SyntaxProcessor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/SyntaxProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="175" column="0" lean-forward="false" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
+            <state relative-caret-position="137">
+              <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -208,8 +215,6 @@
         <option value="$PROJECT_DIR$/lib/junit-4.4.jar!/org/junit/Assert.class" />
         <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/TutorialTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/simplenlg/syntax/galician/VerbPhraseHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/simplenlg/external/galician/ExternalTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/ClauseTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/simplenlg/framework/ListElement.java" />
         <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/InterrogativeTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyRules.java" />
@@ -218,16 +223,18 @@
         <option value="$PROJECT_DIR$/src/main/java/MainTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/OrthographyFormatTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/ClauseAggregationTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/CoordinationTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/NounPhraseTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/PrepositionalPhraseTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/VerbPhraseTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyRules.java" />
         <option value="$PROJECT_DIR$/src/main/java/simplenlg/features/Feature.java" />
         <option value="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java" />
-        <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/PhraseSpecTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/simplenlg/syntax/SyntaxProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyProcessor.java" />
+        <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/PhraseSpecTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/simplenlg/external/galician/ExternalTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/ClauseTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/CoordinationTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/simplenlg/realiser/Realiser.java" />
       </list>
     </option>
@@ -261,8 +268,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -400,6 +405,16 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="simplenlg" type="462c0819:PsiDirectoryNode" />
+              <item name="lexicon" type="462c0819:PsiDirectoryNode" />
+              <item name="galician" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SimpleNLG-es" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simplenlg" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="simplenlg" type="462c0819:PsiDirectoryNode" />
               <item name="realiser" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -435,8 +450,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -477,7 +494,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PhraseSpecTest">
+  <component name="RunManager" selected="JUnit.VerbPhraseTest">
     <configuration name="ClauseTest.testPassive" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -492,31 +509,6 @@
       <option name="MAIN_CLASS_NAME" value="simplenlg.syntax.galician.ClauseTest" />
       <option name="METHOD_NAME" value="testPassive" />
       <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="PhraseSpecTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="simplenlg.syntax.galician.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="SimpleNLG-gl" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="simplenlg.syntax.galician" />
-      <option name="MAIN_CLASS_NAME" value="simplenlg.syntax.galician.PhraseSpecTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -552,6 +544,25 @@
       </option>
       <envs />
       <patterns />
+    </configuration>
+    <configuration name="StandAloneExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="simplenlg.syntax.galician.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="simplenlg.syntax.galician.StandAloneExample" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="SimpleNLG-gl" />
+      <envs />
     </configuration>
     <configuration name="StringElementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
@@ -828,17 +839,17 @@
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JUnit.ClauseTest.testPassive" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.PrepositionalPhraseTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.StringElementTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TutorialTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.VerbPhraseTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.PhraseSpecTest" />
+      <item index="2" class="java.lang.String" itemvalue="Application.StandAloneExample" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.StringElementTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TutorialTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.VerbPhraseTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.PhraseSpecTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.VerbPhraseTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TutorialTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.StringElementTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.VerbPhraseTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TutorialTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.StringElementTest" />
+        <item index="3" class="java.lang.String" itemvalue="Application.StandAloneExample" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.PrepositionalPhraseTest" />
       </list>
     </recent_temporary>
@@ -892,39 +903,46 @@
       <option name="project" value="LOCAL" />
       <updated>1507656071936</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Prep+pronombre solucionado (salvo un caso concreto en PrepositionalPhraseTest)&#10;Añadidas conjunciones preposición tras&#10;Verbo+pronombre: los casos concretos no funcionan bien y reglas de acentuación no implementadas">
+      <created>1507742539628</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1507742539628</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PhraseSpecTest - 2017.10.11 at 18h 59m 50s.xml">
+    <history-entry file="HTMLFormatterTest - 2017.10.13 at 22h 47m 39s.xml">
+      <configuration name="HTMLFormatterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="InterrogativeTest - 2017.10.13 at 22h 49m 03s.xml">
+      <configuration name="InterrogativeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NounPhraseTest - 2017.10.13 at 22h 52m 19s.xml">
+      <configuration name="NounPhraseTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OrthographyFormatTest - 2017.10.13 at 22h 53m 22s.xml">
+      <configuration name="OrthographyFormatTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PhraseSpecTest - 2017.10.13 at 22h 53m 56s.xml">
       <configuration name="PhraseSpecTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PhraseSpecTest - 2017.10.11 at 19h 01m 00s.xml">
-      <configuration name="PhraseSpecTest" configurationId="JUnit" />
+    <history-entry file="PremodifierTest - 2017.10.13 at 22h 54m 48s.xml">
+      <configuration name="PremodifierTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PhraseSpecTest - 2017.10.11 at 19h 01m 23s.xml">
-      <configuration name="PhraseSpecTest" configurationId="JUnit" />
+    <history-entry file="PrepositionalPhraseTest - 2017.10.13 at 22h 56m 25s.xml">
+      <configuration name="PrepositionalPhraseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PhraseSpecTest - 2017.10.11 at 19h 12m 11s.xml">
-      <configuration name="PhraseSpecTest" configurationId="JUnit" />
+    <history-entry file="StringElementTest - 2017.10.13 at 22h 59m 27s.xml">
+      <configuration name="StringElementTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PhraseSpecTest - 2017.10.11 at 19h 12m 27s.xml">
-      <configuration name="PhraseSpecTest" configurationId="JUnit" />
+    <history-entry file="TutorialTest - 2017.10.13 at 23h 02m 07s.xml">
+      <configuration name="TutorialTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PhraseSpecTest - 2017.10.11 at 19h 13m 58s.xml">
-      <configuration name="PhraseSpecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PhraseSpecTest - 2017.10.11 at 19h 15m 32s.xml">
-      <configuration name="PhraseSpecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PhraseSpecTest - 2017.10.11 at 19h 15m 49s.xml">
-      <configuration name="PhraseSpecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PhraseSpecTest - 2017.10.11 at 19h 17m 29s.xml">
-      <configuration name="PhraseSpecTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PhraseSpecTest - 2017.10.11 at 19h 17m 43s.xml">
-      <configuration name="PhraseSpecTest" configurationId="JUnit" />
+    <history-entry file="VerbPhraseTest - 2017.10.13 at 23h 05m 12s.xml">
+      <configuration name="VerbPhraseTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -933,23 +951,23 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.029503105" sideWeight="0.48958334" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.027950311" sideWeight="0.47803807" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34248078" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42857143" sideWeight="0.27891654" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30124223" sideWeight="0.86302084" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29968944" sideWeight="0.86302084" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22913617" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2408492" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4037267" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.507764" sideWeight="0.72108346" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1036,19 +1054,25 @@
           <option name="timeStamp" value="262" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/simplenlg/realiser/Realiser.java</url>
-          <line>139</line>
-          <properties />
-          <option name="timeStamp" value="276" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/PhraseSpecTest.java</url>
           <line>116</line>
           <properties />
           <option name="timeStamp" value="277" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/FeatureTest.java</url>
+          <line>302</line>
+          <properties />
+          <option name="timeStamp" value="280" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/simplenlg/realiser/Realiser.java</url>
+          <line>140</line>
+          <properties />
+          <option name="timeStamp" value="281" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="278" />
+      <option name="time" value="282" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -1066,21 +1090,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/LexicalCategory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/phrasespec/PPPhraseSpec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/junit-4.4.jar!/org/junit/runner/JUnitCore.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1109,14 +1118,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/external/galician/ExternalTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="284" column="0" lean-forward="false" selection-start-line="284" selection-start-column="0" selection-end-line="284" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/SimpleNLG4Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
@@ -1135,7 +1136,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1238,26 +1238,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/CoordinationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-47">
-          <caret line="109" column="69" lean-forward="false" selection-start-line="109" selection-start-column="69" selection-end-line="109" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/NounPhraseTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-564">
           <caret line="390" column="38" lean-forward="false" selection-start-line="390" selection-start-column="38" selection-end-line="390" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/PrepositionalPhraseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1308,13 +1292,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="511" column="0" lean-forward="false" selection-start-line="511" selection-start-column="0" selection-end-line="511" selection-end-column="0" />
-          <folding>
-            <element signature="e#6314#6315#0" expanded="false" />
-            <element signature="e#6378#6379#0" expanded="false" />
-            <element signature="e#19582#19583#0" expanded="false" />
-            <element signature="e#19658#19659#0" expanded="false" />
-            <element signature="e#19940#19941#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1333,11 +1310,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
           <caret line="124" column="0" lean-forward="false" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding>
-            <element signature="e#3654#3655#0" expanded="false" />
-            <element signature="e#3721#3722#0" expanded="false" />
-            <element signature="e#4359#4360#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1359,7 +1331,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
           <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1396,7 +1367,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/phrasespec/SPhraseSpec.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
+        <state relative-caret-position="3179">
           <caret line="212" column="0" lean-forward="false" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
           <folding />
         </state>
@@ -1404,15 +1375,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/NLGElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
+        <state relative-caret-position="7276">
           <caret line="455" column="0" lean-forward="false" selection-start-line="455" selection-start-column="0" selection-end-line="455" selection-end-column="0" />
           <folding>
-            <element signature="e#2104#2120#0" expanded="true" />
             <element signature="e#2660#2661#0" expanded="true" />
             <element signature="e#2696#2697#0" expanded="true" />
             <element signature="e#6105#6106#0" expanded="true" />
             <element signature="e#6187#6188#0" expanded="true" />
-            <element signature="e#7487#7499#0" expanded="true" />
             <element signature="e#25586#25587#0" expanded="true" />
             <element signature="e#25616#25617#0" expanded="true" />
           </folding>
@@ -1423,15 +1392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/ClauseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="871" column="55" lean-forward="false" selection-start-line="871" selection-start-column="55" selection-end-line="871" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1439,21 +1399,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/SyntaxProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="175" column="0" lean-forward="false" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-36">
+        <state relative-caret-position="1377">
           <caret line="103" column="13" lean-forward="false" selection-start-line="103" selection-start-column="13" selection-end-line="103" selection-end-column="13" />
           <folding />
         </state>
@@ -1461,26 +1412,82 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="161" column="34" lean-forward="true" selection-start-line="161" selection-start-column="34" selection-end-line="161" selection-end-column="34" />
-          <folding>
-            <element signature="e#3232#3244#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2295">
+          <caret line="161" column="34" lean-forward="false" selection-start-line="161" selection-start-column="34" selection-end-line="161" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/realiser/Realiser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/SyntaxProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="927">
-          <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+        <state relative-caret-position="137">
+          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/PhraseSpecTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+        <state relative-caret-position="315">
+          <caret line="100" column="5" lean-forward="false" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/external/galician/ExternalTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="260" column="36" lean-forward="false" selection-start-line="260" selection-start-column="36" selection-end-line="260" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/AdjectivePhraseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
+          <caret line="59" column="16" lean-forward="false" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/ClauseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="640" column="42" lean-forward="false" selection-start-line="640" selection-start-column="42" selection-end-line="640" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/CoordinationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="109" column="42" lean-forward="true" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/FeatureTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="302" column="0" lean-forward="false" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/realiser/Realiser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+          <folding>
+            <element signature="e#5792#5804#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/PrepositionalPhraseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding />
         </state>
       </provider>
