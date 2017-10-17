@@ -142,7 +142,7 @@ public abstract class Realiser extends NLGModule {
             pronoun_after = true;
         }
         List<NLGElement> elements = new ArrayList<NLGElement>();
-        if (postSyntax instanceof ListElement) {
+        if (postSyntax instanceof ListElement || postSyntax instanceof DocumentElement) {
             elements.addAll(postSyntax.getChildren());
         } else {
             elements.add(postSyntax);
@@ -280,7 +280,7 @@ public abstract class Realiser extends NLGModule {
         this.orthography.setLexicon(newLexicon);
     }
 
-    //split ListElements
+    //split lists of elements
     public List<NLGElement> checkElements(List<NLGElement> list) {
         List<NLGElement> aux;
         boolean completed;
