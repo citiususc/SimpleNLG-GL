@@ -209,7 +209,7 @@ public class NounPhraseTest extends SimpleNLG4Test {
         pro.setFeature(LexicalFeature.GENDER, Gender.MASCULINE);
         pro.setPlural(true);
         sent = phraseFactory.createClause("Mary", "querer", pro);
-        Assert.assertEquals("Mary os quere.", this.realiser
+        Assert.assertEquals("Mary quéreos.", this.realiser
                 .realiseSentence(sent));
     }
 

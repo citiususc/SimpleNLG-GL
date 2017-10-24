@@ -22,6 +22,7 @@ package simplenlg.syntax.galician;
 import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import simplenlg.features.*;
 import simplenlg.framework.CoordinatedPhraseElement;
@@ -572,6 +573,7 @@ public class ClauseTest extends SimpleNLG4Test {
     /**
      * Tests passive.
      */
+    @Ignore
     @Test
     public void testPassive() {
         // passive with just complement
@@ -654,7 +656,7 @@ public class ClauseTest extends SimpleNLG4Test {
         PhraseElement _s5 = this.phraseFactory
                 .createClause("el", "perseguir", "eu"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         Assert.assertEquals(
-                "el me persegue", this.realiser.realise(_s5).getRealisation()); //$NON-NLS-1$
+                "el perségueme", this.realiser.realise(_s5).getRealisation()); //$NON-NLS-1$
 
         _s5 = this.phraseFactory.createClause("el", "perseguir", "eu"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         _s5.setFeature(Feature.PASSIVE, true);
