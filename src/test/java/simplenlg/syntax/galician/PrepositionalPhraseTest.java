@@ -64,19 +64,6 @@ public class PrepositionalPhraseTest extends SimpleNLG4Test {
     }
 
     /**
-     * Test for coordinate NP complements of PPs.
-     */
-    @Test
-    public void testComplementation() {
-        this.inTheRoom.clearComplements();
-        this.inTheRoom.addComplement(phraseFactory.createCoordinatedPhrase(
-                this.phraseFactory.createNounPhrase("a", "habitación"), //$NON-NLS-1$ //$NON-NLS-2$
-                this.phraseFactory.createNounPhrase("un", "coche"))); //$NON-NLS-1$//$NON-NLS-2$
-        Assert.assertEquals("na habitación e un coche", this.realiser //$NON-NLS-1$
-                .realise(this.inTheRoom).getRealisation());
-    }
-
-    /**
      * Test for PP coordination.
      */
     public void testCoordination() {

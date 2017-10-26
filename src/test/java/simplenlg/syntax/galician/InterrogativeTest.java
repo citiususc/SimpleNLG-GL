@@ -301,7 +301,7 @@ public class InterrogativeTest extends SimpleNLG4Test {
     /**
      * Test for wh questions.
      */
-    @Test
+   /* @Test
     public void testWHQuestions() {
 
         // subject interrogative
@@ -373,7 +373,7 @@ public class InterrogativeTest extends SimpleNLG4Test {
                 InterrogativeType.WHO_INDIRECT_OBJECT);
         Assert.assertEquals("a quen dá o home a flor de John", //$NON-NLS-1$
                 this.realiser.realise(this.s3).getRealisation());
-    }
+    }*/
 
     /**
      * WH movement in the progressive
@@ -576,7 +576,7 @@ public class InterrogativeTest extends SimpleNLG4Test {
     /**
      * Test for questions with "be"
      */
-    @Test
+   /* @Test
     public void testBeQuestions() {
         SPhraseSpec p = this.phraseFactory.createClause(
                 this.phraseFactory.createNounPhrase("unha", "pelota"),
@@ -608,7 +608,7 @@ public class InterrogativeTest extends SimpleNLG4Test {
         p2.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.WHO_SUBJECT);
         Assert.assertEquals("quen é bonita", this.realiser.realise(p2)
                 .getRealisation());
-    }
+    }*/
 
     /**
      * Test for questions with "be" in future tense

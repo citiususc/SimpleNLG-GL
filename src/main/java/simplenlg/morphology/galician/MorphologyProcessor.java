@@ -405,8 +405,15 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
             System.out.println("AGUDA CON ACENTO: " + conjugated + pronoun);
         }
         //aguda no acentuada
-        else if (((Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length()-1))) == false) || (String.valueOf(conjugated.charAt(conjugated.length()-1)) != "n" && String.valueOf(conjugated.charAt(conjugated.length()-1)) != "s") || (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length()-2))) == false && Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length()-1))) == false) || (String.valueOf(conjugated.charAt(conjugated.length()-1)) == "y") || (Arrays.asList(STRONG_VOWELS).contains(conjugated.charAt(conjugated.length()-2)) && Arrays.asList(SOFT_VOWELS).contains(conjugated.charAt(conjugated.length()-1)))) && accentIndex == -1) {
-            System.out.println("AGUDA SIN ACENTO: " + conjugated + pronoun);
+        else if ((Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))) == false) ||
+                //(String.valueOf(conjugated.charAt(conjugated.length() - 1)) != "n" && String.valueOf(conjugated.charAt(conjugated.length() - 1)) != "s") ||
+                (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) == false && Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))) == false) ||
+                (String.valueOf(conjugated.charAt(conjugated.length() - 1)) == "y") ||
+                (Arrays.asList(STRONG_VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) && Arrays.asList(SOFT_VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1)))))
+                 {
+            if (accentIndex == -1) {
+                System.out.println("AGUDA SIN ACENTO: " + conjugated + pronoun);
+            }
         }
         //graves acentuadas
         else if ((String.valueOf(conjugated.length() - 1).equals("n") || String.valueOf(conjugated.length() - 1).equals("s") || conjugated.substring(conjugated.length() - 2).equals("ns")) && accentIndex > -1) {
