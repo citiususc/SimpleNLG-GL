@@ -408,7 +408,6 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
         else if ((Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))) == false) ||
                 //(String.valueOf(conjugated.charAt(conjugated.length() - 1)) != "n" && String.valueOf(conjugated.charAt(conjugated.length() - 1)) != "s") ||
                 (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) == false && Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))) == false) ||
-                (String.valueOf(conjugated.charAt(conjugated.length() - 1)) == "y") ||
                 (Arrays.asList(STRONG_VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) && Arrays.asList(SOFT_VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1)))))
                  {
             if (accentIndex == -1) {
