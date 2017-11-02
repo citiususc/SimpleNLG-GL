@@ -111,9 +111,6 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                                 art = (InflectedWordElement) aux.getFirst();
                                 if ((Arrays.asList(DEFINITES).contains(art.getBaseForm().substring(0, art.getBaseForm().indexOf(" ")))) || (Arrays.asList(INDEFINITES).contains(art.getBaseForm().substring(0, art.getBaseForm().indexOf(" "))) && Arrays.asList(PREP_INDET).contains(prep.getBaseForm()))) {
                                     String letter = morphologyRules.buildPrepositionArticleConjunction(prep.getBaseForm());
-                                    /*if (letter.equals("p")) {
-                                        letter = "pol";
-                                    }*/
                                     if (letter.equals("a") && art.getBaseForm().startsWith("a")) {
                                         letter = "á";
                                         art.setFeature(LexicalFeature.BASE_FORM, art.getBaseForm().substring(1, art.getBaseForm().length()));
@@ -165,11 +162,25 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
 
                     }
 
+                    //two complements
+                    if (eachElement != null && LexicalCategory.PRONOUN.equals(eachElement.getCategory()) && prevElement != null && LexicalCategory.PRONOUN.equals(prevElement.getCategory())) {
+                        String result = morphologyRules.buildPronounsConjunction(prevElement.getFeatureAsString(LexicalFeature.BASE_FORM), eachElement.getFeatureAsString(LexicalFeature.BASE_FORM));
+                        if (prevElement.getFeatureAsBoolean(Feature.VERB_PRONOUN) != null) {
+                            prevString.setRealisation(doAccentuation(prevElement.getFeatureAsString(Feature.VERB_PRONOUN), result));
+                            currentElement.setRealisation("");
+                        } else {
+                            prevString.setRealisation(result);
+                            currentElement.setRealisation("");
+                        }
+                    }
+
                     //verb+pronoun
                     if (eachElement.getFeatureAsBoolean(Feature.PRONOUN_AFTER) && prevElement != null && LexicalCategory.VERB.equals(prevElement.getCategory()) && LexicalCategory.PRONOUN.equals(eachElement.getCategory())) {
-                        String result = doAccentuation(prevElement.getRealisation(), prevString.toString(), currentElement.getRealisation());
+                        eachElement.setFeature(Feature.VERB_PRONOUN, prevString.toString());
+                        String result = doAccentuation(prevString.toString(), currentElement.getRealisation());
                         prevString.setRealisation(result);
                         currentElement.setRealisation("");
+
                     }
 
                     //preposition+article
@@ -374,80 +385,163 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
         return realisedElement;
     }
 
-    public String doAccentuation(String infinitive, String conjugated, String pronoun) {
+    public String doAccentuation(String conjugated, String pronoun) {
         List<String> syllables = splitSyllables(conjugated);
-        int accentIndex = -1, index, j, position;
-        char letter;
+        List<String> syllablesPronoun = splitSyllables(pronoun);
+        List<Integer> positions = new ArrayList<Integer>();
+        int accentIndex = -1, index, j, position, countVowels = 0;
+        char letter, replacement;
         String result = "";
+
         for (int i = 0; i < ACCENTUATED_VOWELS.length; i++) {
             if (conjugated.contains(ACCENTUATED_VOWELS[i])) {
                 accentIndex = conjugated.indexOf(ACCENTUATED_VOWELS[i]);
             }
         }
-        //monosílabas: si lleva tilde se mantiene
-        if (syllables.size() == 1) {
-            System.out.println("AGUDA MONOSÍLABA: " + conjugated + pronoun);
-        }
-        //aguda acentuada
-        else if (Arrays.asList(ACCENTUATED_VOWELS).contains(conjugated.substring(conjugated.length() - 1)) || (Arrays.asList(VOWELS).contains(conjugated.substring(conjugated.length() - 2)) && (conjugated.substring(conjugated.length() - 1).equals("n")) || conjugated.substring(conjugated.length() - 1).equals("s")) || ((Arrays.asList(VOWELS).contains(conjugated.substring(conjugated.length() - 3)) && conjugated.substring(conjugated.length() - 2).equals("n")) && conjugated.substring(conjugated.length() - 1).equals("s"))) {
-            letter = conjugated.charAt(accentIndex);
-            if (letter == 'á') {
-                conjugated = conjugated.substring(0, accentIndex) + "a" + conjugated.substring(accentIndex + 1, conjugated.length());
-            } else if (letter == 'é') {
-                conjugated = conjugated.substring(0, accentIndex) + "e" + conjugated.substring(accentIndex + 1, conjugated.length());
-            } else if (letter == 'í') {
-                conjugated = conjugated.substring(0, accentIndex) + "i" + conjugated.substring(accentIndex + 1, conjugated.length());
-            } else if (letter == 'ó') {
-                conjugated = conjugated.substring(0, accentIndex) + "o" + conjugated.substring(accentIndex + 1, conjugated.length());
-            } else if (letter == 'ú') {
-                conjugated = conjugated.substring(0, accentIndex) + "u" + conjugated.substring(accentIndex + 1, conjugated.length());
+
+        ///////////////////////////////pronombre de una sílaba
+        if(syllablesPronoun.size() == 1) {
+            System.out.println("PRONOMBRE DE UNA SÍLABA");
+            //monosílabas: si lleva tilde se mantiene
+            if (syllables.size() == 1) {
+                System.out.println("MONOSÍLABA: " + conjugated + pronoun);
             }
-            System.out.println("AGUDA CON ACENTO: " + conjugated + pronoun);
-        }
-        //aguda no acentuada
-        else if ((Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))) == false) ||
-                //(String.valueOf(conjugated.charAt(conjugated.length() - 1)) != "n" && String.valueOf(conjugated.charAt(conjugated.length() - 1)) != "s") ||
-                (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) == false && Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))) == false) ||
-                (Arrays.asList(STRONG_VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) && Arrays.asList(SOFT_VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1)))))
-                 {
-            if (accentIndex == -1) {
-                System.out.println("AGUDA SIN ACENTO: " + conjugated + pronoun);
+            //aguda acentuada
+            else if (Arrays.asList(ACCENTUATED_VOWELS).contains(conjugated.substring(conjugated.length() - 1)) || (Arrays.asList(VOWELS).contains(conjugated.substring(conjugated.length() - 2)) && (conjugated.substring(conjugated.length() - 1).equals("n")) || conjugated.substring(conjugated.length() - 1).equals("s")) || ((Arrays.asList(VOWELS).contains(conjugated.substring(conjugated.length() - 3)) && conjugated.substring(conjugated.length() - 2).equals("n")) && conjugated.substring(conjugated.length() - 1).equals("s"))) {
+                letter = conjugated.charAt(accentIndex);
+                replacement = morphologyRules.replaceAccentuatedChar(letter);
+                conjugated = conjugated.substring(0, accentIndex) + replacement + conjugated.substring(accentIndex + 1, conjugated.length());
+                System.out.println("AGUDA CON ACENTO: " + conjugated + pronoun);
             }
-        }
-        //graves acentuadas
-        else if ((String.valueOf(conjugated.length() - 1).equals("n") || String.valueOf(conjugated.length() - 1).equals("s") || conjugated.substring(conjugated.length() - 2).equals("ns")) && accentIndex > -1) {
-            System.out.println("GRAVE CON ACENTO: " + conjugated + pronoun);
-        }
-        //graves no acentuadas
-        else if ((!conjugated.substring(conjugated.length() - 1).equals("n") || !conjugated.substring(conjugated.length() - 1).equals("s") || !conjugated.substring(conjugated.length() - 2).equals("ns")) && accentIndex == -1) {
-            index = syllables.get(syllables.size() - 2).length() - 1;
-            j = 0;
-            do {
-                position = index - j;
-                letter = syllables.get(syllables.size() - 2).charAt(position);
-                j++;
-            } while (!Arrays.asList(NOTACCENTUATED_VOWELS).contains(String.valueOf(letter)));
-            for (int k = 0; k < syllables.size(); k++) {
-                if (k == syllables.size() - 2) {
-                    if (letter == 'a') {
-                        result += syllables.get(k).replaceFirst(String.valueOf(syllables.get(k).charAt(position)), "á");
-                    } else if (letter == 'e') {
-                        result += syllables.get(k).replaceFirst(String.valueOf(syllables.get(k).charAt(position)), "é");
-                    } else if (letter == 'i') {
-                        result += syllables.get(k).replaceFirst(String.valueOf(syllables.get(k).charAt(position)), "í");
-                    } else if (letter == 'o') {
-                        result += syllables.get(k).replaceFirst(String.valueOf(syllables.get(k).charAt(position)), "ó");
-                    } else if (letter == 'u') {
-                        result += syllables.get(k).replaceFirst(String.valueOf(syllables.get(k).charAt(position)), "ú");
-                    }
-                } else {
-                    result += syllables.get(k);
+            //aguda no acentuada
+            else if ((Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))) == false) ||
+                    //(String.valueOf(conjugated.charAt(conjugated.length() - 1)) != "n" && String.valueOf(conjugated.charAt(conjugated.length() - 1)) != "s") ||
+                    (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) == false && Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))) == false) ||
+                    (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) && Arrays.asList(SOFT_VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))))) {
+                if (accentIndex == -1) {
+                    System.out.println("AGUDA SIN ACENTO: " + conjugated + pronoun);
                 }
             }
-            conjugated = result;
-            System.out.println("GRAVE SIN ACENTO: " + conjugated
-                    + pronoun);
+            //graves acentuadas
+            else if ((String.valueOf(conjugated.length() - 1).equals("n") || String.valueOf(conjugated.length() - 1).equals("s") || conjugated.substring(conjugated.length() - 2).equals("ns")) && accentIndex > -1) {
+                System.out.println("GRAVE CON ACENTO: " + conjugated + pronoun);
+            }
+            //graves no acentuadas
+            else if ((!conjugated.substring(conjugated.length() - 1).equals("n") || !conjugated.substring(conjugated.length() - 1).equals("s") || !conjugated.substring(conjugated.length() - 2).equals("ns")) && accentIndex == -1) {
+                index = syllables.get(syllables.size() - 2).length() - 1;
+                j = 0;
+                do {
+                    position = index - j;
+                    letter = syllables.get(syllables.size() - 2).charAt(position);
+                    j++;
+                } while (!Arrays.asList(NOTACCENTUATED_VOWELS).contains(String.valueOf(letter)));
+                for (int k = 0; k < syllables.size(); k++) {
+                    if (k == syllables.size() - 2) {
+                        replacement = morphologyRules.replaceNotAccentuatedChar(letter);
+                        result += syllables.get(k).replaceFirst(String.valueOf(syllables.get(k).charAt(position)), String.valueOf(replacement));
+                    } else {
+                        result += syllables.get(k);
+                    }
+                }
+                conjugated = result;
+                System.out.println("GRAVE SIN ACENTO: " + conjugated
+                        + pronoun);
+            }
         }
+        //////////////////////////////////////////7/pronombre de dos sílabas
+        else if (syllablesPronoun.size() == 2) {
+            System.out.println("PRONOMBRE DE DOS SÍLABAS");
+            
+            //monosílabas: si lleva tilde se mantiene
+            if (syllables.size() == 1 && accentIndex > -1) {
+                System.out.println("MONOSÍLABA: " + conjugated + pronoun);
+            }
+            //monosílabas sin tilde pasan a ser esdrújulas
+            else if (syllables.size() == 1 && accentIndex == -1) {
+                for(int k = 0; k < conjugated.length(); k++) {
+                    if(Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(k)))) {
+                        countVowels++;
+                        positions.add(k);
+                    }
+                }
+                //si solo hay una vocal se acentúa
+                if(countVowels == 1) {
+                    letter = conjugated.charAt(positions.get(0));
+                    replacement = morphologyRules.replaceNotAccentuatedChar(letter);
+                    conjugated = conjugated.replaceFirst(String.valueOf(conjugated.charAt(positions.get(0))), String.valueOf(replacement));
+                }
+                //si hay dos vocales
+                else {
+                    //vocal fuerte + vocal cerrada -> se acentúa la fuerte
+                    if(Arrays.asList(STRONG_VOWELS).contains(conjugated.charAt(positions.get(0))) && Arrays.asList(SOFT_VOWELS).contains(conjugated.charAt(positions.get(1)))) {
+                       conjugated =  conjugated.replace(String.valueOf(conjugated.charAt(positions.get(0))), String.valueOf(morphologyRules.replaceNotAccentuatedChar(conjugated.charAt(positions.get(0)))));
+                    } else if(Arrays.asList(SOFT_VOWELS).contains(conjugated.charAt(positions.get(0))) && Arrays.asList(STRONG_VOWELS).contains(conjugated.charAt(positions.get(1)))) {
+                        conjugated =  conjugated.replace(String.valueOf(conjugated.charAt(positions.get(1))), String.valueOf(morphologyRules.replaceNotAccentuatedChar(conjugated.charAt(positions.get(1)))));
+                    }
+                    //dos vocales cerradas -> se acentúa la segunda
+                    else if(Arrays.asList(SOFT_VOWELS).contains(conjugated.charAt(positions.get(0))) && Arrays.asList(SOFT_VOWELS).contains(conjugated.charAt(positions.get(1)))) {
+                        conjugated =  conjugated.replace(String.valueOf(conjugated.charAt(positions.get(1))), String.valueOf(morphologyRules.replaceNotAccentuatedChar(conjugated.charAt(positions.get(1)))));
+                    }
+                }
+            }
+            //aguda acentuada
+            else if (Arrays.asList(ACCENTUATED_VOWELS).contains(conjugated.substring(conjugated.length() - 1)) || (Arrays.asList(VOWELS).contains(conjugated.substring(conjugated.length() - 2)) && (conjugated.substring(conjugated.length() - 1).equals("n")) || conjugated.substring(conjugated.length() - 1).equals("s")) || ((Arrays.asList(VOWELS).contains(conjugated.substring(conjugated.length() - 3)) && conjugated.substring(conjugated.length() - 2).equals("n")) && conjugated.substring(conjugated.length() - 1).equals("s"))) {
+                System.out.println("AGUDA CON ACENTO: " + conjugated + pronoun);
+            }
+            //aguda no acentuada
+            else if ((Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))) == false) ||
+                    //(String.valueOf(conjugated.charAt(conjugated.length() - 1)) != "n" && String.valueOf(conjugated.charAt(conjugated.length() - 1)) != "s") ||
+                    (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) == false && Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))) == false) ||
+                    (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) && Arrays.asList(SOFT_VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))))) {
+                if (accentIndex == -1) {
+                    for(int k = 0; k < syllables.size(); k++) {
+                        result += syllables.get(k);
+                        if(k == syllables.size()-1) {
+                            for(int l = 0; l < syllables.get(syllables.size()-1).length(); l++) {
+                                if(Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(l)))) {
+                                    countVowels++;
+                                    positions.add(l);
+                                }
+                            }
+                        }
+                    }
+                    /////////////// NO ACABADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+                    //si solo hay una vocal se acentúa
+                    if(countVowels == 1) {
+                        letter = syllables.get(syllables.size()-1).charAt(positions.get(0));
+                        replacement = morphologyRules.replaceNotAccentuatedChar(letter);
+                        syllables.set(syllables.size()-1, syllables.get(syllables.size()-1).replace(String.valueOf(syllables.get(syllables.size()-1).charAt(positions.get(0))), String.valueOf(replacement)));
+                        conjugated = result + syllables.get(syllables.size()-1);
+                    }
+                    //si hay dos vocales
+                    else {
+                        //vocal fuerte + vocal cerrada -> se acentúa la fuerte
+                        if(Arrays.asList(STRONG_VOWELS).contains(syllables.get(syllables.size()-1).charAt(positions.get(0))) && Arrays.asList(SOFT_VOWELS).contains(syllables.get(syllables.size()-1).charAt(positions.get(1)))) {
+                            for(int k = 0; k < syllables.size(); k++) {
+                                result += syllables.get(k);
+                                if(k == syllables.size()-1) {
+                                    ESTOY AQUI
+                                }
+                            }
+                            replacement = morphologyRules.replaceNotAccentuatedChar(syllables.get(syllables.size()-1).charAt(positions.get(0));
+                            syllables.set(syllables.size()-1, syllables.get(syllables.size()-1).replace(String.valueOf(syllables.get(syllables.size()-1).charAt(positions.get(0))), String.valueOf(replacement)));
+
+
+                            conjugated =  conjugated.replace(String.valueOf(conjugated.charAt(positions.get(0))), String.valueOf(morphologyRules.replaceNotAccentuatedChar(conjugated.charAt(positions.get(0)))));
+                        } else if(Arrays.asList(SOFT_VOWELS).contains(conjugated.charAt(positions.get(0))) && Arrays.asList(STRONG_VOWELS).contains(conjugated.charAt(positions.get(1)))) {
+                            conjugated =  conjugated.replace(String.valueOf(conjugated.charAt(positions.get(1))), String.valueOf(morphologyRules.replaceNotAccentuatedChar(conjugated.charAt(positions.get(1)))));
+                        }
+                        //dos vocales cerradas -> se acentúa la segunda
+                        else if(Arrays.asList(SOFT_VOWELS).contains(conjugated.charAt(positions.get(0))) && Arrays.asList(SOFT_VOWELS).contains(conjugated.charAt(positions.get(1)))) {
+                            conjugated =  conjugated.replace(String.valueOf(conjugated.charAt(positions.get(1))), String.valueOf(morphologyRules.replaceNotAccentuatedChar(conjugated.charAt(positions.get(1)))));
+                        }
+                    }
+
+                    System.out.println("AGUDA SIN ACENTO: " + conjugated + pronoun);
+                }
+            }
+        }
+
         return conjugated + pronoun;
     }
 
@@ -460,39 +554,14 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
             System.out.println(word.charAt(i - 1) + " " + word.charAt(i));
             //consonant+vowel
             if (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i - 1))) && Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i)))) {
-                if ((word.charAt(i - 1) != 'q' || word.charAt(i - 1) != 'g') && word.charAt(i) != 'u') {
-                    try {
-                        //+consonant+consonant-> syllable: consonant+vowel+consonant
-                        if (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i + 1))) && !Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i + 2)))) {
-                            syllables.add(word.substring(0, i + 2));
-                            word = word.substring(i + 2, word.length());
-                            //+consonant+vowel -> syllable: consonant+vowel
-                        } else if (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i + 1))) && Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i + 2)))) {
-                            syllables.add(word.substring(0, i + 1));
-                            word = word.substring(i + 1, word.length());
-                            //diphthong
-                        } else if (Arrays.asList(SOFT_VOWELS).contains(String.valueOf(word.charAt(i + 1)))) {
-                            syllables.add(word.substring(0, i + 2));
-                            word = word.substring(i + 2, word.length());
-                        }
-                        //hiatus
-                        else if (Arrays.asList(STRONG_VOWELS).contains(String.valueOf(word.charAt(i + 1)))) {
-                            syllables.add(word.substring(0, i + 1));
-                            word = word.substring(i + 1, word.length());
-                        }
-                    } catch (Exception e) {
-                        syllables.add(word.substring(0, i + 1));
-                        word = word.substring(i + 1, word.length());
-                    }
-                }
                 //q or g + u
-                else {
+                if ((word.charAt(i - 1) == 'q' || word.charAt(i - 1) == 'g') && word.charAt(i) == 'u') {
                     try {
                         //+ e or i
                         if (word.charAt(i + 1) == 'e' || word.charAt(i + 1) == 'i') {
                             try {
-                                //+ r or n
-                                if (word.charAt(i + 2) == 'n' || word.charAt(i + 2) == 'r') {
+                                //+ r, n or s
+                                if (word.charAt(i + 2) == 'n' || word.charAt(i + 2) == 'r' || word.charAt(i + 2) == 's') {
                                     try {
                                         if (Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i + 3)))) {
                                             syllables.add(word.substring(0, i + 2));
@@ -518,17 +587,51 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                         syllables.add(word.substring(0, i));
                         word = word.substring(i, word.length());
                     }
+                } else {
+                    try {
+                        //+consonant+consonant-> syllable: consonant+vowel+consonant
+                        if (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i + 1))) && !Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i + 2)))) {
+                            syllables.add(word.substring(0, i + 2));
+                            word = word.substring(i + 2, word.length());
+                            //+consonant+vowel -> syllable: consonant+vowel
+                        } else if (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i + 1))) && Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i + 2)))) {
+                            syllables.add(word.substring(0, i + 1));
+                            word = word.substring(i + 1, word.length());
+                            //diphthong
+                        } else if (Arrays.asList(SOFT_VOWELS).contains(String.valueOf(word.charAt(i + 1)))) {
+                            syllables.add(word.substring(0, i + 2));
+                            word = word.substring(i + 2, word.length());
+                        }
+                        //hiatus
+                        else if (Arrays.asList(STRONG_VOWELS).contains(String.valueOf(word.charAt(i + 1)))) {
+                            syllables.add(word.substring(0, i + 1));
+                            word = word.substring(i + 1, word.length());
+                        }
+                    } catch (Exception e) {
+                        syllables.add(word.substring(0, i + 1));
+                        word = word.substring(i + 1, word.length());
+                    }
                 }
             }
             //consonant + consonant (not r or l)
-            else if (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i - 1))) && (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i))) && (word.charAt(i) != 'r' || word.charAt(i) != 'l'))) {
+            else if (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i - 1))) && !Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i))) && word.charAt(i) != 'r' && word.charAt(i) != 'l') {
                 syllables.add(word.substring(0, i));
                 word = word.substring(i, word.length());
             }
             //consonant + consonant r or l
             else if (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i - 1))) && (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i))) && (word.charAt(i) == 'r' || word.charAt(i) == 'l'))) {
-                syllables.add(word.substring(0, i + 1));
-                word = word.substring(i + 1, word.length());
+                try {
+                    if (word.charAt(i - 1) == 'l' && word.charAt(i) == 'l' && Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i + 1))) && (word.charAt(i + 2) == 'n' || word.charAt(i + 2) == 's' || word.charAt(i + 2) == 'r')) {
+                        syllables.add(word.substring(0, i + 3));
+                        word = word.substring(i + 3, word.length());
+                    } else {
+                        syllables.add(word.substring(0, i + 2));
+                        word = word.substring(i + 2, word.length());
+                    }
+                } catch (Exception e) {
+                    syllables.add(word.substring(0, i + 1));
+                    word = word.substring(i + 1, word.length());
+                }
             }
             //strong vowel+ soft vowel or consonant
             else if (Arrays.asList(STRONG_VOWELS).contains(String.valueOf(word.charAt(i - 1))) && !Arrays.asList(STRONG_VOWELS).contains(String.valueOf(word.charAt(i)))) {
@@ -541,5 +644,4 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
         } while (!completed);
         return syllables;
     }
-
 }

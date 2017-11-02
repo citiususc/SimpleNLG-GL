@@ -1778,6 +1778,14 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
         return null;
     }
 
+    public char replaceNotAccentuatedChar(char letter) {
+        return 0;
+    }
+
+    public char replaceAccentuatedChar(char letter) {
+        return 0;
+    }
+
 
     public void doDeterminerMorphology(NLGElement determiner, String realisation) {
 

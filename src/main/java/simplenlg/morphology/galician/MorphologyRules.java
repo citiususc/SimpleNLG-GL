@@ -75,7 +75,7 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
                     {"nós", "vós", "eles", "elas"},
                     {"nos", "vos", "os", "as"},
                     {"nos", "vos", "lles", "lles", "lles"},
-                    {"noso", "voso", "suyo", "suya", "suyo", "nosos", "vosos", "seus", "súas"},
+                    {"noso", "voso", "seu", "súa", "seu", "nosos", "vosos", "seus", "súas"},
                     {"nós", "vós", "eles", "elas"}
             }};
 
@@ -1902,7 +1902,7 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
                 } else if (DiscourseFunction.SUBJECT.equals(discourseValue) && element.getFeatureAsBoolean(Feature.PASSIVE)) {
                     positionIndex = 5;
                 } else if (DiscourseFunction.INDIRECT_OBJECT.equals(discourseValue)) {
-                    positionIndex = 3;
+                    positionIndex = 2;
                 } else {
                     positionIndex = (DiscourseFunction.SUBJECT.equals(discourseValue) && !element.getFeatureAsBoolean(
                             Feature.PASSIVE)) || (DiscourseFunction.OBJECT.equals(discourseValue) && element.getFeatureAsBoolean(Feature.PASSIVE))
@@ -2087,7 +2087,35 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
         return conj;
     }
 
-    public void accentuationRules(String word) {
+    public char replaceNotAccentuatedChar(char letter) {
+        char result = 0;
+        if (letter == 'a') {
+            result = 'á';
+        } else if (letter == 'e') {
+            result = 'é';
+        } else if (letter == 'i') {
+            result = 'í';
+        } else if (letter == 'o') {
+            result = 'ó';
+        } else if (letter == 'u') {
+            result = 'ú';
+        }
+        return result;
+    }
 
+    public char replaceAccentuatedChar(char letter) {
+        char result = 0;
+        if (letter == 'á') {
+            result = 'a';
+        } else if (letter == 'é') {
+            result = 'e';
+        } else if (letter == 'í') {
+            result = 'i';
+        } else if (letter == 'ó') {
+            result = 'o';
+        } else if (letter == 'ú') {
+            result = 'u';
+        }
+        return result;
     }
 }

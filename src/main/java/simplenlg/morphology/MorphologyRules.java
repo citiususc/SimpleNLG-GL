@@ -181,4 +181,20 @@ public abstract class MorphologyRules {
      * @return String conjunction
      */
     public abstract String buildPronounsConjunction(String ci, String cd);
+
+    /**
+     * return the accentuated form of a letter
+     *
+     * @param letter
+     * @return char letter
+     */
+    public abstract char replaceNotAccentuatedChar(char letter);
+
+    /**
+     * return the not accentuated form of a letter
+     *
+     * @param letter
+     * @return char letter
+     */
+    public abstract char replaceAccentuatedChar(char letter);
 }

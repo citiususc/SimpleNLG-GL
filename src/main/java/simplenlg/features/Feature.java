@@ -1112,4 +1112,37 @@ abstract public class Feature {
 	 * </table>
 	 */
 	public static final String PRONOUN_AFTER = "pronoun_after";
+
+	/**
+	 * <p>
+	 * This flag represents if verb form is verb+pronoun
+	 * </p>
+	 * <table border="1">
+	 * <tr>
+	 * <td><b>Feature name</b></td>
+	 * <td><em>verb_pronoun</em></td>
+	 * </tr>
+	 * <tr>
+	 * <td><b>Expected type</b></td>
+	 * <td><code>verb form without pronoun</code></td>
+	 * </tr>
+	 * <tr>
+	 * <td><b>Created by</b></td>
+	 * <td>The morphology processor.</td>
+	 * </tr>
+	 * <tr>
+	 * <td><b>Used by</b></td>
+	 * <td>The morphology processor.</td>
+	 * </tr>
+	 * <tr>
+	 * <td><b>Applies to</b></td>
+	 * <td>Clauses, coordinated phrases and verb phrases.</td>
+	 * </tr>
+	 * <tr>
+	 * <td><b>Default</b></td>
+	 * <td><code>false</code>.</td>
+	 * </tr>
+	 * </table>
+	 */
+	public static final String VERB_PRONOUN = "verb_pronoun";
 }

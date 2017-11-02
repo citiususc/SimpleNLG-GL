@@ -26,14 +26,15 @@ public class MainTest {
         System.out.println(output);*/
 
         //presente -> ok
-        NPPhraseSpec subject2 = nlgFactory.createNounPhrase("seu","karateka");
+        NPPhraseSpec subject2 = nlgFactory.createNounPhrase("el");
         subject2.setFeature(LexicalFeature.GENDER, Gender.MASCULINE);
         //subject2.setFeature(Feature.NUMBER, NumberAgreement.PLURAL);
         SPhraseSpec p = nlgFactory.createClause();
         p.setSubject(subject2);
         p.setObject("o");
-        p.setIndirectObject("lle");
-        p.setVerb("dicir");
+        p.setIndirectObject("lles");
+        p.setVerb("cantar");
+        p.setFeature(Feature.TENSE, Tense.PAST);
         //p.setObject("un mono");
         output = realiser.realiseSentence(p);
         System.out.println(output);
