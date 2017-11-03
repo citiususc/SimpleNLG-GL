@@ -728,33 +728,4 @@ public class InterrogativeTest extends SimpleNLG4Test {
 
     }
 
-    /**
-     * Case 1 checks that "What do you think about John?" can be generated.
-     * <p>
-     * Case 2 checks that the same clause is generated, even when an object is
-     * declared.
-     */
-    @Test
-    public void testWhatObjectInterrogative() {
-        Lexicon lexicon = new XMLLexicon();
-        NLGFactory nlg = new NLGFactory(lexicon);
-        Realiser realiser = new Realiser(lexicon);
-
-        // Case 1, no object is explicitly given:
-        SPhraseSpec clause = nlg.createClause("ti", "pensar");
-        PPPhraseSpec aboutJohn = nlg.createPrepositionPhrase("acerca de", "John");
-        clause.addPostModifier(aboutJohn);
-        clause.setFeature(Feature.INTERROGATIVE_TYPE,
-                InterrogativeType.WHAT_OBJECT);
-        String realisation = realiser.realiseSentence(clause);
-        System.out.println(realisation);
-        Assert.assertEquals("Que pensas ti acerca de John?", realisation);
-
-        // Case 2:
-        // Add "bad things" as the object so the object doesn't remain null:
-        clause.setObject("cousas malas");
-        realisation = realiser.realiseSentence(clause);
-        System.out.println(realiser.realiseSentence(clause));
-        Assert.assertEquals("Que pensas ti acerca de John?", realisation);
-    }
 }

@@ -74,6 +74,7 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
             {
                     {"nós", "vós", "eles", "elas"},
                     {"nos", "vos", "os", "as"},
+                    {"nos", "vos", "se", "se", "se"},
                     {"nos", "vos", "lles", "lles", "lles"},
                     {"noso", "voso", "seu", "súa", "seu", "nosos", "vosos", "seus", "súas"},
                     {"nós", "vós", "eles", "elas"}
@@ -1902,7 +1903,7 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
                 } else if (DiscourseFunction.SUBJECT.equals(discourseValue) && element.getFeatureAsBoolean(Feature.PASSIVE)) {
                     positionIndex = 5;
                 } else if (DiscourseFunction.INDIRECT_OBJECT.equals(discourseValue)) {
-                    positionIndex = 2;
+                    positionIndex = 3;
                 } else {
                     positionIndex = (DiscourseFunction.SUBJECT.equals(discourseValue) && !element.getFeatureAsBoolean(
                             Feature.PASSIVE)) || (DiscourseFunction.OBJECT.equals(discourseValue) && element.getFeatureAsBoolean(Feature.PASSIVE))

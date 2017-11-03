@@ -396,13 +396,12 @@ class ClauseHelper extends simplenlg.syntax.ClauseHelper {
                 case WHERE:
                     splitVerb = realiseObjectWHInterrogative((InterrogativeType) type, phrase, parent, realisedElement, phraseFactory);
                     break;
-                case WHO_OBJECT:
-                    /*NLGElement preposition = phraseFactory.createWord("a", LexicalCategory.PREPOSITION);
-                    realisedElement.addComponent(parent.realise(preposition));*/
-                    splitVerb = realiseObjectWHInterrogative((InterrogativeType) type, phrase, parent, realisedElement, phraseFactory);
-                    break;
                 case WHO_INDIRECT_OBJECT:
                 case WHAT_OBJECT:
+                case WHO_OBJECT:
+                    NLGElement preposition = phraseFactory.createWord("a", LexicalCategory.PREPOSITION);
+                    realisedElement.addComponent(parent.realise(preposition));
+                    realisedElement.setFeature(Feature.HAS_PREPOSITION, true);
                     splitVerb = realiseObjectWHInterrogative((InterrogativeType) type, phrase, parent, realisedElement, phraseFactory);
                     break;
                 case HOW_PREDICATE:
@@ -522,7 +521,7 @@ class ClauseHelper extends simplenlg.syntax.ClauseHelper {
                     object = verbPhrase.getIndirectObject();
                     break;
             }
-            if (object != null) {
+            if (object != null && !realisedElement.getFeatureAsBoolean(Feature.HAS_PREPOSITION)) {
                 if (PhraseCategory.PREPOSITIONAL_PHRASE.equals(object.getCategory())) {
                     NLGElement preposition = ((PPPhraseSpec) object).getPreposition();
                     realisedElement.addComponent(parent.realise(preposition));

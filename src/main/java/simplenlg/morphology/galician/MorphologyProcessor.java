@@ -165,7 +165,7 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
 
                     //two complements
                     if (eachElement != null && LexicalCategory.PRONOUN.equals(eachElement.getCategory()) && prevElement != null && LexicalCategory.PRONOUN.equals(prevElement.getCategory())) {
-                        String result = morphologyRules.buildPronounsConjunction(prevElement.getFeatureAsString(LexicalFeature.BASE_FORM), eachElement.getFeatureAsString(LexicalFeature.BASE_FORM));
+                        String result = morphologyRules.buildPronounsConjunction(prevElement.getFeatureAsString(Feature.PRONOUN_FORM), eachElement.getFeatureAsString(LexicalFeature.BASE_FORM));
                         if (prevElement.getFeatureAsBoolean(Feature.VERB_PRONOUN) != null) {
                             prevString.setRealisation(doAccentuation(prevElement.getFeatureAsString(Feature.VERB_PRONOUN), result));
                             currentElement.setRealisation("");
@@ -178,6 +178,7 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                     //verb+pronoun
                     if (eachElement.getFeatureAsBoolean(Feature.PRONOUN_AFTER) && prevElement != null && LexicalCategory.VERB.equals(prevElement.getCategory()) && LexicalCategory.PRONOUN.equals(eachElement.getCategory())) {
                         eachElement.setFeature(Feature.VERB_PRONOUN, prevString.toString());
+                        eachElement.setFeature(Feature.PRONOUN_FORM, currentElement.getRealisation());
                         String result = doAccentuation(prevString.toString(), currentElement.getRealisation());
                         prevString.setRealisation(result);
                         currentElement.setRealisation("");
@@ -449,7 +450,7 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                         + pronoun);
             }
         }
-        //////////////////////////////////////////7/pronombre de dos sílabas
+        ///////////////////////////////////////////pronombre de dos sílabas
         else if (syllablesPronoun.size() == 2) {
             System.out.println("PRONOMBRE DE DOS SÍLABAS");
 
@@ -571,9 +572,13 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
         int i;
         do {
             i = 1;
-            System.out.println(word.charAt(i - 1) + " " + word.charAt(i));
+            //vowel
+            if (word.length() == 1 && Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i - 1)))) {
+                syllables.add(word.substring(0, i));
+                word = word.substring(i, word.length());
+            }
             //consonant+vowel
-            if (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i - 1))) && Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i)))) {
+            else if (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i - 1))) && Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i)))) {
                 //q or g + u
                 if ((word.charAt(i - 1) == 'q' || word.charAt(i - 1) == 'g') && word.charAt(i) == 'u') {
                     try {
@@ -628,8 +633,13 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                             word = word.substring(i + 1, word.length());
                         }
                     } catch (Exception e) {
-                        syllables.add(word.substring(0, i + 1));
-                        word = word.substring(i + 1, word.length());
+                        try {
+                            syllables.add(word.substring(0, i + 2));
+                            word = word.substring(i + 2, word.length());
+                        } catch (Exception ex) {
+                            syllables.add(word.substring(0, i + 1));
+                            word = word.substring(i + 1, word.length());
+                        }
                     }
                 }
             }

@@ -26,7 +26,7 @@ public class MainTest {
         System.out.println(output);*/
 
         //presente -> ok
-        NPPhraseSpec subject2 = nlgFactory.createNounPhrase("el");
+       /* NPPhraseSpec subject2 = nlgFactory.createNounPhrase("el");
         subject2.setFeature(LexicalFeature.GENDER, Gender.MASCULINE);
         //subject2.setFeature(Feature.NUMBER, NumberAgreement.PLURAL);
         SPhraseSpec p = nlgFactory.createClause();
@@ -34,10 +34,10 @@ public class MainTest {
         p.setObject("o");
         p.setIndirectObject("lles");
         p.setVerb("cantar");
-        //p.setFeature(Feature.TENSE, Tense.CONDITIONAL);
+        p.setFeature(Feature.TENSE, Tense.CONDITIONAL);
         //p.setObject("un mono");
         output = realiser.realiseSentence(p);
-        System.out.println(output);
+        System.out.println(output);*/
 
         //pasado -> ok
        /* SPhraseSpec p1 = nlgFactory.createClause();
@@ -222,13 +222,13 @@ public class MainTest {
         SPhraseSpec p5 = nlgFactory.createClause();
         p5.setSubject("María");
         p5.setVerb("perseguir");
-        p5.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.WHO_OBJECT);
+        p5.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.WHAT_OBJECT);
         output = realiser.realiseSentence(p5);
         System.out.println(output);
 
         //otra forma de crear una frase preposicional -> ok
         NPPhraseSpec place = nlgFactory.createNounPhrase("un", "parque");
-        PPPhraseSpec pp = nlgFactory.createPrepositionPhrase("de");
+        PPPhraseSpec pp = nlgFactory.createPrepositionPhrase("en");
         pp.addComplement(place);
         SPhraseSpec p11 = nlgFactory.createClause("María", "perseguir", "un mono");
         p11.addComplement(pp);

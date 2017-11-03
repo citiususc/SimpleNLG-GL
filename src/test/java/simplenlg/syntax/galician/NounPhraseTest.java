@@ -166,6 +166,14 @@ public class NounPhraseTest extends SimpleNLG4Test {
 
         pro = phraseFactory.createNounPhrase("John");
         pro.setFeature(Feature.PRONOMINAL, true);
+        pro.setFeature(Feature.PERSON, Person.FIRST);
+        pro.setPlural(true);
+        sent = phraseFactory.createClause("Mary", "querer", pro);
+        Assert.assertEquals("Mary quérenos.", this.realiser
+                .realiseSentence(sent));
+
+        pro = phraseFactory.createNounPhrase("John");
+        pro.setFeature(Feature.PRONOMINAL, true);
         pro.setFeature(Feature.PERSON, Person.SECOND);
         sent = phraseFactory.createClause("Mary", "querer", pro);
         Assert.assertEquals("Mary quérete.", this.realiser
@@ -188,14 +196,6 @@ public class NounPhraseTest extends SimpleNLG4Test {
         pro.setFeature(LexicalFeature.GENDER, Gender.MASCULINE);
         sent = phraseFactory.createClause("Mary", "querer", pro);
         Assert.assertEquals("Mary quéreo.", this.realiser
-                .realiseSentence(sent));
-
-        pro = phraseFactory.createNounPhrase("John");
-        pro.setFeature(Feature.PRONOMINAL, true);
-        pro.setFeature(Feature.PERSON, Person.FIRST);
-        pro.setPlural(true);
-        sent = phraseFactory.createClause("Mary", "querer", pro);
-        Assert.assertEquals("Mary quérenos.", this.realiser
                 .realiseSentence(sent));
 
         pro = phraseFactory.createNounPhrase("John");
