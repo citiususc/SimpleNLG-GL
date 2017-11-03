@@ -34,7 +34,7 @@ public class MainTest {
         p.setObject("o");
         p.setIndirectObject("lles");
         p.setVerb("cantar");
-        p.setFeature(Feature.TENSE, Tense.PAST);
+        //p.setFeature(Feature.TENSE, Tense.CONDITIONAL);
         //p.setObject("un mono");
         output = realiser.realiseSentence(p);
         System.out.println(output);
