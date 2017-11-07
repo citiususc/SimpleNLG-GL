@@ -174,10 +174,12 @@ public class NounPhraseTest extends SimpleNLG4Test {
 
         pro = phraseFactory.createNounPhrase("John");
         pro.setFeature(Feature.PRONOMINAL, true);
-        pro.setFeature(Feature.PERSON, Person.SECOND);
+        pro.setFeature(Feature.PERSON, Person.THIRD);
+        pro.setFeature(LexicalFeature.GENDER, Gender.MASCULINE);
         sent = phraseFactory.createClause("Mary", "querer", pro);
-        Assert.assertEquals("Mary quérete.", this.realiser
+        Assert.assertEquals("Mary quéreo.", this.realiser
                 .realiseSentence(sent));
+
 
         pro = phraseFactory.createNounPhrase("John");
        // pro.setFeature(Feature.PRONOMINAL, true);

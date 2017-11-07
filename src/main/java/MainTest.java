@@ -26,25 +26,41 @@ public class MainTest {
         System.out.println(output);*/
 
         //presente -> ok
-       /* NPPhraseSpec subject2 = nlgFactory.createNounPhrase("el");
+        NPPhraseSpec pro = nlgFactory.createNounPhrase("John");
+
+        pro = nlgFactory.createNounPhrase("John");
+        pro.setFeature(Feature.PRONOMINAL, true);
+        pro.setFeature(Feature.PERSON, Person.THIRD);
+        pro.setFeature(LexicalFeature.GENDER, Gender.FEMININE);
+        SPhraseSpec sent = nlgFactory.createClause("Mary", "querer", pro);
+        sent.setIndirectObject("lle");
+        System.out.println(realiser.realiseSentence(sent));
+
+
+      /* pro.setFeature(Feature.PRONOMINAL, true);
+        pro.setFeature(Feature.PERSON, Person.THIRD);
+        pro.setFeature(LexicalFeature.GENDER, Gender.FEMININE);
+
+        NPPhraseSpec subject2 = nlgFactory.createNounPhrase("el");
         subject2.setFeature(LexicalFeature.GENDER, Gender.MASCULINE);
         //subject2.setFeature(Feature.NUMBER, NumberAgreement.PLURAL);
         SPhraseSpec p = nlgFactory.createClause();
         p.setSubject(subject2);
-        p.setObject("o");
-        p.setIndirectObject("lles");
-        p.setVerb("cantar");
-        p.setFeature(Feature.TENSE, Tense.CONDITIONAL);
+        p.setObject(pro);
+        p.setIndirectObject("lle");
+        p.setVerb("saltar");
+        p.setFeature(Feature.TENSE, Tense.PRESENT);
         //p.setObject("un mono");
         output = realiser.realiseSentence(p);
         System.out.println(output);*/
+
 
         //pasado -> ok
        /* SPhraseSpec p1 = nlgFactory.createClause();
         p1.setSubject("María");
         p1.setVerb("perseguir");
         p1.setObject("un mono");
-        p1.setFeature(Feature.TENSE, Tense.PLUSQUAMPERFECT);
+        p1.setFeature(Feature.TENSE, Tense.PLUPERFECT);
         output = realiser.realiseSentence(p1);
         System.out.println(output);
 
@@ -219,7 +235,7 @@ public class MainTest {
         System.out.println(output);*/
 
         //interrogativa -> ok
-        SPhraseSpec p5 = nlgFactory.createClause();
+       /* SPhraseSpec p5 = nlgFactory.createClause();
         p5.setSubject("María");
         p5.setVerb("perseguir");
         p5.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.WHAT_OBJECT);
@@ -233,6 +249,6 @@ public class MainTest {
         SPhraseSpec p11 = nlgFactory.createClause("María", "perseguir", "un mono");
         p11.addComplement(pp);
         output = realiser.realiseSentence(p11);
-        System.out.println(output);
+        System.out.println(output);*/
     }
 }

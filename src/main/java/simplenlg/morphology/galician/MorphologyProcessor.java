@@ -66,6 +66,7 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
     private static final String[] PREPOSITIONS = new String[]{"a", "con", "de", "en", "por", "tras"};
     private static final String[] PREP_INDET = new String[]{"con", "de", "en"};
     private static final String[] CI_PRONOUNS = new String[]{"me", "che", "lle", "nos", "vos", "lles"};
+    private static final String[] CD_PRONOUNS = new String[]{"o", "a", "os", "as"};
     private static final String[] DEFINITES = new String[]{"o", "a", "os", "as"};
     private static final String[] INDEFINITES = new String[]{"un", "unha", "uns", "unhas"};
     private static final String[] VOWELS = new String[]{"a", "e", "i", "o", "u", "á", "é", "í", "ó", "ú"};
@@ -162,29 +163,6 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                     } catch (Exception e) {
 
                     }
-
-                    //two complements
-                    if (eachElement != null && LexicalCategory.PRONOUN.equals(eachElement.getCategory()) && prevElement != null && LexicalCategory.PRONOUN.equals(prevElement.getCategory())) {
-                        String result = morphologyRules.buildPronounsConjunction(prevElement.getFeatureAsString(Feature.PRONOUN_FORM), eachElement.getFeatureAsString(LexicalFeature.BASE_FORM));
-                        if (prevElement.getFeatureAsBoolean(Feature.VERB_PRONOUN) != null) {
-                            prevString.setRealisation(doAccentuation(prevElement.getFeatureAsString(Feature.VERB_PRONOUN), result));
-                            currentElement.setRealisation("");
-                        } else {
-                            prevString.setRealisation(result);
-                            currentElement.setRealisation("");
-                        }
-                    }
-
-                    //verb+pronoun
-                    if (eachElement.getFeatureAsBoolean(Feature.PRONOUN_AFTER) && prevElement != null && LexicalCategory.VERB.equals(prevElement.getCategory()) && LexicalCategory.PRONOUN.equals(eachElement.getCategory())) {
-                        eachElement.setFeature(Feature.VERB_PRONOUN, prevString.toString());
-                        eachElement.setFeature(Feature.PRONOUN_FORM, currentElement.getRealisation());
-                        String result = doAccentuation(prevString.toString(), currentElement.getRealisation());
-                        prevString.setRealisation(result);
-                        currentElement.setRealisation("");
-
-                    }
-
                     //preposition+article
                     if (prevElement != null && LexicalCategory.PREPOSITION.equals(prevElement.getCategory())) {
                         NLGElement root = elements.get(0);
@@ -280,6 +258,33 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                         realisedElements.add(i, currentElement);
                     } else {
                         realisedElements.add(currentElement);
+                    }
+
+                    //two complements
+                    if (eachElement != null && LexicalCategory.PRONOUN.equals(eachElement.getCategory()) && prevElement != null && LexicalCategory.PRONOUN.equals(prevElement.getCategory())) {
+                       String result = "";
+                        if(currentElement.getRealisation() == null) {
+                            result = morphologyRules.buildPronounsConjunction(prevElement.getFeatureAsString(Feature.PRONOUN_FORM), eachElement.getFeatureAsString(LexicalFeature.BASE_FORM));
+                        } else {
+                            result = morphologyRules.buildPronounsConjunction(prevElement.getFeatureAsString(Feature.PRONOUN_FORM), currentElement.getRealisation());
+                        }
+                        if (prevElement.getFeatureAsBoolean(Feature.VERB_PRONOUN) != null) {
+                            prevString.setRealisation(doAccentuation(prevElement.getFeatureAsString(Feature.VERB_PRONOUN), result));
+                            currentElement.setRealisation("");
+                        } else {
+                            prevString.setRealisation(result);
+                            currentElement.setRealisation("");
+                        }
+                    }
+
+                    //verb+pronoun
+                    if (eachElement.getFeatureAsBoolean(Feature.PRONOUN_AFTER) && prevElement != null && LexicalCategory.VERB.equals(prevElement.getCategory()) && LexicalCategory.PRONOUN.equals(eachElement.getCategory())) {
+                        eachElement.setFeature(Feature.VERB_PRONOUN, prevString.toString());
+                        eachElement.setFeature(Feature.PRONOUN_FORM, currentElement.getRealisation());
+                        String result = doAccentuation(prevString.toString(), currentElement.getRealisation());
+                        prevString.setRealisation(result);
+                        currentElement.setRealisation("");
+
                     }
 
 //                    if (determiner == null && DiscourseFunction.SPECIFIER.equals(currentElement.getFeature(
@@ -645,13 +650,26 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
             }
             //consonant + consonant (not r or l)
             else if (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i - 1))) && !Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i))) && word.charAt(i) != 'r' && word.charAt(i) != 'l') {
-                syllables.add(word.substring(0, i));
-                word = word.substring(i, word.length());
+                try {
+                    if (word.charAt(i - 1) == 'c' && word.charAt(i) == 'h' && Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i + i)))) {
+                        syllables.add(word.substring(0, i + 2));
+                        word = word.substring(i + 2, word.length());
+                    } else {
+                        syllables.add(word.substring(0, i));
+                        word = word.substring(i, word.length());
+                    }
+                } catch (Exception e) {
+                    syllables.add(word.substring(0, i));
+                    word = word.substring(i, word.length());
+                }
             }
             //consonant + consonant r or l
             else if (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i - 1))) && (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i))) && (word.charAt(i) == 'r' || word.charAt(i) == 'l'))) {
                 try {
-                    if (word.charAt(i - 1) == 'l' && word.charAt(i) == 'l' && Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i + 1))) && (word.charAt(i + 2) == 'n' || word.charAt(i + 2) == 's' || word.charAt(i + 2) == 'r')) {
+                    if (word.charAt(i - 1) == 'l' && word.charAt(i) == 'l' && Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i + 1)))) {
+                        syllables.add(word.substring(0, i + 2));
+                        word = word.substring(i + 2, word.length());
+                    } else if (word.charAt(i - 1) == 'l' && word.charAt(i) == 'l' && Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i + 1))) && (word.charAt(i + 2) == 'n' || word.charAt(i + 2) == 's' || word.charAt(i + 2) == 'r')) {
                         syllables.add(word.substring(0, i + 3));
                         word = word.substring(i + 3, word.length());
                     } else {
