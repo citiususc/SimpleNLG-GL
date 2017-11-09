@@ -41,9 +41,10 @@ public abstract class Realiser extends NLGModule {
     protected boolean debug = false;
 
     private static final String[] SUBORDINATES = new String[]{"porque", "que", "se"};
-    private static final String[] ADVERBS = new String[]{"quizais", "talvez", "seica", "disque", "xa", "só", "mal", "axiña", "sempre", "aínda", "aquí", "aí", "alí", "máis", "menos"};
-    private static final String[] INDEFINITES = new String[]{"ninguén", "alguén", "calquera", "mesmo", "algo", "nada", "bastante"};
+    private static final String[] ADVERBS = new String[]{"quizais", "talvez", "seica", "disque", "xa", "só", "mal", "axiña", "sempre", "aínda", "aquí", "aí", "alí", "máis", "menos", "aínda", "ata", "até", "tamén"};
+    private static final String[] INDEFINITES = new String[]{"ninguén", "alguén", "calquera", "mesmo", "algo", "nada", "bastante", "todo", "ambos"};
     private static final String[] INTERROGATIVES = new String[]{"cando", "onde", "canto", "como"};
+    private static final String[] DESIDERATIVES = new String[]{"oxalá"};
 
     /**
      * create a realiser (no lexicon)
@@ -150,7 +151,7 @@ public abstract class Realiser extends NLGModule {
 
         elements = checkElements(elements);
 
-        int indexVerb = -1, indexSubordinate = -1, indexAdverb = -1, indexIndefinite = -1, indexInterrogative = -1;
+        int indexVerb = -1, indexSubordinate = -1, indexAdverb = -1, indexIndefinite = -1, indexInterrogative = -1, indexDesiderative = -1;
         for (NLGElement e : elements) {
             try {
                 if (e.getCategory().equals(LexicalCategory.VERB)) {
@@ -171,6 +172,9 @@ public abstract class Realiser extends NLGModule {
             if(Arrays.asList(INTERROGATIVES).contains(e.getRealisation())) {
                 indexInterrogative = elements.indexOf(e);
             }
+            if(Arrays.asList(DESIDERATIVES).contains(e.getRealisation())) {
+                indexDesiderative = elements.indexOf(e);
+            }
         }
         if (indexVerb >= 0) {
             //subordinates sentences: pronoun before
@@ -187,6 +191,10 @@ public abstract class Realiser extends NLGModule {
             }
             //with interrogatives: pronoun before
             if(indexInterrogative >= 0 && indexInterrogative < indexVerb) {
+                pronoun_after = false;
+            }
+            //in desideratives phrases: pronoun before
+            if(indexDesiderative >= 0 && indexDesiderative < indexVerb) {
                 pronoun_after = false;
             }
         }
