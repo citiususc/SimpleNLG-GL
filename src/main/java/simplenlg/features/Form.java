@@ -88,5 +88,10 @@ public enum Form {
      * of unreality such as wish, emotion, possibility, judgment, opinion,
      * obligation, or action that has not yet occurred.
      */
-    SUBJUNCTIVE
+    SUBJUNCTIVE,
+
+	/**
+	 * The conjugate infinitive form of the verb.
+	 */
+	CONJUGATE_INFINITIVE
 }

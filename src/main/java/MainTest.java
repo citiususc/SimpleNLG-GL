@@ -32,7 +32,13 @@ public class MainTest {
         pro.setFeature(Feature.PRONOMINAL, true);
         pro.setFeature(Feature.PERSON, Person.THIRD);
         pro.setFeature(LexicalFeature.GENDER, Gender.FEMININE);
+
+
         SPhraseSpec sent = nlgFactory.createClause("Mary", "querer", pro);
+
+        sent.setFeature(Feature.FORM, Form.CONJUGATE_INFINITIVE);
+        //sent.setFeature(Feature.TENSE, Tense.FUTURE);
+
         sent.setIndirectObject("lle");
         System.out.println(realiser.realiseSentence(sent));
 

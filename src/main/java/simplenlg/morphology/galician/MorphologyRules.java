@@ -527,7 +527,7 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
                         }
                         // build inflected form if none was specified by the user or lexicon
                         if (realised == null) {
-                            realised = buildRegularSubjunctiveFutureVerb(baseForm, numberValue, personValue);
+                            realised = buildRegularSubjunctiveFuture_ConjugateInfinitiveVerb(baseForm, numberValue, personValue);
                         }
                         break;
                        /* String imp3p = getRealisedVerbFromFeature(element, baseWord, LexicalFeature.PAST3P);
@@ -581,6 +581,43 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
                             realised = buildRegularImperativeVerb(baseForm, numberValue, personValue);
                         }
                         break;
+                }
+                break;
+            case CONJUGATE_INFINITIVE:
+                switch (numberValue) {
+                    case SINGULAR:
+                    case BOTH:
+                        switch (personValue) {
+                            case FIRST:
+                                realised = getRealisedVerbFromFeature(element, baseWord, LexicalFeature.FUTURESUBJUNCTIVE1S);
+                                break;
+                            case SECOND:
+                                realised = getRealisedVerbFromFeature(element, baseWord, LexicalFeature.FUTURESUBJUNCTIVE2S);
+                                break;
+                            case THIRD:
+                            case NONE:
+                                realised = getRealisedVerbFromFeature(element, baseWord, LexicalFeature.FUTURESUBJUNCTIVE3S);
+                                break;
+                        }
+                        break;
+                    case PLURAL:
+                        switch (personValue) {
+                            case FIRST:
+                                realised = getRealisedVerbFromFeature(element, baseWord, LexicalFeature.FUTURESUBJUNCTIVE1P);
+                                break;
+                            case SECOND:
+                                realised = getRealisedVerbFromFeature(element, baseWord, LexicalFeature.FUTURESUBJUNCTIVE2P);
+                                break;
+                            case THIRD:
+                            case NONE:
+                                realised = getRealisedVerbFromFeature(element, baseWord, LexicalFeature.FUTURESUBJUNCTIVE3P);
+                                break;
+                        }
+                        break;
+                }
+                // build inflected form if none was specified by the user or lexicon
+                if (realised == null) {
+                    realised = buildRegularSubjunctiveFuture_ConjugateInfinitiveVerb(baseForm, numberValue, personValue);
                 }
                 break;
             default:
@@ -1286,7 +1323,7 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
      * @param person   the person.
      * @return the inflected word.
      */
-    private String buildRegularSubjunctiveFutureVerb(String baseForm, NumberAgreement number, Person person) {
+    private String buildRegularSubjunctiveFuture_ConjugateInfinitiveVerb(String baseForm, NumberAgreement number, Person person) {
         String morphology = null;
         if (baseForm != null) {
             String radical = baseForm.substring(0, baseForm.length() - 2);
@@ -1414,126 +1451,6 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
                             } else if (baseForm.endsWith("ir")) {
                                 morphology = radical + "isen";
                             }
-                            break;
-                    }
-                    break;
-            }
-        }
-        return morphology;
-    }
-
-    /**
-     * Builds the imperfect-tense subjunctive form for regular verbs.
-     *
-     * @param baseForm the base form of the verb.
-     * @param radical  the radical of the verb.
-     * @param number   the number agreement for the verb.
-     * @param person   the person.
-     * @return the inflected word.
-     */
-    private String buildRegularSubjunctiveImperfectVerb(String baseForm, String radical, NumberAgreement number, Person person) {
-        String morphology = null;
-        if (baseForm != null && radical != null) {
-            switch (number) {
-                case SINGULAR:
-                    switch (person) {
-                        case FIRST:
-                        case THIRD:
-                            if (baseForm.endsWith("ar")) {
-                                morphology = radical + "ase";
-                            } else if (baseForm.endsWith("er")) {
-                                morphology = radical + "ese";
-                            } else if (baseForm.endsWith("ir")) {
-                                morphology = radical + "ise";
-                            }
-                            break;
-                        case SECOND:
-                            if (baseForm.endsWith("ar")) {
-                                morphology = radical + "ases";
-                            } else if (baseForm.endsWith("er")) {
-                                morphology = radical + "eses";
-                            } else if (baseForm.endsWith("ir")) {
-                                morphology = radical + "ises";
-                            }
-                            break;
-                    }
-                    break;
-                case PLURAL:
-                    switch (person) {
-                        case FIRST:
-                            if (baseForm.endsWith("ar")) {
-                                morphology = radical + "ásemos";
-                            } else if (baseForm.endsWith("er")) {
-                                morphology = radical + "ésemos";
-                            } else if (baseForm.endsWith("ir")) {
-                                morphology = radical + "ísemos";
-                            }
-                            break;
-                        case SECOND:
-                            if (baseForm.endsWith("ar")) {
-                                morphology = radical + "ásedes";
-                            } else if (baseForm.endsWith("er")) {
-                                morphology = radical + "ésedes";
-                            } else if (baseForm.endsWith("ir")) {
-                                morphology = radical + "ísedes";
-                            }
-                            break;
-                        case THIRD:
-                            if (baseForm.endsWith("ar")) {
-                                morphology = radical + "asen";
-                            } else if (baseForm.endsWith("er")) {
-                                morphology = radical + "esen";
-                            } else if (baseForm.endsWith("ir")) {
-                                morphology = radical + "isen";
-                            }
-                            break;
-                    }
-                    break;
-            }
-        }
-        return morphology;
-    }
-
-    /**
-     * Builds the future-tense subjunctive and conjugated-infinitive form for regular verbs.
-     *
-     * @param baseForm the base form of the verb.
-     * @param radical  the radical of the verb.
-     * @param number   the number agreement for the verb.
-     * @param person   the person.
-     * @return the inflected word.
-     */
-    private String buildRegularSubjunctiveFutureVerb(String baseForm, String radical, NumberAgreement number, Person person) {
-        String morphology = null;
-        if (baseForm != null && radical != null) {
-            switch (number) {
-                case SINGULAR:
-                    switch (person) {
-                        case FIRST:
-                        case THIRD:
-                            morphology = radical;
-                            break;
-                        case SECOND:
-                            if (baseForm.endsWith("ar")) {
-                                morphology = radical + "ares";
-                            } else if (baseForm.endsWith("er")) {
-                                morphology = radical + "eres";
-                            } else if (baseForm.endsWith("ir")) {
-                                morphology = radical + "ires";
-                            }
-                            break;
-                    }
-                    break;
-                case PLURAL:
-                    switch (person) {
-                        case FIRST:
-                            morphology = radical + "mos";
-                            break;
-                        case SECOND:
-                            morphology = radical + "des";
-                            break;
-                        case THIRD:
-                            morphology = radical + "ren";
                             break;
                     }
                     break;

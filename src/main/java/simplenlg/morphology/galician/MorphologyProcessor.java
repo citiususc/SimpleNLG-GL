@@ -604,6 +604,9 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                                         syllables.add(word.substring(0, i + 2));
                                         word = word.substring(i + 2, word.length());
                                     }
+                                } else {
+                                    syllables.add(word.substring(0, i + 2));
+                                    word = word.substring(i + 2, word.length());
                                 }
                             } catch (Exception e) {
                                 syllables.add(word.substring(0, i + 2));
