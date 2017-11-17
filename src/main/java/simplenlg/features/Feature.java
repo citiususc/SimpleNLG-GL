@@ -1243,4 +1243,37 @@ abstract public class Feature {
      * </table>
      */
     public static final String HAS_PREPOSITION = "has_preposition";
+
+    /**
+     * <p>
+     * This flag represents if the verb is impersonal
+     * </p>
+     * <table border="1">
+     * <tr>
+     * <td><b>Feature name</b></td>
+     * <td><em>is_impersonal</em></td>
+     * </tr>
+     * <tr>
+     * <td><b>Expected type</b></td>
+     * <td><code>boolean</code></td>
+     * </tr>
+     * <tr>
+     * <td><b>Created by</b></td>
+     * <td>The clause helper.</td>
+     * </tr>
+     * <tr>
+     * <td><b>Used by</b></td>
+     * <td>The clause helper.</td>
+     * </tr>
+     * <tr>
+     * <td><b>Applies to</b></td>
+     * <td>Clauses, coordinated phrases and verb phrases.</td>
+     * </tr>
+     * <tr>
+     * <td><b>Default</b></td>
+     * <td><code>false</code>.</td>
+     * </tr>
+     * </table>
+     */
+    public static final String IS_IMPERSONAL = "is_impersonal";
     }

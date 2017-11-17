@@ -128,12 +128,6 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                     }
                 }
 
-                //save verb realisation if there is a pronoun after
-                if (eachElement.getFeatureAsBoolean(Feature.PRONOUN_AFTER) && prevElement != null && prevElement.getCategory().equals(LexicalCategory.VERB) && currentElement.getRealisation() != null) {
-                    eachElement.setFeature(Feature.VERB_FORM, currentElement.getRealisation());
-                    currentElement.setRealisation("");
-                }
-
                 currentElement = realise(eachElement);
 
                 //when possesive + noun add determiner -> determiner + possesive + noun
@@ -284,6 +278,11 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                         }
                     }
 
+                    //impersonal phrase
+                    if(LexicalCategory.VERB.equals(eachElement.getCategory()) && eachElement.getFeatureAsBoolean(Feature.IS_IMPERSONAL)) {
+                        String result = doAccentuation(currentElement.getRealisation(), "se");
+                        currentElement.setRealisation(result);
+                    }
                     //verb+pronoun
                     if (eachElement.getFeatureAsBoolean(Feature.PRONOUN_AFTER) && prevElement != null && LexicalCategory.VERB.equals(prevElement.getCategory()) && LexicalCategory.PRONOUN.equals(eachElement.getCategory())) {
                         eachElement.setFeature(Feature.VERB_PRONOUN, prevString.toString());
@@ -291,14 +290,14 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                         String result = doAccentuation(prevString.toString(), currentElement.getRealisation());
                         prevString.setRealisation(result);
                         currentElement.setRealisation("");
-                    } else if (eachElement.getFeatureAsBoolean(Feature.PRONOUN_AFTER) && LexicalCategory.PRONOUN.equals(eachElement.getCategory()) && prevElement == null) {
+                    } /*else if (eachElement.getFeatureAsBoolean(Feature.PRONOUN_AFTER) && LexicalCategory.PRONOUN.equals(eachElement.getCategory()) && prevElement == null) {
                         if (eachElement.getFeatureAsString(Feature.VERB_FORM) != null) {
                             eachElement.setFeature(Feature.VERB_PRONOUN, eachElement.getFeatureAsString(Feature.VERB_FORM));
                             eachElement.setFeature(Feature.PRONOUN_FORM, currentElement.getRealisation());
                             String result = doAccentuation(eachElement.getFeatureAsString(Feature.VERB_FORM), currentElement.getRealisation());
                             currentElement.setRealisation(result);
                         }
-                    }
+                    }*/
 
 //                    if (determiner == null && DiscourseFunction.SPECIFIER.equals(currentElement.getFeature(
 //                            InternalFeature.DISCOURSE_FUNCTION))) {
@@ -421,17 +420,17 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
 
         ///////////////////////////////pronombre de una sílaba
         if (syllablesPronoun.size() == 1) {
-            System.out.println("PRONOMBRE DE UNA SÍLABA");
+            //System.out.println("PRONOMBRE DE UNA SÍLABA");
             //monosílabas: si lleva tilde se mantiene
             if (syllables.size() == 1) {
-                System.out.println("MONOSÍLABA: " + conjugated + pronoun);
+                //System.out.println("MONOSÍLABA: " + conjugated + pronoun);
             }
             //aguda acentuada
             else if (Arrays.asList(ACCENTUATED_VOWELS).contains(conjugated.substring(conjugated.length() - 1)) || (Arrays.asList(VOWELS).contains(conjugated.substring(conjugated.length() - 2)) && (conjugated.substring(conjugated.length() - 1).equals("n")) || conjugated.substring(conjugated.length() - 1).equals("s")) || ((Arrays.asList(VOWELS).contains(conjugated.substring(conjugated.length() - 3)) && conjugated.substring(conjugated.length() - 2).equals("n")) && conjugated.substring(conjugated.length() - 1).equals("s"))) {
                 letter = conjugated.charAt(accentIndex);
                 replacement = morphologyRules.replaceAccentuatedChar(letter);
                 conjugated = conjugated.substring(0, accentIndex) + replacement + conjugated.substring(accentIndex + 1, conjugated.length());
-                System.out.println("AGUDA CON ACENTO: " + conjugated + pronoun);
+                //System.out.println("AGUDA CON ACENTO: " + conjugated + pronoun);
             }
             //aguda no acentuada
             else if ((Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))) == false) ||
@@ -439,12 +438,12 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                     (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) == false && Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))) == false) ||
                     (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) && Arrays.asList(SOFT_VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))))) {
                 if (accentIndex == -1) {
-                    System.out.println("AGUDA SIN ACENTO: " + conjugated + pronoun);
+                    //System.out.println("AGUDA SIN ACENTO: " + conjugated + pronoun);
                 }
             }
             //graves acentuadas
             else if ((String.valueOf(conjugated.length() - 1).equals("n") || String.valueOf(conjugated.length() - 1).equals("s") || conjugated.substring(conjugated.length() - 2).equals("ns")) && accentIndex > -1) {
-                System.out.println("GRAVE CON ACENTO: " + conjugated + pronoun);
+                //System.out.println("GRAVE CON ACENTO: " + conjugated + pronoun);
             }
             //graves no acentuadas
             else if ((!conjugated.substring(conjugated.length() - 1).equals("n") || !conjugated.substring(conjugated.length() - 1).equals("s") || !conjugated.substring(conjugated.length() - 2).equals("ns")) && accentIndex == -1) {
@@ -464,17 +463,17 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                     }
                 }
                 conjugated = result;
-                System.out.println("GRAVE SIN ACENTO: " + conjugated
-                        + pronoun);
+                //System.out.println("GRAVE SIN ACENTO: " + conjugated
+                        //+ pronoun);
             }
         }
         ///////////////////////////////////////////pronombre de dos sílabas
         else if (syllablesPronoun.size() == 2) {
-            System.out.println("PRONOMBRE DE DOS SÍLABAS");
+            //System.out.println("PRONOMBRE DE DOS SÍLABAS");
 
             //monosílabas: si lleva tilde se mantiene
             if (syllables.size() == 1 && accentIndex > -1) {
-                System.out.println("MONOSÍLABA: " + conjugated + pronoun);
+                //System.out.println("MONOSÍLABA: " + conjugated + pronoun);
             }
             //monosílabas sin tilde pasan a ser esdrújulas
             else if (syllables.size() == 1 && accentIndex == -1) {
@@ -506,7 +505,7 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
             }
             //aguda acentuada
             else if (Arrays.asList(ACCENTUATED_VOWELS).contains(conjugated.substring(conjugated.length() - 1)) || (Arrays.asList(VOWELS).contains(conjugated.substring(conjugated.length() - 2)) && (conjugated.substring(conjugated.length() - 1).equals("n")) || conjugated.substring(conjugated.length() - 1).equals("s")) || ((Arrays.asList(VOWELS).contains(conjugated.substring(conjugated.length() - 3)) && conjugated.substring(conjugated.length() - 2).equals("n")) && conjugated.substring(conjugated.length() - 1).equals("s"))) {
-                System.out.println("AGUDA CON ACENTO: " + conjugated + pronoun);
+                //System.out.println("AGUDA CON ACENTO: " + conjugated + pronoun);
             }
             //aguda no acentuada
             else if ((Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))) == false) ||
@@ -551,12 +550,12 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                         result += syllables.get(syllables.size() - 1);
                         conjugated = result;
                     }
-                    System.out.println("AGUDA SIN ACENTO: " + conjugated + pronoun);
+                    //System.out.println("AGUDA SIN ACENTO: " + conjugated + pronoun);
                 }
             }
             //graves acentuadas
             else if ((String.valueOf(conjugated.length() - 1).equals("n") || String.valueOf(conjugated.length() - 1).equals("s") || conjugated.substring(conjugated.length() - 2).equals("ns")) && accentIndex > -1) {
-                System.out.println("GRAVE CON ACENTO: " + conjugated + pronoun);
+                //System.out.println("GRAVE CON ACENTO: " + conjugated + pronoun);
             }
             //graves no acentuadas
             else if ((!conjugated.substring(conjugated.length() - 1).equals("n") || !conjugated.substring(conjugated.length() - 1).equals("s") || !conjugated.substring(conjugated.length() - 2).equals("ns")) && accentIndex == -1) {
@@ -576,8 +575,8 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                     }
                 }
                 conjugated = result;
-                System.out.println("GRAVE SIN ACENTO: " + conjugated
-                        + pronoun);
+                //System.out.println("GRAVE SIN ACENTO: " + conjugated
+                //        + pronoun);
             }
         }
 

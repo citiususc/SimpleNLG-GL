@@ -99,6 +99,7 @@ public class SPhraseSpec extends PhraseElement {
 		super(PhraseCategory.CLAUSE);
 		this.setFactory(phraseFactory);
 
+
 		// create VP
 		setVerbPhrase(phraseFactory.createVerbPhrase());
 

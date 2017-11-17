@@ -8,26 +8,22 @@
   <component name="ChangeListManager">
     <list default="true" id="3a438994-81f5-48c3-9745-5f0cfd17d647" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MainTest.class" afterPath="$PROJECT_DIR$/target/classes/MainTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/DiscourseFunction.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/DiscourseFunction.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/Feature.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/Feature.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/features/InternalFeature.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/features/InternalFeature.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/PhraseCategory.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/PhraseCategory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/framework/PhraseElement.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/framework/PhraseElement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/MorphologyProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/MorphologyProcessor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyProcessor$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyProcessor$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyProcessor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyRules$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyRules$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyRules.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyRules.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/ClauseHelper$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/ClauseHelper$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/ClauseHelper.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/galician/ClauseHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/phrasespec/SPhraseSpec.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/phrasespec/SPhraseSpec.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/SyntaxProcessor$1.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/SyntaxProcessor$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/syntax/SyntaxProcessor.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/syntax/SyntaxProcessor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MainTest.java" afterPath="$PROJECT_DIR$/src/main/java/MainTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/features/DiscourseFunction.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/features/DiscourseFunction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/features/Feature.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/features/Feature.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/features/InternalFeature.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/features/InternalFeature.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/framework/PhraseCategory.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/framework/PhraseCategory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/framework/PhraseElement.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/framework/PhraseElement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyProcessor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyRules.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyRules.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/phrasespec/SPhraseSpec.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/phrasespec/SPhraseSpec.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/syntax/SyntaxProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/syntax/SyntaxProcessor.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,26 +46,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="MorphologyProcessor.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MorphologyProcessor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="132" column="90" lean-forward="false" selection-start-line="132" selection-start-column="90" selection-end-line="132" selection-end-column="90" />
-              <folding>
-                <element signature="e#3944#3956#0" expanded="true" />
-                <element signature="e#25988#25997#0" expanded="true" />
-                <element signature="e#39693#39701#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="207">
+              <caret line="422" column="14" lean-forward="false" selection-start-line="422" selection-start-column="14" selection-end-line="422" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MorphologyProcessor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyProcessor.java">
+      <file leaf-file-name="Realiser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/realiser/Realiser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="164">
+              <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+              <folding>
+                <element signature="e#5914#5926#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,46 +71,31 @@
       <file leaf-file-name="SyntaxProcessor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/SyntaxProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
+            <state relative-caret-position="185">
+              <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
               <folding>
-                <element signature="e#5479#5491#0" expanded="true" />
+                <element signature="e#5767#5779#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PhraseElement.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/PhraseElement.java">
+      <file leaf-file-name="VerbPhraseHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/galician/VerbPhraseHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-881">
-              <caret line="319" column="104" lean-forward="false" selection-start-line="319" selection-start-column="104" selection-end-line="319" selection-end-column="104" />
+            <state relative-caret-position="395">
+              <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MainTest.java">
+      <file leaf-file-name="ClauseHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/ClauseHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="278" column="0" lean-forward="true" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
+            <state relative-caret-position="206">
+              <caret line="264" column="0" lean-forward="false" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NLGElement.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/NLGElement.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="95" column="79" lean-forward="true" selection-start-line="95" selection-start-column="79" selection-end-line="95" selection-end-column="79" />
-              <folding>
-                <element signature="e#2104#2120#0" expanded="true" />
-                <element signature="e#2902#2903#0" expanded="true" />
-                <element signature="e#2945#2946#0" expanded="true" />
-                <element signature="e#7487#7499#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -124,7 +103,7 @@
       <file leaf-file-name="MorphologyRules.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyRules.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="-3891">
               <caret line="1836" column="0" lean-forward="false" selection-start-line="1836" selection-start-column="0" selection-end-line="1836" selection-end-column="0" />
               <folding>
                 <element signature="method#doVerbMorphology#0;class#MorphologyRules#0" expanded="false" />
@@ -133,11 +112,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InternalFeature.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/features/InternalFeature.java">
+      <file leaf-file-name="ClauseHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/galician/ClauseHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="494" column="11" lean-forward="false" selection-start-line="494" selection-start-column="11" selection-end-line="494" selection-end-column="11" />
+            <state relative-caret-position="227">
+              <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VerbPhraseHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/VerbPhraseHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MorphologyProcessor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyProcessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MainTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="326">
+              <caret line="286" column="0" lean-forward="false" selection-start-line="286" selection-start-column="0" selection-end-line="286" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -218,7 +227,6 @@
         <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/spanish/PhraseSpecTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/PremodifierTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/StandAloneExample.java" />
-        <option value="$PROJECT_DIR$/src/main/java/simplenlg/phrasespec/SPhraseSpec.java" />
         <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/StringElementTest.java" />
         <option value="$PROJECT_DIR$/lib/junit-4.4.jar!/org/junit/Assert.class" />
         <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/TutorialTest.java" />
@@ -239,19 +247,20 @@
         <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/InterrogativeTest2.java" />
         <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/spanish/NounPhraseTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/simplenlg/syntax/galician/NounPhraseTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/simplenlg/realiser/Realiser.java" />
         <option value="$PROJECT_DIR$/src/main/java/simplenlg/features/Form.java" />
         <option value="$PROJECT_DIR$/src/main/java/simplenlg/features/DiscourseFunction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/simplenlg/features/Feature.java" />
-        <option value="$PROJECT_DIR$/src/main/java/simplenlg/framework/PhraseCategory.java" />
         <option value="$PROJECT_DIR$/src/main/java/simplenlg/syntax/galician/ClauseHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/simplenlg/features/InternalFeature.java" />
         <option value="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyRules.java" />
-        <option value="$PROJECT_DIR$/src/main/java/simplenlg/framework/PhraseElement.java" />
-        <option value="$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyProcessor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MainTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/simplenlg/framework/NLGElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/simplenlg/framework/PhraseElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/simplenlg/phrasespec/SPhraseSpec.java" />
+        <option value="$PROJECT_DIR$/src/main/java/simplenlg/features/Feature.java" />
+        <option value="$PROJECT_DIR$/src/main/java/simplenlg/framework/PhraseCategory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MainTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/simplenlg/syntax/SyntaxProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/simplenlg/realiser/Realiser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java" />
       </list>
     </option>
@@ -286,8 +295,8 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -1062,7 +1071,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510665496860</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Implementada oración impersonal (al meter un objeto se hace mal -&gt; revisar)">
+      <created>1510939869033</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1510939869033</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1120,16 +1136,15 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24890351" sideWeight="0.66041666" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17447917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17395833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2850877" sideWeight="0.7140625" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39144737" sideWeight="0.7140625" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1138,6 +1153,7 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1222,7 +1238,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java</url>
-          <line>422</line>
+          <line>421</line>
           <properties />
           <option name="timeStamp" value="316" />
         </line-breakpoint>
@@ -1258,33 +1274,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java</url>
-          <line>592</line>
+          <line>591</line>
           <properties />
           <option name="timeStamp" value="349" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java</url>
-          <line>287</line>
+          <line>286</line>
           <properties />
           <option name="timeStamp" value="351" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/MainTest.java</url>
-          <line>277</line>
-          <properties />
-          <option name="timeStamp" value="355" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/SyntaxProcessor.java</url>
-          <line>197</line>
-          <properties />
-          <option name="timeStamp" value="360" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java</url>
-          <line>132</line>
-          <properties />
-          <option name="timeStamp" value="365" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyRules.java</url>
@@ -1294,18 +1292,30 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java</url>
-          <line>131</line>
-          <properties />
-          <option name="timeStamp" value="367" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java</url>
           <line>94</line>
           <properties />
           <option name="timeStamp" value="368" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/MainTest.java</url>
+          <line>286</line>
+          <properties />
+          <option name="timeStamp" value="369" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyProcessor.java</url>
+          <line>70</line>
+          <properties />
+          <option name="timeStamp" value="373" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/SyntaxProcessor.java</url>
+          <line>139</line>
+          <properties />
+          <option name="timeStamp" value="377" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="369" />
+      <option name="time" value="381" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -1324,27 +1334,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/VerbPhraseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/galician/NounPhraseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/NounPhraseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2037">
-          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/InflectedWordElement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -1408,13 +1397,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/realiser/galician/Realiser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/features/Tense.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1435,16 +1417,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="44" column="11" lean-forward="false" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/galician/VerbPhraseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding>
-            <element signature="e#6935#6947#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1531,52 +1503,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/PhraseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/features/Feature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="1245" column="4" lean-forward="false" selection-start-line="1245" selection-start-column="4" selection-end-line="1245" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/DocumentCategory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="186" column="0" lean-forward="false" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/PhraseCategory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="71" column="8" lean-forward="false" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/DocumentElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding>
-            <element signature="e#3657#3658#0" expanded="false" />
-            <element signature="e#8796#8797#0" expanded="false" />
-            <element signature="e#8825#8826#0" expanded="false" />
-            <element signature="e#9130#9131#0" expanded="false" />
-            <element signature="e#9184#9185#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/orthography/galician/OrthographyProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
@@ -1597,7 +1523,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1605,75 +1530,56 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
           <caret line="184" column="0" lean-forward="false" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/features/InternalFeature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10017">
+          <caret line="494" column="11" lean-forward="false" selection-start-line="494" selection-start-column="11" selection-end-line="494" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/realiser/Realiser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/phrasespec/VPPhraseSpec.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="262" column="0" lean-forward="false" selection-start-line="262" selection-start-column="0" selection-end-line="262" selection-end-column="0" />
+        <state relative-caret-position="353">
+          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/PhraseElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5799">
+          <caret line="292" column="5" lean-forward="false" selection-start-line="292" selection-start-column="5" selection-end-line="292" selection-end-column="5" />
           <folding>
-            <element signature="e#5914#5926#0" expanded="false" />
+            <element signature="e#10579#10591#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/WordElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
+        <state relative-caret-position="203">
           <caret line="180" column="0" lean-forward="false" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
           <folding>
-            <element signature="e#5160#5161#0" expanded="false" />
+            <element signature="e#5160#5161#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/phrasespec/SPhraseSpec.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/PhraseHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="212" column="0" lean-forward="false" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
+        <state relative-caret-position="160">
+          <caret line="164" column="0" lean-forward="false" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/galician/ClauseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/ClauseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="521" column="0" lean-forward="false" selection-start-line="521" selection-start-column="0" selection-end-line="521" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/features/InternalFeature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="494" column="11" lean-forward="false" selection-start-line="494" selection-start-column="11" selection-end-line="494" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyRules.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="1836" column="0" lean-forward="false" selection-start-line="1836" selection-start-column="0" selection-end-line="1836" selection-end-column="0" />
-          <folding>
-            <element signature="method#doVerbMorphology#0;class#MorphologyRules#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/ListElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="160">
           <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding>
             <element signature="e#2328#2329#0" expanded="false" />
@@ -1681,61 +1587,171 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/PhraseElement.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/features/Feature.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-881">
-          <caret line="319" column="104" lean-forward="false" selection-start-line="319" selection-start-column="104" selection-end-line="319" selection-end-column="104" />
+        <state relative-caret-position="249">
+          <caret line="1112" column="39" lean-forward="false" selection-start-line="1112" selection-start-column="39" selection-end-line="1112" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/PhraseCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="67" column="16" lean-forward="false" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/realiser/galician/Realiser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-336">
+          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/DocumentCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="186" column="0" lean-forward="false" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/DocumentElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="267" column="0" lean-forward="false" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
+          <folding>
+            <element signature="e#3141#3142#0" expanded="false" />
+            <element signature="e#3189#3190#0" expanded="false" />
+            <element signature="e#3595#3596#0" expanded="false" />
+            <element signature="e#3657#3658#0" expanded="false" />
+            <element signature="e#8825#8826#0" expanded="false" />
+            <element signature="e#9130#9131#0" expanded="false" />
+            <element signature="e#9184#9185#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/phrasespec/SPhraseSpec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/framework/NLGElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="95" column="79" lean-forward="true" selection-start-line="95" selection-start-column="79" selection-end-line="95" selection-end-column="79" />
+        <state relative-caret-position="307">
+          <caret line="434" column="0" lean-forward="false" selection-start-line="434" selection-start-column="0" selection-end-line="434" selection-end-column="0" />
           <folding>
             <element signature="e#2104#2120#0" expanded="true" />
+            <element signature="e#2660#2661#0" expanded="true" />
+            <element signature="e#2696#2697#0" expanded="true" />
             <element signature="e#2902#2903#0" expanded="true" />
             <element signature="e#2945#2946#0" expanded="true" />
+            <element signature="e#6105#6106#0" expanded="true" />
+            <element signature="e#6187#6188#0" expanded="true" />
             <element signature="e#7487#7499#0" expanded="true" />
+            <element signature="e#17727#17728#0" expanded="true" />
+            <element signature="e#17766#17767#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/SyntaxProcessor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/NounPhraseHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
-          <folding>
-            <element signature="e#5479#5491#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+        <state relative-caret-position="353">
+          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/ClauseHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="132" column="90" lean-forward="false" selection-start-line="132" selection-start-column="90" selection-end-line="132" selection-end-column="90" />
+        <state relative-caret-position="206">
+          <caret line="264" column="0" lean-forward="false" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/galician/ClauseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/galician/VerbPhraseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/VerbPhraseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/realiser/Realiser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
           <folding>
-            <element signature="e#3944#3956#0" expanded="true" />
-            <element signature="e#25988#25997#0" expanded="true" />
-            <element signature="e#39693#39701#0" expanded="true" />
+            <element signature="e#5914#5926#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MainTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="278" column="0" lean-forward="true" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
+        <state relative-caret-position="326">
+          <caret line="286" column="0" lean-forward="false" selection-start-line="286" selection-start-column="0" selection-end-line="286" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/syntax/SyntaxProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+          <folding>
+            <element signature="e#5767#5779#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/MorphologyProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyRules.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3891">
+          <caret line="1836" column="0" lean-forward="false" selection-start-line="1836" selection-start-column="0" selection-end-line="1836" selection-end-column="0" />
+          <folding>
+            <element signature="method#doVerbMorphology#0;class#MorphologyRules#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="422" column="14" lean-forward="false" selection-start-line="422" selection-start-column="14" selection-end-line="422" selection-end-column="14" />
           <folding />
         </state>
       </provider>

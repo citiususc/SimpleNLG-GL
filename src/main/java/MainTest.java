@@ -274,8 +274,10 @@ public class MainTest {
         output = realiser.realiseSentence(v);
         System.out.println(output);*/
 
-        SPhraseSpec text = nlgFactory.createClause(null, "esperar");
-        text.setCategory(PhraseCategory.IMPERSONAL);
+        VPPhraseSpec text = nlgFactory.createVerbPhrase("esperar");
+        text.setFeature(Feature.IS_IMPERSONAL, true);
+       // SPhraseSpec text = nlgFactory.createClause(null, "esperar");
+       // text.setFeature(Feature.IS_IMPERSONAL, true);
 
         SPhraseSpec object = nlgFactory.createClause("os ceos", "alternar");
         object.setPlural(true);

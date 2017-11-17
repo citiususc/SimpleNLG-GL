@@ -65,12 +65,7 @@ public enum PhraseCategory implements ElementCategory {
     /**
      * A phrase relating to a pre-formed string that is not altered in anyway.
      */
-    CANNED_TEXT,
-
-    /**
-     * An impersonal phrase
-     **/
-    IMPERSONAL;
+    CANNED_TEXT;
 
     /**
      * <p>

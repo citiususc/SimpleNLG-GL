@@ -357,7 +357,7 @@ public class PhraseElement extends NLGElement {
      * @param newPostModifier the new post-modifier as a <code>String</code>. It is used to
      *                        create a <code>StringElement</code>.
      */
-    public void addImpersonalPostModifier(String newPostModifier) {
+   /* public void addImpersonalPronoun(String newPostModifier) {
         List<NLGElement> postModifiers = getFeatureAsElementList(InternalFeature.POSTMODIFIERS);
         if (postModifiers == null) {
             postModifiers = new ArrayList<NLGElement>();
@@ -377,7 +377,7 @@ public class PhraseElement extends NLGElement {
             modifierElement.setFeature(InternalFeature.IMPERSONAL, true);
             addPostModifier(modifierElement);
         }
-    }
+    }*/
 
 
     /**

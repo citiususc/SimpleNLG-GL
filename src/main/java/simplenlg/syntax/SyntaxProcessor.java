@@ -128,6 +128,7 @@ public abstract class SyntaxProcessor extends NLGModule {
             }
         }
 
+
         // Remove the spurious ListElements that have only one element.
         if (realisedElement instanceof ListElement) {
             if (((ListElement) realisedElement).size() == 1) {
@@ -135,6 +136,10 @@ public abstract class SyntaxProcessor extends NLGModule {
             }
         }
 
+        //if the phrase is impersonal, the verb has to be
+        if(element != null && LexicalCategory.VERB.equals(element.getCategory()) && element.getParent().getFeatureAsBoolean(Feature.IS_IMPERSONAL)) {
+            realisedElement.setFeature(Feature.IS_IMPERSONAL, true);
+        }
         return realisedElement;
     }
 
@@ -193,12 +198,6 @@ public abstract class SyntaxProcessor extends NLGModule {
                     case ADVERB_PHRASE:
                         realisedElement = phraseHelper.realise(this, phrase);
                         break;
-                    case IMPERSONAL:
-                        List<NLGElement> postModifiers = phrase.getPostModifiers();
-                        phrase.addImpersonalPostModifier("se");
-                        realisedElement = clauseHelper.realise(this, phrase);
-                        break;
-
                     default:
                         realisedElement = phrase;
                         break;
