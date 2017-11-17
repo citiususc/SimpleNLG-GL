@@ -26,6 +26,8 @@ import simplenlg.framework.StringElement;
 import simplenlg.framework.WordElement;
 import simplenlg.phrasespec.PPPhraseSpec;
 
+import java.util.Arrays;
+
 /**
  * <p>
  * This abstract class contains a number of rules for doing simple inflection.
@@ -82,6 +84,7 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
 
     private static final String[] WH_PRONOUNS = {"quen", "que", "cal", "cales", "onde",
             "porque", "porqué", "por que", "como", "canto", "canta", "cantos", "cantas"};
+    private static final String[] VOWELS = new String[]{"a", "e", "i", "o", "u", "á", "é", "í", "ó", "ú"};
 
     /**
      * This method performs the morphology for nouns.
@@ -1701,7 +1704,7 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
                 if (NumberAgreement.PLURAL.equals(number)) {
                     morphology = morphology + "s";
                 }
-            } else if (lastChar.equals('e')) {
+            } else if (Arrays.asList(VOWELS).contains(String.valueOf(lastChar))) {
                 morphology = baseForm + 's';
             } else {
                 morphology = baseForm;
@@ -1827,6 +1830,9 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
                             || DiscourseFunction.SPECIFIER.equals(discourseValue) || (
                             DiscourseFunction.COMPLEMENT.equals(discourseValue)
                                     && (element.getFeatureAsBoolean(Feature.PASSIVE) || element.getParent().getParent() instanceof PPPhraseSpec)) ? 0 : 1;
+                }
+                if(element.getFeatureAsBoolean(InternalFeature.IMPERSONAL)) {
+                    positionIndex = 2;
                 }
                 realised = PRONOUNS[numberIndex][positionIndex][personIndex];
             } else {

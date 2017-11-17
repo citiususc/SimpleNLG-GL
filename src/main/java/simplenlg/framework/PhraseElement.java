@@ -351,6 +351,36 @@ public class PhraseElement extends NLGElement {
     }
 
     /**
+     * Adds a new post-modifier to the phrase element. Post-modifiers will be
+     * realised in the syntax after the complements.
+     *
+     * @param newPostModifier the new post-modifier as a <code>String</code>. It is used to
+     *                        create a <code>StringElement</code>.
+     */
+    public void addImpersonalPostModifier(String newPostModifier) {
+        List<NLGElement> postModifiers = getFeatureAsElementList(InternalFeature.POSTMODIFIERS);
+        if (postModifiers == null) {
+            postModifiers = new ArrayList<NLGElement>();
+        }
+        // get modifier as NLGElement if possible
+        NLGElement modifierElement = null;
+        if (newPostModifier.length() > 0 && !newPostModifier.contains(" ")) {
+            modifierElement = getFactory().createWord(newPostModifier, LexicalCategory.ANY);
+        }
+        if (modifierElement == null) {
+            modifierElement = new StringElement(newPostModifier);
+            modifierElement.setParent(this);
+            modifierElement.setFeature(InternalFeature.IMPERSONAL, true);
+            postModifiers.add(modifierElement);
+            setFeature(InternalFeature.POSTMODIFIERS, postModifiers);
+        } else {
+            modifierElement.setFeature(InternalFeature.IMPERSONAL, true);
+            addPostModifier(modifierElement);
+        }
+    }
+
+
+    /**
      * Set the postmodifier for this phrase. This resets all previous
      * postmodifiers to <code>null</code> and replaces them with the given
      * string.

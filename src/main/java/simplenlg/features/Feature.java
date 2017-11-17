@@ -1180,6 +1180,39 @@ abstract public class Feature {
 
     /**
      * <p>
+     * This variable contains the verb realisation
+     * </p>
+     * <table border="1">
+     * <tr>
+     * <td><b>Feature name</b></td>
+     * <td><em>verb_form</em></td>
+     * </tr>
+     * <tr>
+     * <td><b>Expected type</b></td>
+     * <td><code>verb realisation</code></td>
+     * </tr>
+     * <tr>
+     * <td><b>Created by</b></td>
+     * <td>The morphology processor.</td>
+     * </tr>
+     * <tr>
+     * <td><b>Used by</b></td>
+     * <td>The morphology processor.</td>
+     * </tr>
+     * <tr>
+     * <td><b>Applies to</b></td>
+     * <td>Clauses, coordinated phrases and verb phrases.</td>
+     * </tr>
+     * <tr>
+     * <td><b>Default</b></td>
+     * <td><code>false</code>.</td>
+     * </tr>
+     * </table>
+     */
+    public static final String VERB_FORM = "verb_form";
+
+    /**
+     * <p>
      * This flag represents if the object question has preposition
      * </p>
      * <table border="1">
@@ -1210,5 +1243,4 @@ abstract public class Feature {
      * </table>
      */
     public static final String HAS_PREPOSITION = "has_preposition";
-
-}
+    }

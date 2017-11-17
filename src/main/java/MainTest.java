@@ -26,7 +26,7 @@ public class MainTest {
         System.out.println(output);*/
 
         //presente -> ok
-        NPPhraseSpec pro = nlgFactory.createNounPhrase("John");
+       /* NPPhraseSpec pro = nlgFactory.createNounPhrase("John");
 
         pro = nlgFactory.createNounPhrase("John");
         pro.setFeature(Feature.PRONOMINAL, true);
@@ -40,7 +40,7 @@ public class MainTest {
         sent.setFeature(Feature.TENSE, Tense.PAST);
 
         sent.setIndirectObject("lle");
-        System.out.println(realiser.realiseSentence(sent));
+        System.out.println(realiser.realiseSentence(sent));*/
 
 
       /* pro.setFeature(Feature.PRONOMINAL, true);
@@ -256,5 +256,33 @@ public class MainTest {
         p11.addComplement(pp);
         output = realiser.realiseSentence(p11);
         System.out.println(output);*/
+
+        //SPhraseSpec text = nlgFactory.createClause(null, null);
+
+       /* VPPhraseSpec v = nlgFactory.createVerbPhrase("esperar");
+        v.setObject("el");
+        v.getObject().setFeature(Feature., true);
+        v.setFeature(Feature.PERSON, Person.NONE);
+
+
+        SPhraseSpec object = nlgFactory.createClause("os ceos", "alternar");
+        object.setPlural(true);
+        object.setFeature(Feature.FORM, Form.SUBJUNCTIVE);
+        v.setObject(object);
+
+        //text.setVerbPhrase(v);
+        output = realiser.realiseSentence(v);
+        System.out.println(output);*/
+
+        SPhraseSpec text = nlgFactory.createClause(null, "esperar");
+        text.setCategory(PhraseCategory.IMPERSONAL);
+
+        SPhraseSpec object = nlgFactory.createClause("os ceos", "alternar");
+        object.setPlural(true);
+        object.setFeature(Feature.FORM, Form.SUBJUNCTIVE);
+        text.setObject(object);
+
+        output = realiser.realiseSentence(text);
+        System.out.println(output);
     }
 }

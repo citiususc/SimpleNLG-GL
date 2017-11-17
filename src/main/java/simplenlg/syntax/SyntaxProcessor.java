@@ -18,7 +18,10 @@
  */
 package simplenlg.syntax;
 
+import simplenlg.features.DiscourseFunction;
 import simplenlg.features.Feature;
+import simplenlg.features.InternalFeature;
+import simplenlg.features.LexicalFeature;
 import simplenlg.framework.*;
 import simplenlg.phrasespec.VPPhraseSpec;
 
@@ -189,6 +192,11 @@ public abstract class SyntaxProcessor extends NLGModule {
                     case ADJECTIVE_PHRASE:
                     case ADVERB_PHRASE:
                         realisedElement = phraseHelper.realise(this, phrase);
+                        break;
+                    case IMPERSONAL:
+                        List<NLGElement> postModifiers = phrase.getPostModifiers();
+                        phrase.addImpersonalPostModifier("se");
+                        realisedElement = clauseHelper.realise(this, phrase);
                         break;
 
                     default:

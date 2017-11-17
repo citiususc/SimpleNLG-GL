@@ -471,6 +471,41 @@ public abstract class InternalFeature {
 	 * </table>
 	 */
 	public static final String INTERROGATIVE = "interrogative";
+
+    /**
+     * <p>
+     * This flag determines if the pronoun is impersonal or not.
+     * </p>
+     * <table border="1">
+     * <tr>
+     * <td><b>Feature name</b></td>
+     * <td><em>isImpersonal</em></td>
+     * </tr>
+     * <tr>
+     * <td><b>Expected type</b></td>
+     * <td><code>Boolean</code></td>
+     * </tr>
+     * <tr>
+     * <td><b>Created by</b></td>
+     * <td>The syntax processor sets this feature on sentences if a contained
+     * phrase is impersonal.</td>
+     * </tr>
+     * <tr>
+     * <td><b>Used by</b></td>
+     * <td></td>
+     * </tr>
+     * <tr>
+     * <td><b>Applies to</b></td>
+     * <td>Sentences only.</td>
+     * </tr>
+     * <tr>
+     * <td><b>Default</b></td>
+     * <td><code>Boolean.FALSE</code>.</td>
+     * </tr>
+     * </table>
+     */
+    public static final String IMPERSONAL = "impersonal";
+
 	/**
 	 * <p>
 	 * This feature represents the list of post-modifier elements.

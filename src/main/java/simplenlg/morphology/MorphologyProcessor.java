@@ -19,6 +19,7 @@
 package simplenlg.morphology;
 
 import simplenlg.features.Feature;
+import simplenlg.features.InternalFeature;
 import simplenlg.framework.*;
 
 import java.util.List;
@@ -94,6 +95,9 @@ public abstract class MorphologyProcessor extends NLGModule {
             realisedElement = new ListElement();
             for(NLGElement child: element.getChildren()) {
                 child.setFeature(Feature.PRONOUN_AFTER, element.getFeatureAsBoolean(Feature.PRONOUN_AFTER));
+                if(element.getFeatureAsString(Feature.VERB_FORM) != null) {
+                    child.setFeature(Feature.VERB_FORM, element.getFeatureAsString(Feature.VERB_FORM));
+                }
             }
             ((ListElement) realisedElement).addComponents(realise(element.getChildren()));
 

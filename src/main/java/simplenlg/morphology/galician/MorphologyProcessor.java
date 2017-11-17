@@ -128,6 +128,12 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                     }
                 }
 
+                //save verb realisation if there is a pronoun after
+                if (eachElement.getFeatureAsBoolean(Feature.PRONOUN_AFTER) && prevElement != null && prevElement.getCategory().equals(LexicalCategory.VERB) && currentElement.getRealisation() != null) {
+                    eachElement.setFeature(Feature.VERB_FORM, currentElement.getRealisation());
+                    currentElement.setRealisation("");
+                }
+
                 currentElement = realise(eachElement);
 
                 //when possesive + noun add determiner -> determiner + possesive + noun
@@ -285,7 +291,13 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                         String result = doAccentuation(prevString.toString(), currentElement.getRealisation());
                         prevString.setRealisation(result);
                         currentElement.setRealisation("");
-
+                    } else if (eachElement.getFeatureAsBoolean(Feature.PRONOUN_AFTER) && LexicalCategory.PRONOUN.equals(eachElement.getCategory()) && prevElement == null) {
+                        if (eachElement.getFeatureAsString(Feature.VERB_FORM) != null) {
+                            eachElement.setFeature(Feature.VERB_PRONOUN, eachElement.getFeatureAsString(Feature.VERB_FORM));
+                            eachElement.setFeature(Feature.PRONOUN_FORM, currentElement.getRealisation());
+                            String result = doAccentuation(eachElement.getFeatureAsString(Feature.VERB_FORM), currentElement.getRealisation());
+                            currentElement.setRealisation(result);
+                        }
                     }
 
 //                    if (determiner == null && DiscourseFunction.SPECIFIER.equals(currentElement.getFeature(
