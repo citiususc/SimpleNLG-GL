@@ -283,6 +283,14 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                         String result = doAccentuation(currentElement.getRealisation(), "se");
                         currentElement.setRealisation(result);
                     }
+                    //reflexive phrase
+                    if(LexicalCategory.VERB.equals(eachElement.getCategory()) && eachElement.getFeatureAsBoolean(LexicalFeature.REFLEXIVE) && eachElement.getFeatureAsBoolean(Feature.PRONOUN_AFTER)) {
+                        String result = doAccentuation(currentElement.getRealisation(), "se");
+                        currentElement.setRealisation(result);
+                        if(prevString.equals("se")) {
+                            prevString.setRealisation("");
+                        }
+                    }
                     //verb+pronoun
                     if (eachElement.getFeatureAsBoolean(Feature.PRONOUN_AFTER) && prevElement != null && LexicalCategory.VERB.equals(prevElement.getCategory()) && LexicalCategory.PRONOUN.equals(eachElement.getCategory())) {
                         eachElement.setFeature(Feature.VERB_PRONOUN, prevString.toString());
@@ -426,7 +434,7 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                 //System.out.println("MONOSÍLABA: " + conjugated + pronoun);
             }
             //aguda acentuada
-            else if (Arrays.asList(ACCENTUATED_VOWELS).contains(conjugated.substring(conjugated.length() - 1)) || (Arrays.asList(VOWELS).contains(conjugated.substring(conjugated.length() - 2)) && (conjugated.substring(conjugated.length() - 1).equals("n")) || conjugated.substring(conjugated.length() - 1).equals("s")) || ((Arrays.asList(VOWELS).contains(conjugated.substring(conjugated.length() - 3)) && conjugated.substring(conjugated.length() - 2).equals("n")) && conjugated.substring(conjugated.length() - 1).equals("s"))) {
+            else if (Arrays.asList(ACCENTUATED_VOWELS).contains(conjugated.substring(conjugated.length() - 1)) || (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) && (conjugated.substring(conjugated.length() - 1).equals("n")) || conjugated.substring(conjugated.length() - 1).equals("s")) || ((Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 3))) && conjugated.charAt(conjugated.length() - 2) == 'n' && conjugated.charAt(conjugated.length() - 1) == 's'))) {
                 letter = conjugated.charAt(accentIndex);
                 replacement = morphologyRules.replaceAccentuatedChar(letter);
                 conjugated = conjugated.substring(0, accentIndex) + replacement + conjugated.substring(accentIndex + 1, conjugated.length());
@@ -504,7 +512,7 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                 }
             }
             //aguda acentuada
-            else if (Arrays.asList(ACCENTUATED_VOWELS).contains(conjugated.substring(conjugated.length() - 1)) || (Arrays.asList(VOWELS).contains(conjugated.substring(conjugated.length() - 2)) && (conjugated.substring(conjugated.length() - 1).equals("n")) || conjugated.substring(conjugated.length() - 1).equals("s")) || ((Arrays.asList(VOWELS).contains(conjugated.substring(conjugated.length() - 3)) && conjugated.substring(conjugated.length() - 2).equals("n")) && conjugated.substring(conjugated.length() - 1).equals("s"))) {
+            else if (Arrays.asList(ACCENTUATED_VOWELS).contains(conjugated.substring(conjugated.length() - 1)) || (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length()-2))) && (conjugated.substring(conjugated.length() - 1).equals("n")) || conjugated.substring(conjugated.length() - 1).equals("s")) || ((Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length()-3))) && conjugated.charAt(conjugated.length()-2) == 'n' && conjugated.substring(conjugated.length() - 1).equals("s")))) {
                 //System.out.println("AGUDA CON ACENTO: " + conjugated + pronoun);
             }
             //aguda no acentuada

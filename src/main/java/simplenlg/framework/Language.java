@@ -30,7 +30,7 @@ public enum Language {
 
     ENGLISH("en"), SPANISH("es"), GALICIAN("gl");
 
-    final public static Language DEFAULT_LANGUAGE = ENGLISH;
+    final public static Language DEFAULT_LANGUAGE = GALICIAN;
     final public String code;
 
     Language(String code) {

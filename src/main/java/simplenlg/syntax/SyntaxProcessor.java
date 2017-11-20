@@ -136,9 +136,15 @@ public abstract class SyntaxProcessor extends NLGModule {
             }
         }
 
-        //if the phrase is impersonal, the verb has to be
-        if(element != null && LexicalCategory.VERB.equals(element.getCategory()) && element.getParent().getFeatureAsBoolean(Feature.IS_IMPERSONAL)) {
-            realisedElement.setFeature(Feature.IS_IMPERSONAL, true);
+        if(element != null && LexicalCategory.VERB.equals(element.getCategory()) && element.getParent() != null) {
+            //if the phrase is impersonal, the verb has to be
+            if(element.getParent().getFeatureAsBoolean(Feature.IS_IMPERSONAL)) {
+                realisedElement.setFeature(Feature.IS_IMPERSONAL, true);
+            }
+            //if the phrase is reflexive, the verb has to be (except if the phrase has a modal verb)
+            else if(element.getParent().getFeatureAsBoolean(LexicalFeature.REFLEXIVE) && element.getParent().getFeature(Feature.MODAL) == null) {
+                realisedElement.setFeature(LexicalFeature.REFLEXIVE, true);
+            }
         }
         return realisedElement;
     }

@@ -274,7 +274,7 @@ public class MainTest {
         output = realiser.realiseSentence(v);
         System.out.println(output);*/
 
-        VPPhraseSpec text = nlgFactory.createVerbPhrase("esperar");
+        /*VPPhraseSpec text = nlgFactory.createVerbPhrase("esperar");
         text.setFeature(Feature.IS_IMPERSONAL, true);
        // SPhraseSpec text = nlgFactory.createClause(null, "esperar");
        // text.setFeature(Feature.IS_IMPERSONAL, true);
@@ -282,9 +282,16 @@ public class MainTest {
         SPhraseSpec object = nlgFactory.createClause("os ceos", "alternar");
         object.setPlural(true);
         object.setFeature(Feature.FORM, Form.SUBJUNCTIVE);
-        text.setObject(object);
+        text.setObject(object);*/
 
-        output = realiser.realiseSentence(text);
+        SPhraseSpec second_part = nlgFactory.createClause(null, "atopar");
+        second_part.setFeature(Feature.MODAL, "poder");
+        second_part.setFeature(Feature.TENSE, Tense.FUTURE);
+        second_part.setPlural(true);
+        second_part.getVerbPhrase().setFeature(LexicalFeature.REFLEXIVE, true);
+
+
+        output = realiser.realiseSentence(second_part);
         System.out.println(output);
     }
 }
