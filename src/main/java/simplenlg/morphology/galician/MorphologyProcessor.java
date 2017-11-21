@@ -603,19 +603,24 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                     syllables.add(word.substring(0, i));
                     word = word.substring(i, word.length());
                 } else {
-                    //vowel + consonant + consonant -> vowel + consonant / consonant
-                    if (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i)))) {
-                        if (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i + 1)))) {
-                            syllables.add(word.substring(0, i + 1));
-                            word = word.substring(i + 1, word.length());
-                        } else {
-                            syllables.add(word.substring(0, i));
-                            word = word.substring(i, word.length());
-                        }
-                    }
                     //strong vowel+ soft vowel or consonant
                     if ((Arrays.asList(STRONG_VOWELS).contains(String.valueOf(word.charAt(i - 1))) || Arrays.asList(ACCENTUATED_VOWELS).contains(String.valueOf(word.charAt(i - 1))))) {
                         if (!Arrays.asList(STRONG_VOWELS).contains(String.valueOf(word.charAt(i)))) {
+                            syllables.add(word.substring(0, i + 1));
+                            word = word.substring(i + 1, word.length());
+                        }
+                    }
+                    //vowel + consonant + consonant -> vowel + consonant / consonant
+                    else if (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i)))) {
+                        try {
+                            if (!Arrays.asList(VOWELS).contains(String.valueOf(word.charAt(i + 1)))) {
+                                syllables.add(word.substring(0, i + 1));
+                                word = word.substring(i + 1, word.length());
+                            } else {
+                                syllables.add(word.substring(0, i));
+                                word = word.substring(i, word.length());
+                            }
+                        }catch (Exception e) {
                             syllables.add(word.substring(0, i + 1));
                             word = word.substring(i + 1, word.length());
                         }
