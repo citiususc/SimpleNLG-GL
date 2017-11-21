@@ -59,6 +59,8 @@ public abstract class SyntaxProcessor extends NLGModule {
     protected PhraseHelper phraseHelper;
     protected VerbPhraseHelper verbPhraseHelper;
 
+    protected NLGFactory nlgFactory;
+
     @Override
     public NLGElement realise(NLGElement element) {
         NLGElement realisedElement = null;

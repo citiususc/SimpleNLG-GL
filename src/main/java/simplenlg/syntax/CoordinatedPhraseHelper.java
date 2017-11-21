@@ -59,7 +59,7 @@ public abstract class CoordinatedPhraseHelper {
             phraseHelper.realiseList(parent, realisedElement, phrase
                     .getPreModifiers(), DiscourseFunction.PRE_MODIFIER);
 
-            CoordinatedPhraseElement coordinated = new CoordinatedPhraseElement();
+            CoordinatedPhraseElement coordinated = new CoordinatedPhraseElement(parent.nlgFactory);
 
             List<NLGElement> children = phrase.getChildren();
             String conjunction = phrase.getFeatureAsString(Feature.CONJUNCTION);

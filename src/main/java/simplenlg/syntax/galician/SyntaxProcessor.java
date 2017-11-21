@@ -18,6 +18,10 @@
  */
 package simplenlg.syntax.galician;
 
+import simplenlg.framework.NLGFactory;
+import simplenlg.lexicon.Lexicon;
+import simplenlg.lexicon.galician.XMLLexicon;
+
 /**
  * <p>
  * This is the processor for handling syntax within the SimpleNLG. The processor
@@ -50,5 +54,8 @@ public class SyntaxProcessor extends simplenlg.syntax.SyntaxProcessor {
         this.nounPhraseHelper = new NounPhraseHelper();
         this.phraseHelper = new PhraseHelper();
         this.verbPhraseHelper = new VerbPhraseHelper();
+
+        Lexicon lexicon = new XMLLexicon();
+        this.nlgFactory = new NLGFactory(lexicon);
     }
 }
