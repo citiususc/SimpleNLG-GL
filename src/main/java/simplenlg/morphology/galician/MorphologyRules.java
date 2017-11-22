@@ -1704,12 +1704,15 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
                 if (NumberAgreement.PLURAL.equals(number)) {
                     morphology = morphology + "s";
                 }
-            } else if (Arrays.asList(VOWELS).contains(String.valueOf(lastChar))) {
+            } else if (Arrays.asList(VOWELS).contains(String.valueOf(lastChar)) && NumberAgreement.PLURAL.equals(number)) {
                 morphology = baseForm + 's';
             } else {
-                morphology = baseForm;
                 if (NumberAgreement.PLURAL.equals(number)) {
-                    morphology = morphology + "es";
+                    if(lastChar.equals('l')) {
+                        morphology = baseForm.substring(0, baseForm.length() - 1) + "is";
+                    } else {
+                        morphology = morphology + "es";
+                    }
                 }
             }
         }
