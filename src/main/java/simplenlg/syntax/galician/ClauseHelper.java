@@ -394,16 +394,14 @@ class ClauseHelper extends simplenlg.syntax.ClauseHelper {
                 case HOW:
                 case WHY:
                 case WHERE:
+                case WHO_INDIRECT_OBJECT:
+                case WHAT_OBJECT:
                     splitVerb = realiseObjectWHInterrogative((InterrogativeType) type, phrase, parent, realisedElement, phraseFactory);
                     break;
-                case WHO_INDIRECT_OBJECT:
+                case WHO_OBJECT:
                     NLGElement preposition = phraseFactory.createWord("a", LexicalCategory.PREPOSITION);
                     realisedElement.addComponent(parent.realise(preposition));
                     realisedElement.setFeature(Feature.HAS_PREPOSITION, true);
-                    splitVerb = realiseObjectWHInterrogative((InterrogativeType) type, phrase, parent, realisedElement, phraseFactory);
-                    break;
-                case WHAT_OBJECT:
-                case WHO_OBJECT:
                     splitVerb = realiseObjectWHInterrogative((InterrogativeType) type, phrase, parent, realisedElement, phraseFactory);
                     break;
                 case HOW_PREDICATE:
