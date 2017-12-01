@@ -1,10 +1,13 @@
 import simplenlg.features.*;
+import simplenlg.framework.CoordinatedPhraseElement;
 import simplenlg.framework.NLGElement;
 import simplenlg.framework.NLGFactory;
 import simplenlg.framework.PhraseElement;
 import simplenlg.lexicon.Lexicon;
 import simplenlg.lexicon.galician.XMLLexicon;
+import simplenlg.phrasespec.NPPhraseSpec;
 import simplenlg.phrasespec.SPhraseSpec;
+import simplenlg.phrasespec.VPPhraseSpec;
 import simplenlg.realiser.galician.Realiser;
 
 /**
@@ -17,7 +20,7 @@ public class MainTest {
         Realiser realiser = new Realiser(lexicon);
 
 
-        NLGElement s1 = nlgFactory.createSentence("o meu can é feliz");
+       /* NLGElement s1 = nlgFactory.createSentence("o meu can é feliz");
         String output = realiser.realiseSentence(s1);
         System.out.println(output);
 
@@ -28,13 +31,31 @@ public class MainTest {
         p.addComplement("moi rápido"); // Frase adverbial, pasada como unha cadena
         p.addComplement("a pesar do seu esgotamento"); // Frase preposicional
 
-        String output2 = realiser.realiseSentence(p);
-        System.out.println(output2);
+      /*  String output2 = realiser.realiseSentence(p);
+        System.out.println(output2);*/
 
-        PhraseElement min = nlgFactory.createAdjectivePhrase("superior");
+       /* PhraseElement min = nlgFactory.createAdjectivePhrase("superior");
         min.setPlural(true);
         min.setFeature(LexicalFeature.GENDER, Gender.FEMININE);
         output2 = realiser.realiseSentence(min);
-        System.out.println(output2);
+        System.out.println(output2);*/
+
+        SPhraseSpec p = nlgFactory.createClause();
+        NPPhraseSpec subject1 = nlgFactory.createNounPhrase("María");
+        NPPhraseSpec subject2 = nlgFactory.createNounPhrase("unha", "xirafa");
+
+        CoordinatedPhraseElement subj = nlgFactory.createCoordinatedPhrase(subject1, subject2);
+        p.setSubject(subj);
+
+        NPPhraseSpec object1 = nlgFactory.createNounPhrase("un mono");
+        NPPhraseSpec object2 = nlgFactory.createNounPhrase("a Xurxo");
+
+        CoordinatedPhraseElement obj = nlgFactory.createCoordinatedPhrase(object1, object2);
+        obj.addCoordinate("a Marta");
+        p.setObject(obj);
+        obj.setFeature(Feature.CONJUNCTION, "ou");
+
+        String output = realiser.realiseSentence(p);
+        System.out.println(output);
     }
 }
