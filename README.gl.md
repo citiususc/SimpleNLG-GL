@@ -15,8 +15,6 @@ Ao estar baseada en SimpleNLG, SimpleNLG-EnFr e SimpleNLG-ES, SimpleNLG-gl está
 
 O lexicón empregado en SimpleNLG-gl está xerado a partir do dicionario de [FreeLing](http://nlp.lsi.upc.edu/freeling/) que está licenciado baixo os termos e condicións da [Lesser General Public License For Linguistic Resources](http://infolingu.univ-mlv.fr/DonneesLinguistiques/Lexiques-Grammaires/lgpllr.html).
 
-```
-
 SimpleNLG
 ------------------
 A versión actual de SimpleNLG es V4.4.8 ([API](https://cdn.rawgit.com/simplenlg/simplenlg/master/docs/javadoc/index.html)). Para máis información, visita a súa [páxina de Github](https://github.com/simplenlg/simplenlg) ou a [lista de discusión de SimpleNLG] (https://groups.google.com/forum/#!forum/simplenlg) para máis detalles.
