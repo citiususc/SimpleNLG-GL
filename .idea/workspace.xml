@@ -7,11 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a438994-81f5-48c3-9745-5f0cfd17d647" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Arquitectura SimpleNLG-es.odt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Arquitectura SimpleNLG-es.pdf" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.gl.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1086,7 +1083,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512128999973</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Documentación">
+      <created>1512410498625</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1512410498625</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1193,7 +1197,8 @@
     <MESSAGE value="Repaso tests" />
     <MESSAGE value="Arreglado plural cuando la palabra termina en l" />
     <MESSAGE value="Arreglado un caso en el plural de adjetivos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arreglado un caso en el plural de adjetivos" />
+    <MESSAGE value="Documentación" />
+    <option name="LAST_COMMIT_MESSAGE" value="Documentación" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
