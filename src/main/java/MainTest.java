@@ -40,7 +40,7 @@ public class MainTest {
         output2 = realiser.realiseSentence(min);
         System.out.println(output2);*/
 
-        SPhraseSpec p = nlgFactory.createClause();
+       /* SPhraseSpec p = nlgFactory.createClause();
         NPPhraseSpec subject1 = nlgFactory.createNounPhrase("María");
         NPPhraseSpec subject2 = nlgFactory.createNounPhrase("unha", "xirafa");
 
@@ -56,6 +56,13 @@ public class MainTest {
         obj.setFeature(Feature.CONJUNCTION, "ou");
 
         String output = realiser.realiseSentence(p);
+        System.out.println(output);*/
+
+       NPPhraseSpec p = nlgFactory.createNounPhrase("diminución");
+       p.addModifier("notable");
+       p.setFeature(LexicalFeature.GENDER, Gender.FEMININE);
+
+       String output = realiser.realiseSentence(p);
         System.out.println(output);
     }
 }

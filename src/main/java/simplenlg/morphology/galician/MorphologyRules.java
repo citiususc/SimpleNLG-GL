@@ -1704,8 +1704,14 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
                 if (NumberAgreement.PLURAL.equals(number)) {
                     morphology = morphology + "s";
                 }
-            } else if (Arrays.asList(VOWELS).contains(String.valueOf(lastChar)) && NumberAgreement.PLURAL.equals(number)) {
-                morphology = baseForm + 's';
+            } else if (Arrays.asList(VOWELS).contains(String.valueOf(lastChar))) {
+                if(NumberAgreement.PLURAL.equals(number)) {
+                    morphology = baseForm + 's';
+                } else {
+                    if(lastChar.equals('e')) {
+                        morphology = baseForm;
+                    }
+                }
             } else {
                 if (NumberAgreement.PLURAL.equals(number)) {
                     if(lastChar.equals('l')) {
