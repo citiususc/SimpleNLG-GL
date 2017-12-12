@@ -59,7 +59,7 @@ public class MainTest {
         System.out.println(output);*/
 
        NPPhraseSpec p = nlgFactory.createNounPhrase("diminución");
-       p.addModifier("notable");
+       p.addModifier("notábel");
        p.setFeature(LexicalFeature.GENDER, Gender.FEMININE);
 
        String output = realiser.realiseSentence(p);

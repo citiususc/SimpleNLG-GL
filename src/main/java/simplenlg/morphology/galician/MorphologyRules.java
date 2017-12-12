@@ -1717,8 +1717,11 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
                     if(lastChar.equals('l')) {
                         morphology = baseForm.substring(0, baseForm.length() - 1) + "is";
                     } else {
-                        morphology = baseForm;
                         morphology = morphology + "es";
+                    }
+                } else {
+                    if(lastChar.equals('l')) {
+                        morphology = baseForm;
                     }
                 }
             }
