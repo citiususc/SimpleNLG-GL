@@ -7,12 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a438994-81f5-48c3-9745-5f0cfd17d647" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/artifacts/SimpleNLG_gl_jar/SimpleNLG-gl.jar" afterPath="$PROJECT_DIR$/classes/artifacts/SimpleNLG_gl_jar/SimpleNLG-gl.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MainTest.class" afterPath="$PROJECT_DIR$/target/classes/MainTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyRules.class" afterPath="$PROJECT_DIR$/target/classes/simplenlg/morphology/galician/MorphologyRules.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/artifacts/SimpleNLG_gl_jar/SimpleNLG-gl.jar" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MainTest.java" afterPath="$PROJECT_DIR$/src/main/java/MainTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyRules.java" afterPath="$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyRules.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,7 +36,7 @@
       <file leaf-file-name="Realiser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/realiser/Realiser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5418">
+            <state relative-caret-position="5376">
               <caret line="284" column="48" lean-forward="false" selection-start-line="284" selection-start-column="48" selection-end-line="284" selection-end-column="48" />
               <folding>
                 <element signature="e#2224#2225#0" expanded="true" />
@@ -85,8 +81,8 @@
       <file leaf-file-name="MorphologyRules.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyRules.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="1722" column="41" lean-forward="false" selection-start-line="1722" selection-start-column="41" selection-end-line="1722" selection-end-column="41" />
+            <state relative-caret-position="267">
+              <caret line="1706" column="38" lean-forward="true" selection-start-line="1706" selection-start-column="38" selection-end-line="1706" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -105,7 +101,7 @@
       <file leaf-file-name="MainTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MainTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
+            <state relative-caret-position="1281">
               <caret line="61" column="29" lean-forward="false" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -257,65 +253,56 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="SimpleNLG-gl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simplenlg-gl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SimpleNLG-gl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simplenlg-gl" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SimpleNLG-gl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simplenlg-gl" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SimpleNLG-gl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simplenlg-gl" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SimpleNLG-gl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simplenlg-gl" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="simplenlg" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SimpleNLG-gl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simplenlg-gl" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="simplenlg" type="462c0819:PsiDirectoryNode" />
-              <item name="morphology" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SimpleNLG-gl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simplenlg-gl" type="462c0819:PsiDirectoryNode" />
+              <item name="simplenlg" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SimpleNLG-gl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simplenlg" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="SimpleNLG_gl_jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SimpleNLG-gl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simplenlg" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SimpleNLG-gl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simplenlg" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SimpleNLG-gl" type="b2602c69:ProjectViewProjectNode" />
               <item name="simplenlg" type="462c0819:PsiDirectoryNode" />
-              <item name="morphology" type="462c0819:PsiDirectoryNode" />
-              <item name="galician" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -925,7 +912,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512410498625</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Regla generación adjetivos">
+      <created>1513079948712</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1513079948712</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -975,13 +969,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17214912" sideWeight="0.6296875" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28618422" sideWeight="0.6296875" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30921054" sideWeight="0.2859375" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41557017" sideWeight="0.66041666" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41557017" sideWeight="0.66041666" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1033,7 +1027,8 @@
     <MESSAGE value="Arreglado plural cuando la palabra termina en l" />
     <MESSAGE value="Arreglado un caso en el plural de adjetivos" />
     <MESSAGE value="Documentación" />
-    <option name="LAST_COMMIT_MESSAGE" value="Documentación" />
+    <MESSAGE value="Regla generación adjetivos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Regla generación adjetivos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1506,10 +1501,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="31" column="26" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-          <folding>
-            <element signature="e#1212#1213#0" expanded="false" />
-            <element signature="e#1253#1254#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1517,7 +1508,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1525,7 +1515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="40" column="13" lean-forward="false" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1533,7 +1522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="57" column="19" lean-forward="false" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1541,7 +1529,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6912">
           <caret line="421" column="42" lean-forward="false" selection-start-line="421" selection-start-column="42" selection-end-line="421" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1588,7 +1575,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/realiser/Realiser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5418">
+        <state relative-caret-position="5376">
           <caret line="284" column="48" lean-forward="false" selection-start-line="284" selection-start-column="48" selection-end-line="284" selection-end-column="48" />
           <folding>
             <element signature="e#2224#2225#0" expanded="true" />
@@ -1607,7 +1594,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MainTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
+        <state relative-caret-position="1281">
           <caret line="61" column="29" lean-forward="false" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1617,8 +1604,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/simplenlg/morphology/galician/MorphologyRules.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="1722" column="41" lean-forward="false" selection-start-line="1722" selection-start-column="41" selection-end-line="1722" selection-end-column="41" />
+        <state relative-caret-position="267">
+          <caret line="1706" column="38" lean-forward="true" selection-start-line="1706" selection-start-column="38" selection-end-line="1706" selection-end-column="38" />
           <folding />
         </state>
       </provider>
