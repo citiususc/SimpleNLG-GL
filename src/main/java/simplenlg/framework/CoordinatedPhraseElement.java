@@ -69,8 +69,19 @@ public class CoordinatedPhraseElement extends NLGElement {
      * @param factory the factory for this phrase
      */
     public CoordinatedPhraseElement(NLGFactory factory) {
-
         setFactory(factory);
+        this.setFeature(Feature.CONJUNCTION, this.getFactory().getLexicon().getAdditionCoordConjunction().getBaseForm()); //$NON-NLS-1$
+    }
+
+    public CoordinatedPhraseElement(NLGFactory factory, Lexicon lexicon) {
+        if (factory == null) {
+            setFactory(new NLGFactory());
+            if (lexicon != null) {
+                this.getFactory().setLexicon(lexicon);
+            }
+        } else {
+            setFactory(factory);
+        }
         this.setFeature(Feature.CONJUNCTION, this.getFactory().getLexicon().getAdditionCoordConjunction().getBaseForm()); //$NON-NLS-1$
     }
 
