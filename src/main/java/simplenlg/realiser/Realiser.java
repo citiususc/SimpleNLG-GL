@@ -139,63 +139,65 @@ public abstract class Realiser extends NLGModule {
         }
         //////////////////////////////verb + pronoun colocation/////////////////////////////////////////////////
         //negated and interrogative sentences: verb+pronoun
-        if (postSyntax.getFeatureAsBoolean(Feature.NEGATED) == false && postSyntax.getFeatureAsBoolean(Feature.INTERROGATIVE_TYPE) == false) {
-            pronoun_after = true;
-        }
-        List<NLGElement> elements = new ArrayList<NLGElement>();
-        if (postSyntax instanceof ListElement || postSyntax instanceof DocumentElement) {
-            elements.addAll(postSyntax.getChildren());
-        } else {
-            elements.add(postSyntax);
-        }
+        if(postSyntax.getCategory().equals(DocumentCategory.SENTENCE)) {
+            if (postSyntax.getFeatureAsBoolean(Feature.NEGATED) == false && postSyntax.getFeatureAsBoolean(Feature.INTERROGATIVE_TYPE) == false) {
+                pronoun_after = true;
+            }
+            List<NLGElement> elements = new ArrayList<NLGElement>();
+            if (postSyntax instanceof ListElement || postSyntax instanceof DocumentElement) {
+                elements.addAll(postSyntax.getChildren());
+            } else {
+                elements.add(postSyntax);
+            }
 
-        elements = checkElements(elements);
+            elements = checkElements(elements);
 
-        int indexVerb = -1, indexSubordinate = -1, indexAdverb = -1, indexIndefinite = -1, indexInterrogative = -1, indexDesiderative = -1;
-        for (NLGElement e : elements) {
-            try {
-                if (e.getCategory().equals(LexicalCategory.VERB)) {
-                    indexVerb = elements.indexOf(e);
+            int indexVerb = -1, indexSubordinate = -1, indexAdverb = -1, indexIndefinite = -1, indexInterrogative = -1, indexDesiderative = -1;
+            for (NLGElement e : elements) {
+                try {
+                    if (e.getCategory().equals(LexicalCategory.VERB)) {
+                        indexVerb = elements.indexOf(e);
+                    }
+                } catch (Exception ex) {
+
                 }
-            } catch (Exception ex) {
-
+                if (Arrays.asList(SUBORDINATES).contains(e.getRealisation())) {
+                    indexSubordinate = elements.indexOf(e);
+                }
+                if (Arrays.asList(ADVERBS).contains(e.getRealisation()) || e.getCategory().equals(LexicalCategory.ADVERB)) {
+                    indexAdverb = elements.indexOf(e);
+                }
+                if (Arrays.asList(INDEFINITES).contains(e.getRealisation())) {
+                    indexIndefinite = elements.indexOf(e);
+                }
+                if (Arrays.asList(INTERROGATIVES).contains(e.getRealisation())) {
+                    indexInterrogative = elements.indexOf(e);
+                }
+                if (Arrays.asList(DESIDERATIVES).contains(e.getRealisation())) {
+                    indexDesiderative = elements.indexOf(e);
+                }
             }
-            if (Arrays.asList(SUBORDINATES).contains(e.getRealisation())) {
-                indexSubordinate = elements.indexOf(e);
-            }
-            if (Arrays.asList(ADVERBS).contains(e.getRealisation()) || e.getCategory().equals(LexicalCategory.ADVERB)) {
-                indexAdverb = elements.indexOf(e);
-            }
-            if (Arrays.asList(INDEFINITES).contains(e.getRealisation())) {
-                indexIndefinite = elements.indexOf(e);
-            }
-            if(Arrays.asList(INTERROGATIVES).contains(e.getRealisation())) {
-                indexInterrogative = elements.indexOf(e);
-            }
-            if(Arrays.asList(DESIDERATIVES).contains(e.getRealisation())) {
-                indexDesiderative = elements.indexOf(e);
-            }
-        }
-        if (indexVerb >= 0) {
-            //subordinates sentences: pronoun before
-            if (indexSubordinate >= 0 && indexSubordinate < indexVerb) {
-                pronoun_after = false;
-            }
-            //with some adverbs: pronoun before
-            if (indexAdverb >= 0 && indexAdverb < indexVerb) {
-                pronoun_after = false;
-            }
-            //with some indefinites: pronoun before
-            if (indexIndefinite >= 0 && indexIndefinite < indexVerb) {
-                pronoun_after = false;
-            }
-            //with interrogatives: pronoun before
-            if(indexInterrogative >= 0 && indexInterrogative < indexVerb) {
-                pronoun_after = false;
-            }
-            //in desideratives phrases: pronoun before
-            if(indexDesiderative >= 0 && indexDesiderative < indexVerb) {
-                pronoun_after = false;
+            if (indexVerb >= 0) {
+                //subordinates sentences: pronoun before
+                if (indexSubordinate >= 0 && indexSubordinate < indexVerb) {
+                    pronoun_after = false;
+                }
+                //with some adverbs: pronoun before
+                if (indexAdverb >= 0 && indexAdverb < indexVerb) {
+                    pronoun_after = false;
+                }
+                //with some indefinites: pronoun before
+                if (indexIndefinite >= 0 && indexIndefinite < indexVerb) {
+                    pronoun_after = false;
+                }
+                //with interrogatives: pronoun before
+                if (indexInterrogative >= 0 && indexInterrogative < indexVerb) {
+                    pronoun_after = false;
+                }
+                //in desideratives phrases: pronoun before
+                if (indexDesiderative >= 0 && indexDesiderative < indexVerb) {
+                    pronoun_after = false;
+                }
             }
         }
 
