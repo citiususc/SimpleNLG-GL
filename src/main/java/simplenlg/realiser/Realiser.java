@@ -163,7 +163,7 @@ public abstract class Realiser extends NLGModule {
             if (Arrays.asList(SUBORDINATES).contains(e.getRealisation())) {
                 indexSubordinate = elements.indexOf(e);
             }
-            if (Arrays.asList(ADVERBS).contains(e.getRealisation())) {
+            if (Arrays.asList(ADVERBS).contains(e.getRealisation()) || e.getCategory().equals(LexicalCategory.ADVERB)) {
                 indexAdverb = elements.indexOf(e);
             }
             if (Arrays.asList(INDEFINITES).contains(e.getRealisation())) {

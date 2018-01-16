@@ -58,11 +58,22 @@ public class MainTest {
         String output = realiser.realiseSentence(p);
         System.out.println(output);*/
 
-       NPPhraseSpec p = nlgFactory.createNounPhrase("diminución");
+     /*  NPPhraseSpec p = nlgFactory.createNounPhrase("diminución");
        p.addModifier("notábel");
        p.setFeature(LexicalFeature.GENDER, Gender.FEMININE);
 
        String output = realiser.realiseSentence(p);
+        System.out.println(output);*/
+
+        PhraseElement subject = nlgFactory.createPrepositionPhrase("con", "valores que");
+        subject.addPostModifier("globalmente");
+        SPhraseSpec option1 = nlgFactory.createClause(subject, "atopar");
+        option1.setFeature(Feature.TENSE, Tense.FUTURE);
+        option1.setPlural(true);
+        option1.getVerbPhrase().setFeature(LexicalFeature.REFLEXIVE, true);
+        //option1.addPostModifier(nlgFactory.createPrepositionPhrase(t_var.getLabel(token)));
+
+        String output = realiser.realiseSentence(option1);
         System.out.println(output);
     }
 }
