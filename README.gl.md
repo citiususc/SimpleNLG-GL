@@ -5,7 +5,7 @@ SimpleNLG-gl é unha API de Java deseñada para facilitar a xeración de textos 
 
 SimpleNLG-gl está deseñada para facilitar as tarefas de realización lingüística en galego nos sistemas de xeración de linguaxe natural.
 
-O desenvolvemento de SimpleNLG-GL realizouse no marco dos proxectos TIN2014-56633-C3-1-R e TIN2017-84796-C2-1-R, financiados polo MINECO e Fondos FEDER e co apoio da Rede "Tecnoloxías e Análise de Datos Lingüísticos (TECANDALI) (Ref. 2016-PG080)", coordinada polo Instituto da Lingua Galega (IGL).
+O desenvolvemento de SimpleNLG-gl realizouse no marco dos proxectos TIN2014-56633-C3-1-R e TIN2017-84796-C2-1-R, financiados polo MINECO e Fondos FEDER e co apoio da Rede "Tecnoloxías e Análise de Datos Lingüísticos (TECANDALI) (Ref. 2016-PG080)", coordinada polo Instituto da Lingua Galega (IGL).
 
 Para comezar
 ------------
