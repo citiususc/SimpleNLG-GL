@@ -1,7 +1,7 @@
 SimpleNLG-gl
 =========
 
-SimpleNLG-gl é unha API de Java deseñada para facilitara xeración de textos en linguaje natural en galego. É unha adaptación trilingüe inglés /español / galego da libraría SimpleNLG v4.4.8, seguindo a estrutura empregada en SimpleNLG-EnFr. A libraría SimpleNLG orixinal foi desenvolvida para inglés no [Department of Computing Science de la University of Aberdeen](https://www.abdn.ac.uk/ncs/departments/computing-science/natural-language-generation-187.php). SimpleNLG-EnFr é a súa adaptación bilingüe Inglés-Francés, desenvolvida na [Université de Montreal](http://www-etud.iro.umontreal.ca/~vaudrypl/snlgbil/snlgEnFr_francais.xhtml).
+SimpleNLG-gl é unha API de Java deseñada para facilitar a xeración de textos en linguaje natural en galego. É unha adaptación trilingüe inglés /español / galego da libraría SimpleNLG v4.4.8, seguindo a estrutura empregada en SimpleNLG-EnFr. A libraría SimpleNLG orixinal foi desenvolvida para inglés no [Department of Computing Science de la University of Aberdeen](https://www.abdn.ac.uk/ncs/departments/computing-science/natural-language-generation-187.php). SimpleNLG-EnFr é a súa adaptación bilingüe Inglés-Francés, desenvolvida na [Université de Montreal](http://www-etud.iro.umontreal.ca/~vaudrypl/snlgbil/snlgEnFr_francais.xhtml).
 
 SimpleNLG-gl está deseñada para facilitar as tarefas de realización lingüística en galego nos sistemas de xeración de linguaxe natural.
 
