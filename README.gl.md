@@ -19,7 +19,7 @@ O lexicón empregado en SimpleNLG-gl está xerado a partir do dicionario de [Fre
 
 SimpleNLG
 ------------------
-A versión actual de SimpleNLG es V4.4.8 ([API](https://cdn.rawgit.com/simplenlg/simplenlg/master/docs/javadoc/index.html)). Para máis información, visita a súa [páxina de Github](https://github.com/simplenlg/simplenlg) ou a [lista de discusión de SimpleNLG] (https://groups.google.com/forum/#!forum/simplenlg) para máis detalles.
+A versión actual de SimpleNLG é a V4.4.8 ([API](https://cdn.rawgit.com/simplenlg/simplenlg/master/docs/javadoc/index.html)). Para máis información, visita a súa [páxina de Github](https://github.com/simplenlg/simplenlg) ou a [lista de discusión de SimpleNLG] (https://groups.google.com/forum/#!forum/simplenlg) para máis detalles.
 
 Se desexas citar SimpleNLG nunha publicación académica, utiliza o seguinte documento:
 
