@@ -18,13 +18,11 @@
  */
 package simplenlg.morphology.galician;
 
-import gov.nih.nlm.nls.lvg.Util.Str;
 import simplenlg.features.Feature;
 import simplenlg.features.InternalFeature;
 import simplenlg.features.LexicalFeature;
 import simplenlg.framework.*;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -65,10 +63,12 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
 
     private static final String[] PREPOSITIONS = new String[]{"a", "con", "de", "en", "por", "tras"};
     private static final String[] PREP_INDET = new String[]{"con", "de", "en"};
-    private static final String[] CI_PRONOUNS = new String[]{"me", "che", "lle", "nos", "vos", "lles"};
-    private static final String[] CD_PRONOUNS = new String[]{"o", "a", "os", "as"};
     private static final String[] DEFINITES = new String[]{"o", "a", "os", "as"};
     private static final String[] INDEFINITES = new String[]{"un", "unha", "uns", "unhas"};
+    private static final String[] MASCULINE_POSESIVES = new String[]{"meu", "teu", "seu", "noso", "voso"};
+    private static final String[] FEMININE_POSESIVES = new String[]{"miña", "túa", "súa", "nosa", "vosa"};
+    private static final String[] MASCULINE_POSESIVES_PLURAL = new String[]{"meus", "teus", "seus", "nosos", "vosos"};
+    private static final String[] FEMININE_POSESIVES_PLURAL = new String[]{"miñas", "túas", "súas", "nosas", "vosas"};
     private static final String[] VOWELS = new String[]{"a", "e", "i", "o", "u", "á", "é", "í", "ó", "ú"};
     private static final String[] ACCENTUATED_VOWELS = new String[]{"á", "é", "í", "ó", "ú"};
     private static final String[] NOTACCENTUATED_VOWELS = new String[]{"a", "e", "i", "o", "u"};
@@ -94,15 +94,6 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
 
         if (elements != null) {
             for (NLGElement eachElement : elements) {
-//                if (DiscourseFunction.SPECIFIER.equals(eachElement.getFeature(InternalFeature.DISCOURSE_FUNCTION))){
-//                    int index = elements.indexOf(eachElement);
-//                    NLGElement nextElement;
-//                    if (elements.size()>index+1){
-//                        nextElement=elements.get(index+1);
-//                        eachElement.setFeature(LexicalFeature.GENDER, nextElement.getFeature(LexicalFeature.GENDER));
-//                        eachElement.setFeature(Feature.NUMBER, nextElement.getFeature(Feature.NUMBER));
-//                    }
-//                }
                 InflectedWordElement prep = null;
                 InflectedWordElement art = null;
                 if (eachElement instanceof ListElement) {
@@ -131,19 +122,19 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                 currentElement = realise(eachElement);
 
                 //when possesive + noun add determiner -> determiner + possesive + noun
-                if (currentElement != null && currentElement.getRealisation() != null && (currentElement.getRealisation().equals("meu") || currentElement.getRealisation().equals("teu") || currentElement.getRealisation().equals("seu") || currentElement.getRealisation().equals("noso") || currentElement.getRealisation().equals("voso"))) {
+                if (currentElement != null && currentElement.getRealisation() != null && Arrays.asList(MASCULINE_POSESIVES).contains(currentElement.getRealisation())) {
                     if (prevElement == null) {
                         currentElement.setRealisation("o " + currentElement.getRealisation());
                     }
-                } else if (currentElement != null && currentElement.getRealisation() != null && (currentElement.getRealisation().equals("miña") || currentElement.getRealisation().equals("túa") || currentElement.getRealisation().equals("súa") || currentElement.getRealisation().equals("nosa") || currentElement.getRealisation().equals("vosa"))) {
+                } else if (currentElement != null && currentElement.getRealisation() != null && Arrays.asList(FEMININE_POSESIVES).contains(currentElement.getRealisation())) {
                     if (prevElement == null) {
                         currentElement.setRealisation("a " + currentElement.getRealisation());
                     }
-                } else if (currentElement != null && currentElement.getRealisation() != null && (currentElement.getRealisation().equals("meus") || currentElement.getRealisation().equals("teus") || currentElement.getRealisation().equals("seus") || currentElement.getRealisation().equals("nosos") || currentElement.getRealisation().equals("vosos"))) {
+                } else if (currentElement != null && currentElement.getRealisation() != null && Arrays.asList(MASCULINE_POSESIVES_PLURAL).contains(currentElement.getRealisation())) {
                     if (prevElement == null) {
                         currentElement.setRealisation("os " + currentElement.getRealisation());
                     }
-                } else if (currentElement != null && currentElement.getRealisation() != null && (currentElement.getRealisation().equals("miñas") || currentElement.getRealisation().equals("túas") || currentElement.getRealisation().equals("súas") || currentElement.getRealisation().equals("nosas") || currentElement.getRealisation().equals("vosas"))) {
+                } else if (currentElement != null && currentElement.getRealisation() != null && Arrays.asList(FEMININE_POSESIVES_PLURAL).contains(currentElement.getRealisation())) {
                     if (prevElement == null) {
                         currentElement.setRealisation("as " + currentElement.getRealisation());
                     }
@@ -189,9 +180,6 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                                 Boolean startsWithUnhas = (currentElement instanceof ListElement && ((ListElement) currentElement).getFirst().toString().equals("unhas")) || (currentElement.getRealisation().length() >= 6 && currentElement instanceof StringElement && currentElement.getRealisation().substring(0, 6).equals("unhas "));
 
                                 String letter = morphologyRules.buildPrepositionArticleConjunction(prevString.toString());
-                            /*if(letter.equals("p")) {
-                                letter = "pol";
-                            }*/
                                 if (startsWithO) {
                                     prevString.setRealisation(letter + "o");
                                 } else if (startsWithA) {
@@ -233,22 +221,6 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                         }
                     }
 
-                    //pronoun+article
-                   /* StringElement prevString = null;
-                    if (prevElement != null && LexicalCategory.PRONOUN.equals(prevElement.getCategory())) {
-                        for (Object s : realisedElements) {
-                            if (s instanceof StringElement) {
-                                prevString = (StringElement) s;
-                                if (Arrays.asList(CI_PRONOUNS).contains(prevString.getRealisation())) {
-                                    String conj = morphologyRules.buildPronounsConjunction(prevString.getRealisation(), currentElement.getRealisation());
-                                    prevString.setRealisation(conj);
-                                    realisedElements.set(realisedElements.indexOf(s), prevString);
-                                    currentElement.setRealisation("");
-                                }
-                            }
-                        }
-                    }*/
-
                     if (prevElement != null && (LexicalCategory.VERB.equals(prevElement.getCategory()) || LexicalCategory.MODAL.equals(prevElement.getCategory())) && LexicalCategory.PRONOUN.equals(eachElement.getCategory())) {
                         int i;
                         for (i = 0; i < elements.size(); i++) {
@@ -265,12 +237,26 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                     if (eachElement != null && LexicalCategory.PRONOUN.equals(eachElement.getCategory()) && prevElement != null && LexicalCategory.PRONOUN.equals(prevElement.getCategory())) {
                         String result = "";
                         if (currentElement.getRealisation() == null) {
-                            result = morphologyRules.buildPronounsConjunction(prevElement.getFeatureAsString(Feature.PRONOUN_FORM), eachElement.getFeatureAsString(LexicalFeature.BASE_FORM));
+                            if (prevElement.getFeatureAsString(Feature.PRONOUN_FORM) == null) {
+                                result = morphologyRules.buildPronounsConjunction(prevElement.getFeatureAsString(LexicalFeature.BASE_FORM), eachElement.getFeatureAsString(LexicalFeature.BASE_FORM));
+                            } else {
+                                result = morphologyRules.buildPronounsConjunction(prevElement.getFeatureAsString(Feature.PRONOUN_FORM), eachElement.getFeatureAsString(LexicalFeature.BASE_FORM));
+                            }
                         } else {
-                            result = morphologyRules.buildPronounsConjunction(prevElement.getFeatureAsString(Feature.PRONOUN_FORM), currentElement.getRealisation());
+                            if (prevElement.getFeatureAsString(Feature.PRONOUN_FORM) == null) {
+                                result = morphologyRules.buildPronounsConjunction(prevElement.getFeatureAsString(LexicalFeature.BASE_FORM), currentElement.getRealisation());
+                            } else {
+                                result = morphologyRules.buildPronounsConjunction(prevElement.getFeatureAsString(Feature.PRONOUN_FORM), currentElement.getRealisation());
+                            }
+
                         }
                         if (prevElement.getFeatureAsBoolean(Feature.VERB_PRONOUN) != null) {
-                            prevString.setRealisation(doAccentuation(prevElement.getFeatureAsString(Feature.VERB_PRONOUN), result));
+                            if (prevElement.getFeatureAsString(Feature.VERB_PRONOUN) == null) {
+                                prevString.setRealisation(doAccentuation(prevElement.getFeatureAsString(LexicalFeature.BASE_FORM), result));
+                            } else {
+                                prevString.setRealisation(doAccentuation(prevElement.getFeatureAsString(Feature.VERB_PRONOUN), result));
+                            }
+
                             currentElement.setRealisation("");
                         } else {
                             prevString.setRealisation(result);
@@ -279,15 +265,15 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                     }
 
                     //impersonal phrase
-                    if(LexicalCategory.VERB.equals(eachElement.getCategory()) && eachElement.getFeatureAsBoolean(Feature.IS_IMPERSONAL)) {
+                    if (LexicalCategory.VERB.equals(eachElement.getCategory()) && eachElement.getFeatureAsBoolean(Feature.IS_IMPERSONAL)) {
                         String result = doAccentuation(currentElement.getRealisation(), "se");
                         currentElement.setRealisation(result);
                     }
                     //reflexive phrase
-                    if(LexicalCategory.VERB.equals(eachElement.getCategory()) && eachElement.getFeatureAsBoolean(LexicalFeature.REFLEXIVE) && eachElement.getFeatureAsBoolean(Feature.PRONOUN_AFTER)) {
+                    if (LexicalCategory.VERB.equals(eachElement.getCategory()) && eachElement.getFeatureAsBoolean(LexicalFeature.REFLEXIVE) && eachElement.getFeatureAsBoolean(Feature.PRONOUN_AFTER)) {
                         String result = doAccentuation(currentElement.getRealisation(), "se");
                         currentElement.setRealisation(result);
-                        if(prevString.equals("se")) {
+                        if (prevString.equals("se")) {
                             prevString.setRealisation("");
                         }
                     }
@@ -298,45 +284,7 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                         String result = doAccentuation(prevString.toString(), currentElement.getRealisation());
                         prevString.setRealisation(result);
                         currentElement.setRealisation("");
-                    } /*else if (eachElement.getFeatureAsBoolean(Feature.PRONOUN_AFTER) && LexicalCategory.PRONOUN.equals(eachElement.getCategory()) && prevElement == null) {
-                        if (eachElement.getFeatureAsString(Feature.VERB_FORM) != null) {
-                            eachElement.setFeature(Feature.VERB_PRONOUN, eachElement.getFeatureAsString(Feature.VERB_FORM));
-                            eachElement.setFeature(Feature.PRONOUN_FORM, currentElement.getRealisation());
-                            String result = doAccentuation(eachElement.getFeatureAsString(Feature.VERB_FORM), currentElement.getRealisation());
-                            currentElement.setRealisation(result);
-                        }
-                    }*/
-
-//                    if (determiner == null && DiscourseFunction.SPECIFIER.equals(currentElement.getFeature(
-//                            InternalFeature.DISCOURSE_FUNCTION))) {
-//                        determiner = currentElement;
-//                        determiner.setFeature(Feature.NUMBER, eachElement.getFeature(Feature.NUMBER));
-//                        // MorphologyRules.doDeterminerMorphology(determiner,
-//                        // currentElement.getRealisation());
-//
-//                    } else if (determiner != null) {
-//
-//                        if (currentElement instanceof ListElement) {
-//                            // list elements: ensure det matches first element
-//                            NLGElement firstChild = ((ListElement) currentElement).getChildren().get(0);
-//
-//                            if (firstChild != null) {
-//                                //AG: need to check if child is a coordinate
-//                                if (firstChild instanceof CoordinatedPhraseElement) {
-//                                    morphologyRules.doDeterminerMorphology(determiner,
-//                                            firstChild.getChildren().get(0).getRealisation());
-//                                } else {
-//                                    morphologyRules.doDeterminerMorphology(determiner, firstChild.getRealisation());
-//                                }
-//                            }
-//
-//                        } else {
-//                            // everything else: ensure det matches realisation
-//                            morphologyRules.doDeterminerMorphology(determiner, currentElement.getRealisation());
-//                        }
-//
-//                        determiner = null;
-//                    }
+                    }
                 }
                 prevElement = eachElement;
             }
@@ -428,30 +376,14 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
 
         ///////////////////////////////pronombre de una sílaba
         if (syllablesPronoun.size() == 1) {
-            //System.out.println("PRONOMBRE DE UNA SÍLABA");
             //monosílabas: si lleva tilde se mantiene
             if (syllables.size() == 1) {
-                //System.out.println("MONOSÍLABA: " + conjugated + pronoun);
             }
             //aguda acentuada
             else if (Arrays.asList(ACCENTUATED_VOWELS).contains(conjugated.substring(conjugated.length() - 1)) || (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) && (conjugated.substring(conjugated.length() - 1).equals("n")) || conjugated.substring(conjugated.length() - 1).equals("s")) || ((Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 3))) && conjugated.charAt(conjugated.length() - 2) == 'n' && conjugated.charAt(conjugated.length() - 1) == 's'))) {
                 letter = conjugated.charAt(accentIndex);
                 replacement = morphologyRules.replaceAccentuatedChar(letter);
                 conjugated = conjugated.substring(0, accentIndex) + replacement + conjugated.substring(accentIndex + 1, conjugated.length());
-                //System.out.println("AGUDA CON ACENTO: " + conjugated + pronoun);
-            }
-            //aguda no acentuada
-            else if ((Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))) == false) ||
-                    //(String.valueOf(conjugated.charAt(conjugated.length() - 1)) != "n" && String.valueOf(conjugated.charAt(conjugated.length() - 1)) != "s") ||
-                    (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) == false && Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))) == false) ||
-                    (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) && Arrays.asList(SOFT_VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))))) {
-                if (accentIndex == -1) {
-                    //System.out.println("AGUDA SIN ACENTO: " + conjugated + pronoun);
-                }
-            }
-            //graves acentuadas
-            else if ((String.valueOf(conjugated.length() - 1).equals("n") || String.valueOf(conjugated.length() - 1).equals("s") || conjugated.substring(conjugated.length() - 2).equals("ns")) && accentIndex > -1) {
-                //System.out.println("GRAVE CON ACENTO: " + conjugated + pronoun);
             }
             //graves no acentuadas
             else if ((!conjugated.substring(conjugated.length() - 1).equals("n") || !conjugated.substring(conjugated.length() - 1).equals("s") || !conjugated.substring(conjugated.length() - 2).equals("ns")) && accentIndex == -1) {
@@ -471,20 +403,12 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                     }
                 }
                 conjugated = result;
-                //System.out.println("GRAVE SIN ACENTO: " + conjugated
-                        //+ pronoun);
             }
         }
         ///////////////////////////////////////////pronombre de dos sílabas
         else if (syllablesPronoun.size() == 2) {
-            //System.out.println("PRONOMBRE DE DOS SÍLABAS");
-
-            //monosílabas: si lleva tilde se mantiene
-            if (syllables.size() == 1 && accentIndex > -1) {
-                //System.out.println("MONOSÍLABA: " + conjugated + pronoun);
-            }
             //monosílabas sin tilde pasan a ser esdrújulas
-            else if (syllables.size() == 1 && accentIndex == -1) {
+            if (syllables.size() == 1 && accentIndex == -1) {
                 for (int k = 0; k < conjugated.length(); k++) {
                     if (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(k)))) {
                         countVowels++;
@@ -511,13 +435,8 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                     }
                 }
             }
-            //aguda acentuada
-            else if (Arrays.asList(ACCENTUATED_VOWELS).contains(conjugated.substring(conjugated.length() - 1)) || (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length()-2))) && (conjugated.substring(conjugated.length() - 1).equals("n")) || conjugated.substring(conjugated.length() - 1).equals("s")) || ((Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length()-3))) && conjugated.charAt(conjugated.length()-2) == 'n' && conjugated.substring(conjugated.length() - 1).equals("s")))) {
-                //System.out.println("AGUDA CON ACENTO: " + conjugated + pronoun);
-            }
             //aguda no acentuada
             else if ((Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))) == false) ||
-                    //(String.valueOf(conjugated.charAt(conjugated.length() - 1)) != "n" && String.valueOf(conjugated.charAt(conjugated.length() - 1)) != "s") ||
                     (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) == false && Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))) == false) ||
                     (Arrays.asList(VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 2))) && Arrays.asList(SOFT_VOWELS).contains(String.valueOf(conjugated.charAt(conjugated.length() - 1))))) {
                 if (accentIndex == -1) {
@@ -558,12 +477,7 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                         result += syllables.get(syllables.size() - 1);
                         conjugated = result;
                     }
-                    //System.out.println("AGUDA SIN ACENTO: " + conjugated + pronoun);
                 }
-            }
-            //graves acentuadas
-            else if ((String.valueOf(conjugated.length() - 1).equals("n") || String.valueOf(conjugated.length() - 1).equals("s") || conjugated.substring(conjugated.length() - 2).equals("ns")) && accentIndex > -1) {
-                //System.out.println("GRAVE CON ACENTO: " + conjugated + pronoun);
             }
             //graves no acentuadas
             else if ((!conjugated.substring(conjugated.length() - 1).equals("n") || !conjugated.substring(conjugated.length() - 1).equals("s") || !conjugated.substring(conjugated.length() - 2).equals("ns")) && accentIndex == -1) {
@@ -583,8 +497,6 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                     }
                 }
                 conjugated = result;
-                //System.out.println("GRAVE SIN ACENTO: " + conjugated
-                //        + pronoun);
             }
         }
 
@@ -620,7 +532,7 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                                 syllables.add(word.substring(0, i));
                                 word = word.substring(i, word.length());
                             }
-                        }catch (Exception e) {
+                        } catch (Exception e) {
                             syllables.add(word.substring(0, i + 1));
                             word = word.substring(i + 1, word.length());
                         }
@@ -739,7 +651,6 @@ public class MorphologyProcessor extends simplenlg.morphology.MorphologyProcesso
                     }
                 }
             }
-
             if (word.length() == 0) {
                 completed = true;
             }
