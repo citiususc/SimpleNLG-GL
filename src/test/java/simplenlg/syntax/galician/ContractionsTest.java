@@ -132,10 +132,10 @@ public class ContractionsTest extends SimpleNLG4Test {
     }
 
     /**
-     * Preposition + article tests
+     * Contractions between atonic pronouns
      */
     @Test
-    public void testPronouns() {
+    public void testPronounsContractions() {
         SPhraseSpec p = phraseFactory.createClause();
         p.setSubject("María");
         p.setIndirectObject("me");
@@ -168,13 +168,25 @@ public class ContractionsTest extends SimpleNLG4Test {
         p.setObject("o");
         Assert.assertEquals("María dínolo.", this.realiser //$NON-NLS-1$
                 .realiseSentence(p));
+
+        SPhraseSpec p1 = phraseFactory.createClause();
+        p1.setSubject("María");
+        VPPhraseSpec vPhrase = phraseFactory.createVerbPhrase("dicir");
+        vPhrase.setIndirectObject("vos");
+        NLGElement object = phraseFactory.createNLGElement("as", LexicalCategory.PRONOUN);
+        object.setFeature(LexicalFeature.GENDER, Gender.FEMININE);
+        object.setPlural(true);
+        vPhrase.setObject(object);
+        p1.setVerb(vPhrase);
+        Assert.assertEquals("María dívolas.", this.realiser //$NON-NLS-1$
+                .realiseSentence(p1));
     }
 
     /**
      * Atonic pronoun collocation with the verb
      */
     @Test
-    public void testVerbs() {
+    public void testPronounsCollocation() {
         SPhraseSpec p = phraseFactory.createClause();
         p.setSubject("María");
 
@@ -191,13 +203,12 @@ public class ContractionsTest extends SimpleNLG4Test {
         Assert.assertEquals("María dime.", this.realiser //$NON-NLS-1$
                 .realiseSentence(p));
 
-        vPhrase.setIndirectObject("vos");
-        NLGElement object = phraseFactory.createNLGElement("as", LexicalCategory.PRONOUN);
-        object.setFeature(LexicalFeature.GENDER, Gender.FEMININE);
-        object.setPlural(true);
-        vPhrase.setObject(object);
-        p.setVerb(vPhrase);
-        Assert.assertEquals("María dívolas.", this.realiser //$NON-NLS-1$
-                .realiseSentence(p));
+        SPhraseSpec s = this.phraseFactory.createClause("María", "dicir");
+        s.setFeature(Feature.TENSE, Tense.PAST);
+        s.setIndirectObject("che");
+        s.setObject("o");
+        s.addPreModifier(this.lexicon.getWord("quizais", LexicalCategory.ADVERB));
+
+        Assert.assertEquals("María quizais cho dixo.", this.realiser.realiseSentence(s));
     }
 }

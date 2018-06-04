@@ -19,16 +19,18 @@
 
 package simplenlg.syntax.galician;
 
+import gov.nih.nlm.nls.lvg.Lib.Category;
 import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import simplenlg.features.*;
-import simplenlg.framework.CoordinatedPhraseElement;
-import simplenlg.framework.LexicalCategory;
-import simplenlg.framework.PhraseElement;
+import simplenlg.framework.*;
 import simplenlg.phrasespec.*;
+
+import javax.swing.text.Document;
+import java.util.Locale;
 
 // TODO: Auto-generated Javadoc
 
@@ -515,16 +517,16 @@ public class ClauseTest extends SimpleNLG4Test {
                 "eu quero a Mary", this.realiser.realise(_s2).getRealisation()); //$NON-NLS-1$
 
         // test recognition of pronoun for correct form
-        PhraseElement subject = this.phraseFactory.createNounPhrase("can"); //$NON-NLS-1$
+        PhraseElement subject = this.phraseFactory.createNounPhrase("can");
         subject.setFeature(InternalFeature.SPECIFIER, "un"); //$NON-NLS-1$
         subject.addPostModifier("de ao lado"); //$NON-NLS-1$
         PhraseElement object = this.phraseFactory.createNounPhrase("eu"); //$NON-NLS-1$
         PhraseElement s = this.phraseFactory.createClause(subject,
                 "perseguir", object); //$NON-NLS-1$
         s.setFeature(Feature.PROGRESSIVE, true);
-        realiser.setDebugMode(true);
-        Assert.assertEquals("un can de ao lado está perseguíndome", //$NON-NLS-1$
-                this.realiser.realise(s).getRealisation());
+        //realiser.setDebugMode(true);
+        Assert.assertEquals("Un can de ao lado está perseguíndome.", //$NON-NLS-1$
+                this.realiser.realiseSentence(s));
     }
 
     /**
@@ -640,8 +642,7 @@ public class ClauseTest extends SimpleNLG4Test {
         PhraseElement _s4 = this.phraseFactory.createClause(this.phraseFactory
                         .createNounPhrase("el"), "perseguir", //$NON-NLS-1$ //$NON-NLS-2$
                 this.phraseFactory.createNounPhrase("eu")); //$NON-NLS-1$
-        Assert.assertEquals("el perségueme", this.realiser.realise(_s4) //$NON-NLS-1$
-                .getRealisation());
+        Assert.assertEquals("El perségueme.", this.realiser.realiseSentence(_s4));
         _s4 = this.phraseFactory
                 .createClause(
                         this.phraseFactory.createNounPhrase("el"), "perseguir", this.phraseFactory.createNounPhrase("me")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
@@ -655,8 +656,10 @@ public class ClauseTest extends SimpleNLG4Test {
         // anyway
         PhraseElement _s5 = this.phraseFactory
                 .createClause("el", "perseguir", "eu"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        DocumentElement sentence = new DocumentElement(DocumentCategory.SENTENCE, null);
+        sentence.addComponent(_s5);
         Assert.assertEquals(
-                "el perségueme", this.realiser.realise(_s5).getRealisation()); //$NON-NLS-1$
+                "El perségueme.", this.realiser.realise(sentence).getRealisation()); //$NON-NLS-1$
 
         _s5 = this.phraseFactory.createClause("el", "perseguir", "eu"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         _s5.setFeature(Feature.PASSIVE, true);

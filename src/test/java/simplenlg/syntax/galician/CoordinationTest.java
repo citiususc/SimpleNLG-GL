@@ -78,37 +78,37 @@ public class CoordinationTest extends SimpleNLG4Test {
         CoordinatedPhraseElement coord = this.phraseFactory
                 .createCoordinatedPhrase(this.getUp, this.fallDown);
         coord.setFeature(Feature.TENSE, Tense.PAST);
-        Assert.assertEquals("levantouse e caeuse", this.realiser
-                .realise(coord).getRealisation());
+        Assert.assertEquals("Levantouse e caeuse.", this.realiser
+                .realiseSentence(coord));
 
         // add a premodifier
         coord.addPreModifier("despacio");
-        Assert.assertEquals("despacio levantouse e caeuse", this.realiser
-                .realise(coord).getRealisation());
+        Assert.assertEquals("Despacio levantouse e caeuse.", this.realiser
+                .realiseSentence(coord));
 
         // adda postmodifier
         coord.addPostModifier(this.behindTheCurtain);
-        Assert.assertEquals("despacio levantouse e caeuse trala cortina",
-                this.realiser.realise(coord).getRealisation());
+        Assert.assertEquals("Despacio levantouse e caeuse trala cortina.",
+                this.realiser.realiseSentence(coord));
 
         // put within the context of a sentence
         SPhraseSpec s = this.phraseFactory.createClause("Jake", coord);
         s.setFeature(Feature.TENSE, Tense.PAST);
         Assert.assertEquals(
-                "Jake despacio levantouse e caeuse trala cortina",
-                this.realiser.realise(s).getRealisation());
+                "Jake despacio levantouse e caeuse trala cortina.",
+                this.realiser.realiseSentence(s));
 
         // add premod to the sentence
         s.addPreModifier(this.lexicon.getWord("sen embargo", LexicalCategory.ADVERB));
         Assert.assertEquals(
-                "Jake sen embargo despacio levantouse e caeuse trala cortina",
-                this.realiser.realise(s).getRealisation());
+                "Jake sen embargo despacio levantouse e caeuse trala cortina.",
+                this.realiser.realiseSentence(s));
 
         // add postmod to the sentence
         s.addPostModifier(this.inTheRoom);
         Assert.assertEquals(
-                "Jake sen embargo despacio levantouse e caeuse trala cortina na habitación",
-                this.realiser.realise(s).getRealisation());
+                "Jake sen embargo despacio levantouse e caeuse trala cortina na habitación.",
+                this.realiser.realiseSentence(s));
     }
 
     /**

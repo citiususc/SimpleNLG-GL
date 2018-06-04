@@ -139,7 +139,7 @@ public abstract class Realiser extends NLGModule {
         }
         //////////////////////////////verb + pronoun colocation/////////////////////////////////////////////////
         //negated and interrogative sentences: verb+pronoun
-        if(postSyntax.getCategory().equals(DocumentCategory.SENTENCE)) {
+        if(postSyntax.getCategory() != null && postSyntax.getCategory().equals(DocumentCategory.SENTENCE)) {
             if (postSyntax.getFeatureAsBoolean(Feature.NEGATED) == false && postSyntax.getFeatureAsBoolean(Feature.INTERROGATIVE_TYPE) == false) {
                 pronoun_after = true;
             }
@@ -161,20 +161,24 @@ public abstract class Realiser extends NLGModule {
                 } catch (Exception ex) {
 
                 }
-                if (Arrays.asList(SUBORDINATES).contains(e.getRealisation())) {
-                    indexSubordinate = elements.indexOf(e);
-                }
-                if (Arrays.asList(ADVERBS).contains(e.getRealisation()) || e.getCategory().equals(LexicalCategory.ADVERB)) {
-                    indexAdverb = elements.indexOf(e);
-                }
-                if (Arrays.asList(INDEFINITES).contains(e.getRealisation())) {
-                    indexIndefinite = elements.indexOf(e);
-                }
-                if (Arrays.asList(INTERROGATIVES).contains(e.getRealisation())) {
-                    indexInterrogative = elements.indexOf(e);
-                }
-                if (Arrays.asList(DESIDERATIVES).contains(e.getRealisation())) {
-                    indexDesiderative = elements.indexOf(e);
+                try {
+                    if (Arrays.asList(SUBORDINATES).contains(e.getRealisation())) {
+                        indexSubordinate = elements.indexOf(e);
+                    }
+                    if (Arrays.asList(ADVERBS).contains(e.getRealisation()) || e.getCategory().equals(LexicalCategory.ADVERB)) {
+                        indexAdverb = elements.indexOf(e);
+                    }
+                    if (Arrays.asList(INDEFINITES).contains(e.getRealisation())) {
+                        indexIndefinite = elements.indexOf(e);
+                    }
+                    if (Arrays.asList(INTERROGATIVES).contains(e.getRealisation())) {
+                        indexInterrogative = elements.indexOf(e);
+                    }
+                    if (Arrays.asList(DESIDERATIVES).contains(e.getRealisation())) {
+                        indexDesiderative = elements.indexOf(e);
+                    }
+                } catch (Exception ex) {
+
                 }
             }
             if (indexVerb >= 0) {

@@ -85,19 +85,17 @@ public class PhraseSpecTest extends SimpleNLG4Test {
 
 
         // test modifier placement
-        SPhraseSpec c2 = (SPhraseSpec) phraseFactory.createClause();
+        SPhraseSpec c2 = phraseFactory.createClause();
         c2.setVerb("ver");
-        //c2.setFeature(Feature.);
         c2.setSubject("o home");
         c2.setObject("eu");
         c2.addFrontModifier("afortunadamente");
         c2.addModifier("rápidamente");
         c2.addModifier("no parque");
-        //c2.setFeature(Feature.NEGATED, true);
         // try setting tense directly as a feature
         c2.setFeature(Feature.TENSE, Tense.PAST);
-        Assert.assertEquals("afortunadamente o home viume rápidamente no parque", this.realiser //$NON-NLS-1$
-                .realise(c2).getRealisation());
+        Assert.assertEquals("Afortunadamente o home viume rápidamente no parque.", this.realiser //$NON-NLS-1$
+                .realiseSentence(c2));
     }
 
 
