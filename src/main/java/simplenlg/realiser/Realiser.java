@@ -18,7 +18,9 @@
  */
 package simplenlg.realiser;
 
+import simplenlg.features.DiscourseFunction;
 import simplenlg.features.Feature;
+import simplenlg.features.InternalFeature;
 import simplenlg.framework.*;
 import simplenlg.lexicon.Lexicon;
 import simplenlg.morphology.MorphologyProcessor;

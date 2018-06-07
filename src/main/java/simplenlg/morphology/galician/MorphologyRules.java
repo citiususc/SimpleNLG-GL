@@ -1803,6 +1803,13 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
 
         String realised = null;
 
+        if(element.getFeature(InternalFeature.DISCOURSE_FUNCTION) != null && element.getFeature(InternalFeature.DISCOURSE_FUNCTION).equals(DiscourseFunction.COMPLEMENT)) {
+            NLGElement parent = element.getParent();
+            if(parent != null && (parent.getFeature(InternalFeature.DISCOURSE_FUNCTION).equals(DiscourseFunction.INDIRECT_OBJECT))) {
+                element.setFeature(InternalFeature.DISCOURSE_FUNCTION, parent.getFeature(InternalFeature.DISCOURSE_FUNCTION));
+            }
+        }
+
         if (!element.getFeatureAsBoolean(InternalFeature.NON_MORPH).booleanValue() && !isWHPronoun(element)) {
             Object genderValue = element.getFeature(LexicalFeature.GENDER);
             Object personValue = element.getFeature(Feature.PERSON);

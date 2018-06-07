@@ -299,83 +299,6 @@ public class InterrogativeTest extends SimpleNLG4Test {
     }
 
     /**
-     * Test for wh questions.
-     */
-   /* @Test
-    public void testWHQuestions() {
-
-        // subject interrogative
-        setUp();
-        this.realiser.setLexicon(this.lexicon);
-        this.s4.setFeature(Feature.INTERROGATIVE_TYPE,
-                InterrogativeType.WHO_SUBJECT);
-        Assert.assertEquals(
-                "sen embargo quen collerán as pelotas na tenda mañán", //$NON-NLS-1$
-                this.realiser.realise(this.s4).getRealisation());
-
-        // subject interrogative in passive
-        setUp();
-        this.s4.setFeature(Feature.PASSIVE, true);
-        this.s4.setFeature(Feature.INTERROGATIVE_TYPE,
-                InterrogativeType.WHO_SUBJECT);
-
-        Assert.assertEquals(
-                "sen embargo por quen serán as pelotas collidas na tenda mañán", //$NON-NLS-1$
-                this.realiser.realise(this.s4).getRealisation());
-
-        // object interrogative
-        setUp();
-        this.s4.setFeature(Feature.INTERROGATIVE_TYPE,
-                InterrogativeType.WHAT_OBJECT);
-        Assert.assertEquals(
-                "sen embargo que collerán Jane e Andrew na tenda mañán", //$NON-NLS-1$
-                this.realiser.realise(this.s4).getRealisation());
-
-        // object interrogative with passive
-        setUp();
-        this.s4.setFeature(Feature.INTERROGATIVE_TYPE,
-                InterrogativeType.WHAT_OBJECT);
-        this.s4.setFeature(Feature.PASSIVE, true);
-
-        Assert.assertEquals(
-                "sen embargo que serán collidas na tenda por Jane e Andrew mañán", //$NON-NLS-1$
-                this.realiser.realise(this.s4).getRealisation());
-
-        // how-question + passive
-        setUp();
-        this.s4.setFeature(Feature.PASSIVE, true);
-        this.s4.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.HOW);
-        Assert.assertEquals(
-                "sen embargo como serán collidas as pelotas na tenda por Jane e Andrew mañán", //$NON-NLS-1$
-                this.realiser.realise(this.s4).getRealisation());
-
-        // // why-question + passive
-        setUp();
-        this.s4.setFeature(Feature.PASSIVE, true);
-        this.s4.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.WHY);
-        Assert.assertEquals(
-                "sen embargo por que serán collidas as pelotas na tenda por Jane e Andrew mañán", //$NON-NLS-1$
-                this.realiser.realise(this.s4).getRealisation());
-
-        // how question with modal
-        setUp();
-        this.s4.setFeature(Feature.PASSIVE, true);
-        this.s4.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.HOW);
-        this.s4.setFeature(Feature.MODAL, "deber"); //$NON-NLS-1$
-        Assert.assertEquals(
-                "sen embargo como deberán ser collidas as pelotas na tenda por Jane e Andrew mañán", //$NON-NLS-1$
-                this.realiser.realise(this.s4).getRealisation());
-
-        // indirect object
-        setUp();
-        this.realiser.setLexicon(this.lexicon);
-        this.s3.setFeature(Feature.INTERROGATIVE_TYPE,
-                InterrogativeType.WHO_INDIRECT_OBJECT);
-        Assert.assertEquals("a quen dá o home a flor de John", //$NON-NLS-1$
-                this.realiser.realise(this.s3).getRealisation());
-    }*/
-
-    /**
      * WH movement in the progressive
      */
     @Test
@@ -572,43 +495,6 @@ public class InterrogativeTest extends SimpleNLG4Test {
                 .realise(p).getRealisation());
 
     }
-
-    /**
-     * Test for questions with "be"
-     */
-   /* @Test
-    public void testBeQuestions() {
-        SPhraseSpec p = this.phraseFactory.createClause(
-                this.phraseFactory.createNounPhrase("unha", "pelota"),
-                this.phraseFactory.createWord("ser", LexicalCategory.VERB),
-                this.phraseFactory.createNounPhrase("un", "xoguete"));
-
-        p.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.WHAT_OBJECT);
-        Assert.assertEquals("que é unha pelota", this.realiser.realise(p)
-                .getRealisation());
-
-        p.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.YES_NO);
-        Assert.assertEquals("é unha pelota un xoguete", this.realiser.realise(p)
-                .getRealisation());
-
-        p.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.WHAT_SUBJECT);
-        Assert.assertEquals("que é un xoguete", this.realiser.realise(p)
-                .getRealisation());
-
-        SPhraseSpec p2 = this.phraseFactory.createClause("Mary", "ser",
-                "bonita");
-        p2.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.WHY);
-        Assert.assertEquals("por que é Mary bonita", this.realiser.realise(p2)
-                .getRealisation());
-
-        p2.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.WHERE);
-        Assert.assertEquals("onde é Mary bonita", this.realiser.realise(p2)
-                .getRealisation());
-
-        p2.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.WHO_SUBJECT);
-        Assert.assertEquals("quen é bonita", this.realiser.realise(p2)
-                .getRealisation());
-    }*/
 
     /**
      * Test for questions with "be" in future tense

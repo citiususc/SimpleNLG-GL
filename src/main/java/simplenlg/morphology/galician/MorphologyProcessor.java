@@ -18,6 +18,7 @@
  */
 package simplenlg.morphology.galician;
 
+import simplenlg.features.DiscourseFunction;
 import simplenlg.features.Feature;
 import simplenlg.features.InternalFeature;
 import simplenlg.features.LexicalFeature;

@@ -210,5 +210,18 @@ public class ContractionsTest extends SimpleNLG4Test {
         s.addPreModifier(this.lexicon.getWord("quizais", LexicalCategory.ADVERB));
 
         Assert.assertEquals("María quizais cho dixo.", this.realiser.realiseSentence(s));
+
+
+        SPhraseSpec p1 = phraseFactory.createClause("eu", "saber");
+        p1.setFeature(Feature.NEGATED, true);
+        SPhraseSpec q = phraseFactory.createClause("María", "dicir");
+        q.setIndirectObject("ti");
+
+        q.setFeature(Feature.COMPLEMENTISER, "se");
+
+        q.setFeature(Feature.TENSE, Tense.PAST);
+        p1.addComplement(q);
+        Assert.assertEquals("eu non sei se María che dixo", this.realiser //$NON-NLS-1$
+                .realise(p1).getRealisation());
     }
 }

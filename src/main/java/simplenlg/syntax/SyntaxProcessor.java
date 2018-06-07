@@ -64,6 +64,7 @@ public abstract class SyntaxProcessor extends NLGModule {
     @Override
     public NLGElement realise(NLGElement element) {
         NLGElement realisedElement = null;
+        List<NLGElement> subjects;
 
         if (element != null
                 && !element.getFeatureAsBoolean(Feature.ELIDED).booleanValue()) {
@@ -86,6 +87,18 @@ public abstract class SyntaxProcessor extends NLGModule {
                 String baseForm = ((InflectedWordElement) element)
                         .getBaseForm();
                 ElementCategory category = element.getCategory();
+                if(category.equalTo(LexicalCategory.VERB) && element.getFeatureAsString(Feature.PERSON) == null) {
+                    if(element.getParent() != null) {
+                        subjects = element.getParent().getFeatureAsElementList(InternalFeature.SUBJECTS);
+                        if(subjects.size() == 0 && element.getParent().getParent() != null) {
+                            subjects = element.getParent().getParent().getFeatureAsElementList(InternalFeature.SUBJECTS);
+                        }
+                        if(subjects.size() == 1) {
+                            element.setFeature(Feature.PERSON, subjects.get(0).getFeature(Feature.PERSON));
+                        }
+                    }
+
+                }
 
                 if (this.lexicon != null && baseForm != null) {
                     WordElement word = ((InflectedWordElement) element)

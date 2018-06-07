@@ -82,7 +82,7 @@ public class InterrogativeTest2 extends SimpleNLG4Test {
         this.s4.getObject().setFeature(LexicalFeature.GENDER, Gender.FEMININE);
         this.s4.addPostModifier("na tenda"); //$NON-NLS-1$
         this.s4.setFeature(Feature.CUE_PHRASE, "sen embargo"); //$NON-NLS-1$
-        this.s4.addFrontModifier("mañán"); //$NON-NLS-1$
+        this.s4.addFrontModifier("mañá"); //$NON-NLS-1$
         this.s4.setFeature(Feature.TENSE, Tense.FUTURE);
         // this.s5 = new SPhraseSpec();
         // this.s5.setSubject(new NPPhraseSpec("the", "dog"));
@@ -97,6 +97,7 @@ public class InterrogativeTest2 extends SimpleNLG4Test {
      */
     @Test
     public void testWHQuestions() {
+        //todo
 
         // subject interrogative
         setUp();
@@ -104,7 +105,7 @@ public class InterrogativeTest2 extends SimpleNLG4Test {
         this.s4.setFeature(Feature.INTERROGATIVE_TYPE,
                 InterrogativeType.WHO_SUBJECT);
         Assert.assertEquals(
-                "sen embargo quen collerán as pelotas na tenda mañán", //$NON-NLS-1$
+                "sen embargo quen collerán as pelotas na tenda mañá", //$NON-NLS-1$
                 this.realiser.realise(this.s4).getRealisation());
 
         // subject interrogative in passive
@@ -114,7 +115,7 @@ public class InterrogativeTest2 extends SimpleNLG4Test {
                 InterrogativeType.WHO_SUBJECT);
 
         Assert.assertEquals(
-                "sen embargo por quen serán as pelotas collidas na tenda mañán", //$NON-NLS-1$
+                "sen embargo por quen serán as pelotas collidas na tenda mañá", //$NON-NLS-1$
                 this.realiser.realise(this.s4).getRealisation());
 
         // object interrogative
@@ -122,7 +123,7 @@ public class InterrogativeTest2 extends SimpleNLG4Test {
         this.s4.setFeature(Feature.INTERROGATIVE_TYPE,
                 InterrogativeType.WHAT_OBJECT);
         Assert.assertEquals(
-                "sen embargo que collerán Jane e Andrew na tenda mañán", //$NON-NLS-1$
+                "sen embargo que collerán Jane e Andrew na tenda mañá", //$NON-NLS-1$
                 this.realiser.realise(this.s4).getRealisation());
 
         // object interrogative with passive
@@ -132,7 +133,7 @@ public class InterrogativeTest2 extends SimpleNLG4Test {
         this.s4.setFeature(Feature.PASSIVE, true);
 
         Assert.assertEquals(
-                "sen embargo que serán collidas na tenda por Jane e Andrew mañán", //$NON-NLS-1$
+                "sen embargo que serán collidas na tenda por Jane e Andrew mañá", //$NON-NLS-1$
                 this.realiser.realise(this.s4).getRealisation());
 
         // how-question + passive
@@ -140,7 +141,7 @@ public class InterrogativeTest2 extends SimpleNLG4Test {
         this.s4.setFeature(Feature.PASSIVE, true);
         this.s4.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.HOW);
         Assert.assertEquals(
-                "sen embargo como serán collidas as pelotas na tenda por Jane e Andrew mañán", //$NON-NLS-1$
+                "sen embargo como serán collidas as pelotas na tenda por Jane e Andrew mañá", //$NON-NLS-1$
                 this.realiser.realise(this.s4).getRealisation());
 
         // // why-question + passive
@@ -148,7 +149,7 @@ public class InterrogativeTest2 extends SimpleNLG4Test {
         this.s4.setFeature(Feature.PASSIVE, true);
         this.s4.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.WHY);
         Assert.assertEquals(
-                "sen embargo por que serán collidas as pelotas na tenda por Jane e Andrew mañán", //$NON-NLS-1$
+                "sen embargo por que serán collidas as pelotas na tenda por Jane e Andrew mañá", //$NON-NLS-1$
                 this.realiser.realise(this.s4).getRealisation());
 
         // how question with modal
@@ -157,7 +158,7 @@ public class InterrogativeTest2 extends SimpleNLG4Test {
         this.s4.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.HOW);
         this.s4.setFeature(Feature.MODAL, "deber"); //$NON-NLS-1$
         Assert.assertEquals(
-                "sen embargo como deberán ser collidas as pelotas na tenda por Jane e Andrew mañán", //$NON-NLS-1$
+                "sen embargo como deberán ser collidas as pelotas na tenda por Jane e Andrew mañá", //$NON-NLS-1$
                 this.realiser.realise(this.s4).getRealisation());
 
         // indirect object
