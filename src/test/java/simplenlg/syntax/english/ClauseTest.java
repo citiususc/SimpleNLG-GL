@@ -427,7 +427,7 @@ public class ClauseTest extends SimpleNLG4Test {
 		s5.setObject(this.phraseFactory.createNounPhrase("the", "cat")); //$NON-NLS-1$ //$NON-NLS-2$
 
 		CoordinatedPhraseElement coord = new CoordinatedPhraseElement(this.s3,
-				s5);
+				s5, this.phraseFactory);
 		complexS = this.phraseFactory.createClause();
 		complexS.setVerbPhrase(this.phraseFactory.createVerbPhrase("upset")); //$NON-NLS-1$
 		complexS.setFeature(Feature.TENSE, Tense.PAST);
@@ -455,7 +455,7 @@ public class ClauseTest extends SimpleNLG4Test {
 		complexS.setFeature(Feature.TENSE, Tense.PAST);
 		complexS.setObject(this.phraseFactory.createNounPhrase("Peter")); //$NON-NLS-1$
 		s6.setObject(complexS);
-		coord = new CoordinatedPhraseElement(this.s3, s5);
+		coord = new CoordinatedPhraseElement(this.s3, s5, this.phraseFactory);
 		complexS.setSubject(coord);
 		this.s3.setFeature(Feature.PERFECT, true);
 		Assert.assertEquals(
@@ -495,7 +495,7 @@ public class ClauseTest extends SimpleNLG4Test {
 
 		// the coordinate sentence allows us to raise and lower complementiser
 		CoordinatedPhraseElement coord2 = new CoordinatedPhraseElement(this.s1,
-				this.s3);
+				this.s3, this.phraseFactory);
 		coord2.setFeature(Feature.TENSE, Tense.PAST);
 
 		this.realiser.setDebugMode(true);
@@ -635,7 +635,7 @@ public class ClauseTest extends SimpleNLG4Test {
 
 		// test agreement in passive
 		PhraseElement _s3 = this.phraseFactory.createClause(
-				new CoordinatedPhraseElement("my dog", "your cat"), "chase", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				new CoordinatedPhraseElement("my dog", "your cat", this.phraseFactory), "chase", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				"George"); //$NON-NLS-1$
 		_s3.setFeature(Feature.TENSE, Tense.PAST);
 		_s3.addFrontModifier("yesterday"); //$NON-NLS-1$
@@ -643,7 +643,7 @@ public class ClauseTest extends SimpleNLG4Test {
 				this.realiser.realise(_s3).getRealisation());
 
 		_s3 = this.phraseFactory.createClause(new CoordinatedPhraseElement(
-				"my dog", "your cat"), "chase", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				"my dog", "your cat", this.phraseFactory), "chase", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				this.phraseFactory.createNounPhrase("George")); //$NON-NLS-1$
 		_s3.setFeature(Feature.TENSE, Tense.PAST);
 		_s3.addFrontModifier("yesterday"); //$NON-NLS-1$

@@ -181,7 +181,7 @@ public class InterrogativeTest extends SimpleNLG4Test {
         setUp();
         CoordinatedPhraseElement subjects = new CoordinatedPhraseElement(
                 this.phraseFactory.createNounPhrase("Jane"), //$NON-NLS-1$
-                this.phraseFactory.createNounPhrase("Andrew")); //$NON-NLS-1$
+                this.phraseFactory.createNounPhrase("Andrew"), this.phraseFactory); //$NON-NLS-1$
         this.s4 = this.phraseFactory.createClause(subjects, "recoger", //$NON-NLS-1$
                 "las pelotas"); //$NON-NLS-1$
         this.s4.addPostModifier("en la tienda"); //$NON-NLS-1$
@@ -190,7 +190,7 @@ public class InterrogativeTest extends SimpleNLG4Test {
         this.s4.setFeature(Feature.TENSE, Tense.FUTURE);
         this.s4.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.YES_NO);
         Assert.assertEquals(
-                "sin embargo, recogerán Jane and Andrew las pelotas en la tienda mañana", //$NON-NLS-1$
+                "sin embargo, recogerán Jane y Andrew las pelotas en la tienda mañana", //$NON-NLS-1$
                 this.realiser.realise(this.s4).getRealisation());
     }
 
@@ -215,7 +215,7 @@ public class InterrogativeTest extends SimpleNLG4Test {
         // balls in the shop
         CoordinatedPhraseElement subjects = new CoordinatedPhraseElement(
                 this.phraseFactory.createNounPhrase("Jane"), //$NON-NLS-1$
-                this.phraseFactory.createNounPhrase("Andrew")); //$NON-NLS-1$
+                this.phraseFactory.createNounPhrase("Andrew"), this.phraseFactory); //$NON-NLS-1$
         this.s4 = this.phraseFactory.createClause(subjects, "coger", //$NON-NLS-1$
                 "las pelotas"); //$NON-NLS-1$
         this.s4.addPostModifier("en la tienda"); //$NON-NLS-1$
@@ -225,7 +225,7 @@ public class InterrogativeTest extends SimpleNLG4Test {
         this.s4.setFeature(Feature.TENSE, Tense.FUTURE);
         this.s4.setFeature(Feature.INTERROGATIVE_TYPE, InterrogativeType.YES_NO);
         Assert.assertEquals(
-                "sin embargo, no cogerán Jane and Andrew las pelotas en la tienda mañana", //$NON-NLS-1$
+                "sin embargo, no cogerán Jane y Andrew las pelotas en la tienda mañana", //$NON-NLS-1$
                 this.realiser.realise(this.s4).getRealisation());
     }
 

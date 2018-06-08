@@ -75,7 +75,7 @@ public class AdjectivePhraseTest extends SimpleNLG4Test {
 
 		// coordinate the two aps
 		CoordinatedPhraseElement coordap = new CoordinatedPhraseElement(
-				this.salacious, this.beautiful);
+				this.salacious, this.beautiful, this.phraseFactory);
 		Assert.assertEquals("incredibly salacious and amazingly beautiful", //$NON-NLS-1$
 				this.realiser.realise(coordap).getRealisation());
 
@@ -86,7 +86,7 @@ public class AdjectivePhraseTest extends SimpleNLG4Test {
 
 		// coordinate this with a new AdjPhraseSpec
 		CoordinatedPhraseElement coord2 = new CoordinatedPhraseElement(coordap,
-				this.stunning);
+				this.stunning, this.phraseFactory);
 		Assert.assertEquals(
 				"incredibly salacious or amazingly beautiful and stunning", //$NON-NLS-1$
 				this.realiser.realise(coord2).getRealisation());
@@ -95,7 +95,7 @@ public class AdjectivePhraseTest extends SimpleNLG4Test {
 		// "seriously and undeniably incredibly salacious or amazingly beautiful
 		// and stunning"
 		CoordinatedPhraseElement preMod = new CoordinatedPhraseElement(
-				new StringElement("seriously"), new StringElement("undeniably")); //$NON-NLS-1$//$NON-NLS-2$
+				new StringElement("seriously"), new StringElement("undeniably"), this.phraseFactory); //$NON-NLS-1$//$NON-NLS-2$
 
 		coord2.addPreModifier(preMod);
 		Assert.assertEquals(

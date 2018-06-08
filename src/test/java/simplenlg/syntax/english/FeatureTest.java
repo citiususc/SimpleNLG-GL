@@ -196,7 +196,7 @@ public class FeatureTest extends SimpleNLG4Test {
 		NLGElement albert = phraseFactory.createWord("Albert", LexicalCategory.NOUN);
 		
 		CoordinatedPhraseElement coord1 = new CoordinatedPhraseElement(
-				dave, albert);
+				dave, albert, this.phraseFactory);
 		
 		PhraseElement born = phraseFactory.createClause(coord1, "be", "born");
 		born.setFeature(Feature.TENSE,Tense.PAST);

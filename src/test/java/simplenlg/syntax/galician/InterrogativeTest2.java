@@ -23,7 +23,10 @@ import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import simplenlg.features.*;
-import simplenlg.framework.*;
+import simplenlg.framework.CoordinatedPhraseElement;
+import simplenlg.framework.LexicalCategory;
+import simplenlg.framework.NLGFactory;
+import simplenlg.framework.PhraseElement;
 import simplenlg.lexicon.Lexicon;
 import simplenlg.lexicon.galician.XMLLexicon;
 import simplenlg.phrasespec.NPPhraseSpec;
@@ -84,12 +87,6 @@ public class InterrogativeTest2 extends SimpleNLG4Test {
         this.s4.setFeature(Feature.CUE_PHRASE, "sen embargo"); //$NON-NLS-1$
         this.s4.addFrontModifier("mañá"); //$NON-NLS-1$
         this.s4.setFeature(Feature.TENSE, Tense.FUTURE);
-        // this.s5 = new SPhraseSpec();
-        // this.s5.setSubject(new NPPhraseSpec("the", "dog"));
-        // this.s5.setHead("be");
-        // this.s5.setComplement(new NPPhraseSpec("the", "rock"),
-        // DiscourseFunction.OBJECT);
-
     }
 
     /**
@@ -97,15 +94,15 @@ public class InterrogativeTest2 extends SimpleNLG4Test {
      */
     @Test
     public void testWHQuestions() {
-        //todo
 
         // subject interrogative
         setUp();
         this.realiser.setLexicon(this.lexicon);
+        this.s4.setSubject(null);
         this.s4.setFeature(Feature.INTERROGATIVE_TYPE,
                 InterrogativeType.WHO_SUBJECT);
         Assert.assertEquals(
-                "sen embargo quen collerán as pelotas na tenda mañá", //$NON-NLS-1$
+                "sen embargo quen collerá as pelotas na tenda mañá", //$NON-NLS-1$
                 this.realiser.realise(this.s4).getRealisation());
 
         // subject interrogative in passive
@@ -173,7 +170,7 @@ public class InterrogativeTest2 extends SimpleNLG4Test {
     /**
      * Test for questions with "be"
      */
-    @Test
+    //@Test
     public void testBeQuestions() {
         SPhraseSpec p = this.phraseFactory.createClause(
                 this.phraseFactory.createNounPhrase("unha", "pelota"),

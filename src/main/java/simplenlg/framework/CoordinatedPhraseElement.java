@@ -92,7 +92,7 @@ public class CoordinatedPhraseElement extends NLGElement {
      * @param coordinate1 the first coordinate.
      * @param coordinate2 the second coordinate.
      */
-    public CoordinatedPhraseElement(Object coordinate1, Object coordinate2) {
+    public  CoordinatedPhraseElement(Object coordinate1, Object coordinate2) {
 
         this(coordinate1, coordinate2, new NLGFactory());
     }

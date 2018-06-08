@@ -130,7 +130,34 @@ public abstract class Lexicon {
      * @return default lexicon
      */
     public static Lexicon getDefaultLexicon() {
+        return new simplenlg.lexicon.galician.XMLLexicon();
+    }
+
+    /**
+     * returns the English built-in lexicon
+     *
+     * @return default lexicon
+     */
+    public static Lexicon getEnglishLexicon() {
         return new simplenlg.lexicon.english.XMLLexicon();
+    }
+
+    /**
+     * returns the Spanish built-in lexicon
+     *
+     * @return default lexicon
+     */
+    public static Lexicon getSpanishLexicon() {
+        return new simplenlg.lexicon.spanish.XMLLexicon();
+    }
+
+    /**
+     * returns the Galician built-in lexicon
+     *
+     * @return default lexicon
+     */
+    public static Lexicon getGalicianLexicon() {
+        return new simplenlg.lexicon.galician.XMLLexicon();
     }
 
     /**

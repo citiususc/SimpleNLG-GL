@@ -51,7 +51,7 @@ public class StringElementTest {
 	
 	@Before
 	public void setup() {
-		lexicon = Lexicon.getDefaultLexicon();
+		lexicon = Lexicon.getEnglishLexicon();
 		phraseFactory = new NLGFactory(lexicon);
 		realiser = new Realiser(lexicon);
 	}
@@ -339,7 +339,7 @@ public class StringElementTest {
 		
 		CoordinatedPhraseElement coordinate = 
 				phraseFactory.createCoordinatedPhrase(new StringElement("John is going to Tesco"), 
-						                              new StringElement("Mary is going to Sainsburys")); 
+						                              new StringElement("Mary is going to Sainsburys"));
 	    SPhraseSpec sentence = phraseFactory.createClause();
 	    sentence.addComplement(coordinate);
 	    

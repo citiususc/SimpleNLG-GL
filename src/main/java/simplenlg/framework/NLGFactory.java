@@ -19,9 +19,7 @@
 package simplenlg.framework;
 
 import simplenlg.features.InternalFeature;
-import simplenlg.features.LexicalFeature;
 import simplenlg.lexicon.Lexicon;
-import simplenlg.lexicon.galician.XMLLexicon;
 import simplenlg.phrasespec.*;
 
 import java.util.List;
@@ -86,8 +84,12 @@ public class NLGFactory {
      * Gets the lexicon used by this factory.
      */
     public Lexicon getLexicon() {
-        if (lexicon == null)
-            this.lexicon = new XMLLexicon();
+
+        if (lexicon == null) {
+            //if lexicon == null, gets default lexicon
+            this.lexicon = Lexicon.getDefaultLexicon();
+        }
+
         return this.lexicon;
     }
 
@@ -168,7 +170,7 @@ public class NLGFactory {
             inflElement = new InflectedWordElement((WordElement) word);
 
         } else if (word instanceof String) {
-            NLGElement baseword = createWord((String) word, category);
+            NLGElement baseword = createWord(word, category);
 
             if (baseword != null && baseword instanceof WordElement) {
                 inflElement = new InflectedWordElement((WordElement) baseword);
@@ -193,7 +195,7 @@ public class NLGFactory {
      */
     @SuppressWarnings("unused")
     private void doLexiconLookUp(LexicalCategory category, String word, NLGElement wordElement) {
-        WordElement baseWord = null;
+        WordElement baseWord;
 
         if (LexicalCategory.NOUN.equals(category) && this.lexicon.hasWord(word, LexicalCategory.PRONOUN)) {
             baseWord = this.lexicon.lookupWord(word, LexicalCategory.PRONOUN);
@@ -371,13 +373,13 @@ public class NLGFactory {
 
         if (specifier != null) {
             //when possesive + noun add determiner -> determiner + possesive + noun
-            if(specifier.toString().equals("meu") || specifier.toString().equals("teu") || specifier.toString().equals("seu") || specifier.toString().equals("noso") || specifier.toString().equals("voso")) {
+            if (specifier.toString().equals("meu") || specifier.toString().equals("teu") || specifier.toString().equals("seu") || specifier.toString().equals("noso") || specifier.toString().equals("voso")) {
                 phraseElement.setSpecifier("o");
                 phraseElement.addSpecifier(specifier);
             } else if (specifier.toString().equals("miña") || specifier.toString().equals("túa") || specifier.toString().equals("súa") || specifier.toString().equals("nosa") || specifier.toString().equals("vosa")) {
                 phraseElement.setSpecifier("a");
                 phraseElement.addSpecifier(specifier);
-            } else if(specifier.toString().equals("meus") || specifier.toString().equals("teus") || specifier.toString().equals("seus") || specifier.toString().equals("nosos") || specifier.toString().equals("vosos")) {
+            } else if (specifier.toString().equals("meus") || specifier.toString().equals("teus") || specifier.toString().equals("seus") || specifier.toString().equals("nosos") || specifier.toString().equals("vosos")) {
                 phraseElement.setSpecifier("os");
                 phraseElement.addSpecifier(specifier);
             } else if (specifier.toString().equals("miñas") || specifier.toString().equals("túas") || specifier.toString().equals("súas") || specifier.toString().equals("nosas") || specifier.toString().equals("vosas")) {

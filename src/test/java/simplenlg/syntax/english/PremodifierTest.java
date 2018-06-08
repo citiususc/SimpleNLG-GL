@@ -47,7 +47,7 @@ public class PremodifierTest {
 	
 	@Before
 	public void setup() {
-		lexicon = Lexicon.getDefaultLexicon();
+		lexicon = Lexicon.getEnglishLexicon();
 		phraseFactory = new NLGFactory(lexicon);
 		realiser = new Realiser(lexicon);
 	}

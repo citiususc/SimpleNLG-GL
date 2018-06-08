@@ -18,6 +18,7 @@
  */
 package simplenlg.external.galician;
 
+import gov.nih.nlm.nls.lvg.Lib.Category;
 import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,6 +35,7 @@ import simplenlg.realiser.galician.Realiser;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Tests from third parties

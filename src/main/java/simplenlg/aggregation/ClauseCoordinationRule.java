@@ -22,6 +22,7 @@ import simplenlg.features.Feature;
 import simplenlg.features.InternalFeature;
 import simplenlg.framework.CoordinatedPhraseElement;
 import simplenlg.framework.NLGElement;
+import simplenlg.framework.NLGFactory;
 import simplenlg.framework.PhraseCategory;
 
 import java.util.List;
@@ -60,6 +61,13 @@ public class ClauseCoordinationRule extends AggregationRule {
      */
     public ClauseCoordinationRule() {
         super();
+    }
+
+    /**
+     * Constructs an instance of the ClauseCoordinationRule
+     */
+    public ClauseCoordinationRule(NLGFactory factory) {
+        super(factory);
     }
 
     /**

@@ -60,7 +60,7 @@ public class TutorialTest {
 	 */
 	@Test
 	public void section3_Test() {
-		Lexicon lexicon = Lexicon.getDefaultLexicon();                         // default simplenlg lexicon
+		Lexicon lexicon = Lexicon.getEnglishLexicon();
 		NLGFactory nlgFactory = new NLGFactory(lexicon);             // factory based on lexicon
 
 		NLGElement s1 = nlgFactory.createSentence("my dog is happy");
@@ -95,7 +95,7 @@ public class TutorialTest {
 	 */
 	@Test
 	public void section6_Test() {
-		Lexicon lexicon = Lexicon.getDefaultLexicon();                         // default simplenlg lexicon
+		Lexicon lexicon = Lexicon.getEnglishLexicon();                         // default simplenlg lexicon
 		NLGFactory nlgFactory = new NLGFactory(lexicon);             // factory based on lexicon
 		Realiser realiser = new Realiser(lexicon);
 		
@@ -145,7 +145,7 @@ public class TutorialTest {
 	 */
 	@Test
 	public void variantsTest() {
-		Lexicon lexicon = Lexicon.getDefaultLexicon();                         // default simplenlg lexicon
+		Lexicon lexicon = Lexicon.getEnglishLexicon();                         // default simplenlg lexicon
 		NLGFactory nlgFactory = new NLGFactory(lexicon);             // factory based on lexicon
 		Realiser realiser = new Realiser(lexicon);
 		
@@ -218,7 +218,7 @@ public class TutorialTest {
 	 */
 	@Test
 	public void section6A_Test() { 
-		Lexicon lexicon = Lexicon.getDefaultLexicon();    // default simplenlg lexicon
+		Lexicon lexicon = Lexicon.getEnglishLexicon();    // default simplenlg lexicon
 		NLGFactory nlgFactory = new NLGFactory( lexicon );  // factory based on lexicon
 		Realiser realiser = new Realiser( lexicon );
 	
@@ -280,7 +280,7 @@ public class TutorialTest {
 	 */
 	@Test
 	public void section8_Test() { 
-		Lexicon lexicon = Lexicon.getDefaultLexicon();      // default simplenlg lexicon
+		Lexicon lexicon = Lexicon.getEnglishLexicon();      // default simplenlg lexicon
 		NLGFactory nlgFactory = new NLGFactory( lexicon );  // factory based on lexicon
 		Realiser realiser = new Realiser( lexicon );
 		
@@ -310,7 +310,7 @@ public class TutorialTest {
 	 */
 	@Test
 	public void section10_Test() { 
-		Lexicon lexicon = Lexicon.getDefaultLexicon();      // default simplenlg lexicon
+		Lexicon lexicon = Lexicon.getEnglishLexicon();
 		NLGFactory nlgFactory = new NLGFactory( lexicon );  // factory based on lexicon
 		Realiser realiser = new Realiser( lexicon );
 		
@@ -391,7 +391,7 @@ public class TutorialTest {
 	 */
 	@Test
 	public void section13_Test() {
-		Lexicon lexicon = Lexicon.getDefaultLexicon();     // default simplenlg lexicon
+		Lexicon lexicon = Lexicon.getEnglishLexicon();     // default simplenlg lexicon
 		NLGFactory nlgFactory = new NLGFactory( lexicon );  // factory based on lexicon
 
 		Realiser realiser = new Realiser( lexicon );

@@ -46,6 +46,13 @@ public abstract class AggregationRule {
     }
 
     /**
+     * Creates a new instance of AggregationRule
+     */
+    public AggregationRule(NLGFactory factory) {
+        this.factory = factory;
+    }
+
+    /**
      * @return the factory being used by this rule to create phrases
      */
     public NLGFactory getFactory() {

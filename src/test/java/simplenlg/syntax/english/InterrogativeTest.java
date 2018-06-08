@@ -83,7 +83,7 @@ public class InterrogativeTest extends SimpleNLG4Test {
 
 		CoordinatedPhraseElement subjects = new CoordinatedPhraseElement(
 				this.phraseFactory.createNounPhrase("Jane"), //$NON-NLS-1$
-				this.phraseFactory.createNounPhrase("Andrew")); //$NON-NLS-1$
+				this.phraseFactory.createNounPhrase("Andrew"), this.phraseFactory); //$NON-NLS-1$
 		this.s4 = this.phraseFactory.createClause(subjects, "pick up", //$NON-NLS-1$
 				"the balls"); //$NON-NLS-1$
 		this.s4.addPostModifier("in the shop"); //$NON-NLS-1$
@@ -184,7 +184,7 @@ public class InterrogativeTest extends SimpleNLG4Test {
 		setUp();
 		CoordinatedPhraseElement subjects = new CoordinatedPhraseElement(
 				this.phraseFactory.createNounPhrase("Jane"), //$NON-NLS-1$
-				this.phraseFactory.createNounPhrase("Andrew")); //$NON-NLS-1$
+				this.phraseFactory.createNounPhrase("Andrew"), this.phraseFactory); //$NON-NLS-1$
 		this.s4 = this.phraseFactory.createClause(subjects, "pick up", //$NON-NLS-1$
 				"the balls"); //$NON-NLS-1$
 		this.s4.addPostModifier("in the shop"); //$NON-NLS-1$
@@ -218,7 +218,7 @@ public class InterrogativeTest extends SimpleNLG4Test {
 		// balls in the shop
 		CoordinatedPhraseElement subjects = new CoordinatedPhraseElement(
 				this.phraseFactory.createNounPhrase("Jane"), //$NON-NLS-1$
-				this.phraseFactory.createNounPhrase("Andrew")); //$NON-NLS-1$
+				this.phraseFactory.createNounPhrase("Andrew"), this.phraseFactory); //$NON-NLS-1$
 		this.s4 = this.phraseFactory.createClause(subjects, "pick up", //$NON-NLS-1$
 				"the balls"); //$NON-NLS-1$
 		this.s4.addPostModifier("in the shop"); //$NON-NLS-1$
@@ -241,7 +241,7 @@ public class InterrogativeTest extends SimpleNLG4Test {
 		// create a complex vp: "kiss the dog and walk in the room"
 		setUp();
 		CoordinatedPhraseElement complex = new CoordinatedPhraseElement(
-				this.kiss, this.walk);
+				this.kiss, this.walk, this.phraseFactory);
 		this.kiss.addComplement(this.dog);
 		this.walk.addComplement(this.inTheRoom);
 
@@ -249,7 +249,7 @@ public class InterrogativeTest extends SimpleNLG4Test {
 		// will walk in the room"
 		CoordinatedPhraseElement subjects = new CoordinatedPhraseElement(
 				this.phraseFactory.createNounPhrase("Jane"), //$NON-NLS-1$
-				this.phraseFactory.createNounPhrase("Andrew")); //$NON-NLS-1$
+				this.phraseFactory.createNounPhrase("Andrew"), this.phraseFactory); //$NON-NLS-1$
 		this.s4 = this.phraseFactory.createClause(subjects, complex);
 		this.s4.setFeature(Feature.CUE_PHRASE, "however"); //$NON-NLS-1$
 		this.s4.addFrontModifier("tomorrow"); //$NON-NLS-1$
@@ -264,10 +264,10 @@ public class InterrogativeTest extends SimpleNLG4Test {
 		setUp();
 		subjects = new CoordinatedPhraseElement(
 				this.phraseFactory.createNounPhrase("Jane"), //$NON-NLS-1$
-				this.phraseFactory.createNounPhrase("Andrew")); //$NON-NLS-1$
+				this.phraseFactory.createNounPhrase("Andrew"), this.phraseFactory); //$NON-NLS-1$
 		this.kiss.addComplement(this.dog);
 		this.walk.addComplement(this.inTheRoom);
-		complex = new CoordinatedPhraseElement(this.kiss, this.walk);
+		complex = new CoordinatedPhraseElement(this.kiss, this.walk, this.phraseFactory);
 		this.s4 = this.phraseFactory.createClause(subjects, complex);
 		this.s4.setFeature(Feature.CUE_PHRASE, "however"); //$NON-NLS-1$
 		this.s4.addFrontModifier("tomorrow"); //$NON-NLS-1$
@@ -283,8 +283,8 @@ public class InterrogativeTest extends SimpleNLG4Test {
 		this.realiser.setLexicon(this.lexicon);
 		subjects = new CoordinatedPhraseElement(
 				this.phraseFactory.createNounPhrase("Jane"), //$NON-NLS-1$
-				this.phraseFactory.createNounPhrase("Andrew")); //$NON-NLS-1$
-		complex = new CoordinatedPhraseElement(this.kiss, this.walk);
+				this.phraseFactory.createNounPhrase("Andrew"), this.phraseFactory); //$NON-NLS-1$
+		complex = new CoordinatedPhraseElement(this.kiss, this.walk, this.phraseFactory);
 		this.kiss.addComplement(this.dog);
 		this.walk.addComplement(this.inTheRoom);
 		this.s4 = this.phraseFactory.createClause(subjects, complex);
@@ -812,7 +812,7 @@ public class InterrogativeTest extends SimpleNLG4Test {
 	 */
 	@Test
 	public void testWhatObjectInterrogative() {
-		Lexicon lexicon = Lexicon.getDefaultLexicon();
+		Lexicon lexicon = Lexicon.getEnglishLexicon();
 		NLGFactory nlg = new NLGFactory(lexicon);
 		Realiser realiser = new Realiser(lexicon);
 

@@ -72,7 +72,7 @@ public class PrepositionalPhraseTest extends SimpleNLG4Test {
 		this.inTheRoom.clearComplements();
 		this.inTheRoom.addComplement(new CoordinatedPhraseElement(
 				this.phraseFactory.createNounPhrase("the", "room"), //$NON-NLS-1$ //$NON-NLS-2$
-				this.phraseFactory.createNounPhrase("a", "car"))); //$NON-NLS-1$//$NON-NLS-2$
+				this.phraseFactory.createNounPhrase("a", "car"), this.phraseFactory)); //$NON-NLS-1$//$NON-NLS-2$
 		Assert.assertEquals("in the room and a car", this.realiser //$NON-NLS-1$
 				.realise(this.inTheRoom).getRealisation());
 	}
@@ -84,7 +84,7 @@ public class PrepositionalPhraseTest extends SimpleNLG4Test {
 		// simple coordination
 
 		CoordinatedPhraseElement coord1 = new CoordinatedPhraseElement(
-				this.inTheRoom, this.behindTheCurtain);
+				this.inTheRoom, this.behindTheCurtain, this.phraseFactory);
 		Assert.assertEquals("in the room and behind the curtain", this.realiser //$NON-NLS-1$
 				.realise(coord1).getRealisation());
 
@@ -102,7 +102,7 @@ public class PrepositionalPhraseTest extends SimpleNLG4Test {
 
 		// coordinate two coordinates
 		CoordinatedPhraseElement coord3 = new CoordinatedPhraseElement(coord1,
-				coord2);
+				coord2, this.phraseFactory);
 
 		String text = this.realiser.realise(coord3).getRealisation();
 		Assert

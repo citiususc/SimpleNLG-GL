@@ -47,7 +47,7 @@ public class ExternalTest {
 	
 	@Before
 	public void setup() {
-		lexicon = Lexicon.getDefaultLexicon();
+		lexicon = Lexicon.getEnglishLexicon();
 		phraseFactory = new NLGFactory(lexicon);
 		realiser = new Realiser(lexicon);
 	}
@@ -143,7 +143,7 @@ public class ExternalTest {
 		verbPhrase1 = this.phraseFactory.createVerbPhrase("perform"); //$NON-NLS-1$
 
 		CoordinatedPhraseElement coord1 = new CoordinatedPhraseElement(noun2,
-				noun3);
+				noun3, phraseFactory);
 		sentence1 = this.phraseFactory.createClause(noun1, verbPhrase1, coord1);
 		sentence1.setFeature(Feature.TENSE,Tense.PAST);
 
@@ -418,7 +418,7 @@ public class ExternalTest {
 		// aggregation
 		SPhraseSpec s1 = this.phraseFactory.createClause("the man", "be", "hungry");
 		SPhraseSpec s2 = this.phraseFactory.createClause("the man", "buy", "an apple");
-		NLGElement result = new ClauseCoordinationRule().apply(s1, s2);
+		NLGElement result = new ClauseCoordinationRule(this.phraseFactory).apply(s1, s2);
 		Assert.assertEquals("The man is hungry and buys an apple.", realiser.realiseSentence(result));
 
 	}

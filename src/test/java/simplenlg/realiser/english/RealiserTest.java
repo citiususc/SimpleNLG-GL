@@ -55,7 +55,7 @@ public class RealiserTest {
 	
 	@Before
 	public void setup() {
-		lexicon = Lexicon.getDefaultLexicon();
+		lexicon = Lexicon.getEnglishLexicon();
 		nlgFactory = new NLGFactory(lexicon);
 		realiser = new Realiser(lexicon);
 	}

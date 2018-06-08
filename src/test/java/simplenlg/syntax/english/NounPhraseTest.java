@@ -315,7 +315,7 @@ public class NounPhraseTest extends SimpleNLG4Test {
 	public void testCoordination() {
 
 		CoordinatedPhraseElement cnp1 = new CoordinatedPhraseElement(this.dog,
-				this.woman);
+				this.woman, this.phraseFactory);
 		// simple coordination
 		Assert.assertEquals("the dog and the woman", this.realiser //$NON-NLS-1$
 				.realise(cnp1).getRealisation());
@@ -344,7 +344,7 @@ public class NounPhraseTest extends SimpleNLG4Test {
 		this.woman.clearComplements();
 
 		CoordinatedPhraseElement cnp1 = new CoordinatedPhraseElement(this.dog,
-				this.woman);
+				this.woman, this.phraseFactory);
 		cnp1.setFeature(Feature.RAISE_SPECIFIER, true);
 		NLGElement realised = this.realiser.realise(cnp1);
 		Assert.assertEquals("the dog and woman", realised.getRealisation());
@@ -353,7 +353,7 @@ public class NounPhraseTest extends SimpleNLG4Test {
 		this.woman.addComplement(this.behindTheCurtain);
 
 		CoordinatedPhraseElement cnp2 = new CoordinatedPhraseElement(this.dog,
-				this.woman);
+				this.woman, this.phraseFactory);
 
 		this.woman.setFeature(InternalFeature.RAISED, false);
 		Assert.assertEquals(
@@ -399,7 +399,7 @@ public class NounPhraseTest extends SimpleNLG4Test {
 	public void testPossessiveCoordinate() {
 		// simple coordination
 		CoordinatedPhraseElement cnp2 = new CoordinatedPhraseElement(this.dog,
-				this.woman);
+				this.woman, this.phraseFactory);
 		Assert.assertEquals("the dog and the woman", this.realiser //$NON-NLS-1$
 				.realise(cnp2).getRealisation());
 
