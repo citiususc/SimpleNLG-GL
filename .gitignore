@@ -1,6 +1,6 @@
-/target/
-/classes/
-/.settings/
-/.idea/
-/test/resources/NIHLexicon
+/target/*
+/classes/*
+/.settings/*
+/.idea/*
+/test/resources/NIHLexicon/*
 
