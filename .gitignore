@@ -1,16 +1,13 @@
-# Compiled class file
+/target/*
+/.idea/*
+/.settings/*
+/src/test/resources/NIHLexicon/*
+
 *.class
 
-# Log file
+
 *.log
 
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
 *.nar
@@ -20,9 +17,3 @@
 *.rar
 
 hs_err_pid*
-
-target/*
-.idea/*
-.settings/*
-classes/*
-/src/test/resources/NIHLexicon/*
