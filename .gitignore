@@ -26,4 +26,4 @@ target/*
 .idea/*
 .settings/*
 classes/*
-src/test/resources/NIHLexicon/*
+/src/test/resources/NIHLexicon/*
