@@ -1,7 +1,6 @@
-/target/*
-/.idea/*
-/.settings/*
-/src/test/resources/NIHLexicon/*
+target
+.idea
+.settings
 
 *.class
 
