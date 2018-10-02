@@ -5,7 +5,7 @@ SimpleNLG-gl is a simple Java API designed to facilitate the generation of natur
 
 SimpleNLG-gl is designed to facilitate the tasks of linguistic realization in Galician in natural language generation systems.
 
-The development of SimpleNLG-gl was made in the framework of the projects TIN2014-56633-C3-1-R e TIN2017-84796-C2-1-R, funded by the Spanish Ministry for Innovation and Economy and the EDRF funds. It was also supported by the Galician Research Network on "Technologies and Analysis of Linguistic Data (TECANDALI) (Ref. 2016-PG080)", leaded by the Institute for Galician Language (IGL).
+The development of SimpleNLG-gl was made in the framework of the projects TIN2014-56633-C3-1-R and TIN2017-84796-C2-1-R, funded by the Spanish Ministry for Innovation and Economy and the EDRF funds. It was also supported by the Galician Research Network on "Technologies and Analysis of Linguistic Data (TECANDALI) (Ref. 2016-PG080)", leaded by the Institute for Galician Language (IGL).
 
 Getting started
 ---------------
