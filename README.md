@@ -5,6 +5,8 @@ SimpleNLG-gl is a simple Java API designed to facilitate the generation of natur
 
 SimpleNLG-gl is designed to facilitate the tasks of linguistic realization in Galician in natural language generation systems.
 
+The development of SimpleNLG-gl was made in the framework of the projects TIN2014-56633-C3-1-R e TIN2017-84796-C2-1-R, funded by the Spanish Ministry for Innovation and Economy and the EDRF funds. It was also supported by the Galician Research Network on "Technologies and Analysis of Linguistic Data (TECANDALI) (Ref. 2016-PG080)", leaded by the Institute for Galician Language (IGL).
+
 Getting started
 ---------------
 For information on how to use SimpleNLG-gl, see the Wiki and the API.
@@ -14,6 +16,24 @@ SimpleNLG-gl License
 Being based on SimpleNLG and SimpleNLG-EnFr, SimpleNLG-ES is licensed under the terms and conditions of the [Mozilla Public License (MPL) Version 1.1](https://www.mozilla.org/en-US/MPL/1.1/).
 
 The lexicon used in SimpleNLG-gl is generated from the [FreeLing dictionary](http://nlp.lsi.upc.edu/freeling/) which is licensed under the terms and conditions of the [Lesser General Public License For Linguistic Resources](http://infolingu.univ-mlv.fr/DonneesLinguistiques/Lexiques-Grammaires/lgpllr.html).
+
+
+Citation
+--------
+SimpleNLG-GL was presented at the "[11th International Conference on Natural Language Generation (INLG2017)](https://inlg2018.uvt.nl/)", in Tilburg (5-8 november 2018). IfSe utilizas SimpleNLG-GL nalgún proxecto, agradecemos que cites o traballo onde se describe:
+
+> Andrea Cascallar-Fuentes, Alejandro Ramos-Soto, Alberto Bugarín, "[Adapting SimpleNLG to Galician Language](https://citius.usc.es/investigacion/publicacions/listado/adapting-simplenlg-to-galician-language)". Proceedings of the 11th International Conference on Natural Language Generation (INLG2018).
+
+```
+@inproceedings{acascallarfuentes2018adapting,
+	title = {Adapting {SimpleNLG} to Galician Language},
+	journal = {11th International Conference on Natural Language Generation},
+	year = {2018},
+	abstract = {In this paper, we describe SimpleNLG-GL, an adaptation of the linguistic realisation SimpleNLG library for the Galician language. This implementation is derived from SimpleNLG-ES, the English-Spanish version of this library. It has been tested using a battery of examples which covers the most common rules for Galician.},
+	publisher = {Association for Computational Linguistics},
+	author = {A. Cascallar-Fuentes and A. Ramos-Soto and Alberto Bugar\'{i}n}
+}
+```
 
 
 SimpleNLG
