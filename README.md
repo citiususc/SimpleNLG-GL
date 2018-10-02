@@ -20,7 +20,7 @@ The lexicon used in SimpleNLG-gl is generated from the [FreeLing dictionary](htt
 
 Citation
 --------
-SimpleNLG-GL was presented at the "[11th International Conference on Natural Language Generation (INLG2017)](https://inlg2018.uvt.nl/)", in Tilburg (5-8 november 2018). IfSe utilizas SimpleNLG-GL nalgún proxecto, agradecemos que cites o traballo onde se describe:
+SimpleNLG-GL was presented at the "[11th International Conference on Natural Language Generation (INLG2017)](https://inlg2018.uvt.nl/)", in Tilburg (5-8 november 2018). If you use SimpleNLG-GL in any project, please quote the paper where it is described:
 
 > Andrea Cascallar-Fuentes, Alejandro Ramos-Soto, Alberto Bugarín, "[Adapting SimpleNLG to Galician Language](https://citius.usc.es/investigacion/publicacions/listado/adapting-simplenlg-to-galician-language)". Proceedings of the 11th International Conference on Natural Language Generation (INLG2018).
 
