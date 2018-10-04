@@ -17,7 +17,7 @@ The lexicon used in SimpleNLG-gl is generated from the [FreeLing dictionary](htt
 
 Cite
 ----
-The SimpleNLG-GL library was presented at the "[11th International Conference on Natural Language Generation (INLG2017)](https://inlg2018.uvt.nl/)", held in Tilburg (5-8 novembro 2018). If you use SimpleNLG-GL in any project, please quote the work where it is described:
+The SimpleNLG-GL library was presented at the "[11th International Conference on Natural Language Generation (INLG2018)](https://inlg2018.uvt.nl/)", held in Tilburg (5-8 novembro 2018). If you use SimpleNLG-GL in any project, please quote the work where it is described:
 
 > Andrea Cascallar-Fuentes, Alejandro Ramos-Soto, Alberto Bugarín, "[Adapting SimpleNLG to Galician Language](https://citius.usc.es/investigacion/publicacions/listado/adapting-simplenlg-to-galician-language)". Proceedings of the 11th International Conference on Natural Language Generation (INLG2018).
 
