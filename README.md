@@ -17,23 +17,6 @@ Being based on SimpleNLG and SimpleNLG-EnFr, SimpleNLG-ES is licensed under the 
 
 The lexicon used in SimpleNLG-gl is generated from the [FreeLing dictionary](http://nlp.lsi.upc.edu/freeling/) which is licensed under the terms and conditions of the [Lesser General Public License For Linguistic Resources](http://infolingu.univ-mlv.fr/DonneesLinguistiques/Lexiques-Grammaires/lgpllr.html).
 
-Cite
-----
-The SimpleNLG-GL library was presented at the "[11th International Conference on Natural Language Generation (INLG2018)](https://inlg2018.uvt.nl/)", held in Tilburg (5-8 novembro 2018). If you use SimpleNLG-GL in any project, please quote the work where it is described:
-
-> Andrea Cascallar-Fuentes, Alejandro Ramos-Soto, Alberto Bugarín, "[Adapting SimpleNLG to Galician Language](https://citius.usc.es/investigacion/publicacions/listado/adapting-simplenlg-to-galician-language)". Proceedings of the 11th International Conference on Natural Language Generation (INLG2018).
-
-```
-@inproceedings{acascallarfuentes2018adapting,
-	title = {Adapting {SimpleNLG} to Galician Language},
-	journal = {11th International Conference on Natural Language Generation},
-	year = {2018},
-	abstract = {In this paper, we describe SimpleNLG-GL, an adaptation of the linguistic realisation SimpleNLG library for the Galician language. This implementation is derived from SimpleNLG-ES, the English-Spanish version of this library. It has been tested using a battery of examples which covers the most common rules for Galician.},
-	publisher = {Association for Computational Linguistics},
-	author = {A. Cascallar-Fuentes and A. Ramos-Soto and Alberto Bugar\'{i}n}
-}
-```
-
 Citation
 --------
 SimpleNLG-GL was presented at the "[11th International Conference on Natural Language Generation (INLG2017)](https://inlg2018.uvt.nl/)", in Tilburg (5-8 november 2018). If you use SimpleNLG-GL in any project, please quote the paper where it is described:
