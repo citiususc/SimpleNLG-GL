@@ -1620,46 +1620,6 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
         realisedElement.setFeature(InternalFeature.DISCOURSE_FUNCTION, element.getFeature(InternalFeature.DISCOURSE_FUNCTION));
         return realisedElement;
 
-//        String realised = null;
-//        Object patternValue = element.getFeature(LexicalFeature.DEFAULT_INFL);
-//
-//        // base form from baseWord if it exists, otherwise from element
-//        String baseForm = getBaseForm(element, baseWord);
-//
-//        if (element.getFeatureAsBoolean(Feature.IS_COMPARATIVE).booleanValue()) {
-//            realised = element.getFeatureAsString(LexicalFeature.COMPARATIVE);
-//
-//            if (realised == null && baseWord != null) {
-//                realised = baseWord.getFeatureAsString(LexicalFeature.COMPARATIVE);
-//            }
-//            if (realised == null) {
-//                if (Inflection.REGULAR_DOUBLE.equals(patternValue)) {
-//                    realised = buildDoubleCompAdjective(baseForm);
-//                } else {
-//                    realised = buildRegularComparative(baseForm);
-//                }
-//            }
-//        } else if (element.getFeatureAsBoolean(Feature.IS_SUPERLATIVE).booleanValue()) {
-//
-//            realised = element.getFeatureAsString(LexicalFeature.SUPERLATIVE);
-//
-//            if (realised == null && baseWord != null) {
-//                realised = baseWord.getFeatureAsString(LexicalFeature.SUPERLATIVE);
-//            }
-//            if (realised == null) {
-//                if (Inflection.REGULAR_DOUBLE.equals(patternValue)) {
-//                    realised = buildDoubleSuperAdjective(baseForm);
-//                } else {
-//                    realised = buildRegularSuperlative(baseForm);
-//                }
-//            }
-//        } else {
-//            realised = baseForm;
-//        }
-//        StringElement realisedElement = new StringElement(realised);
-//        realisedElement.setFeature(InternalFeature.DISCOURSE_FUNCTION,
-//                element.getFeature(InternalFeature.DISCOURSE_FUNCTION));
-//        return realisedElement;
     }
 
     /**
