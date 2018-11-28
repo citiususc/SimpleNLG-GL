@@ -1716,8 +1716,10 @@ public class MorphologyRules extends simplenlg.morphology.MorphologyRules {
                 if (NumberAgreement.PLURAL.equals(number)) {
                     if(lastChar.equals('l')) {
                         morphology = baseForm.substring(0, baseForm.length() - 1) + "is";
+                    } else if (lastChar.equals('n')) {
+                        morphology = baseForm + "s";
                     } else {
-                        morphology = morphology + "es";
+                        morphology = baseForm + "es";
                     }
                 } else {
                     if(lastChar.equals('l')) {
